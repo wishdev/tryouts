@@ -1,0 +1,235 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang='en'>
+  <head>
+    <title>: Tryouts::Drill [Tryouts are high-level tests for your Ruby code. May all your dreams come true!]</title>
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <link href='../../rdoc-style.css' media='screen' rel='stylesheet' type='text/css'>
+    <script type='text/javascript'>
+      //<![CDATA[
+        function popupCode(url) {
+          window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+        }
+        
+        function toggleCode(id) {
+          var code = document.getElementById(id)
+        
+          code.style.display = code.style.display != 'block' ? 'block' : 'none'
+          return true
+        }
+        
+        // Make codeblocks hidden by default
+        document.writeln('<' + 'style type="text/css">.method .source pre { display: none }<\/style>')
+      //]]>
+    </script>
+  </head>
+  <body class='page'>
+    <div class='class' id='wrapper'>
+      <div class='header'>
+        <div class='name'>
+          <span class='type'>Class</span>
+          Tryouts::Drill
+        </div>
+        <ol class='paths'>
+          <li>
+            <a href="../../files/lib/tryouts/drill/response_rb.html">lib/tryouts/drill/response.rb</a>
+          </li>
+          <li class='other'>
+            <a href="../../files/lib/tryouts/drill/sergeant/api_rb.html">lib/tryouts/drill/sergeant/api.rb</a>
+          </li>
+          <li class='other'>
+            <a href="../../files/lib/tryouts/drill/sergeant/cli_rb.html">lib/tryouts/drill/sergeant/cli.rb</a>
+          </li>
+          <li class='other'>
+            <a href="../../files/lib/tryouts/drill_rb.html">lib/tryouts/drill.rb</a>
+          </li>
+          <li>
+            <a class='show' href='#' onclick='this.parentNode.parentNode.className += " expanded"; this.parentNode.removeChild(this); return false'>show all</a>
+          </li>
+        </ol>
+        <div class='parent'>
+          Parent:
+          <strong>Object</strong>
+        </div>
+      </div>
+      <div id='content'>
+        <div id='text'>
+          <div id='description'>
+            <h1><a href="Drill.html">Drill</a></h1>
+            <p>
+            This class represents a drill. A drill is single test.
+            </p>
+          </div>
+          <div id='method-list'>
+            <h2>Methods</h2>
+            <h3>public class</h3>
+            <ol>
+              <li><a href="#M000082">new</a></li>
+            </ol>
+            <h3>public instance</h3>
+            <ol>
+              <li><a href="#M000087">add_dream</a></li>
+              <li><a href="#M000086">discrepency</a></li>
+              <li><a href="#M000083">hire_sergeant</a></li>
+              <li><a href="#M000084">run</a></li>
+              <li><a href="#M000085">success?</a></li>
+            </ol>
+          </div>
+          <div id='section'>
+            <div id='class-list'>
+              <h2>Classes and Modules</h2>
+              Module <a href="Drill/Sergeant.html" class="link">Tryouts::Drill::Sergeant</a><br />
+              Class <a href="Drill/Dream.html" class="link">Tryouts::Drill::Dream</a><br />
+              Class <a href="Drill/NoSergeant.html" class="link">Tryouts::Drill::NoSergeant</a><br />
+              Class <a href="Drill/Reality.html" class="link">Tryouts::Drill::Reality</a><br />
+              Class <a href="Drill/Response.html" class="link">Tryouts::Drill::Response</a><br />
+            </div>
+            <div id='attribute-list'>
+              <h2 class='section-bar'>Attributes</h2>
+              <div class='name-list'>
+                <table>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>dream</td>
+                    <td class='context-item-value'>[R]</td>
+                    <td class='context-item-desc'>
+                      
+                      A <a href="Drill/Dream.html">Dream</a> object (the expected output of the
+                      test)
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>drill</td>
+                    <td class='context-item-value'>[R]</td>
+                    <td class='context-item-desc'>
+                      
+                      A Proc object which contains the drill logic.
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>dtype</td>
+                    <td class='context-item-value'>[R]</td>
+                    <td class='context-item-desc'>
+                      
+                      A symbol specifying the drill type. One of: :cli, :api
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>name</td>
+                    <td class='context-item-value'>[R]</td>
+                    <td class='context-item-desc'>
+                      
+                      The name of the drill. This should match the name used in the dreams file.
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>reality</td>
+                    <td class='context-item-value'>[R]</td>
+                    <td class='context-item-desc'>
+                      
+                      A <a href="Drill/Reality.html">Reality</a> object (the actual output of the
+                      test)
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>sergeant</td>
+                    <td class='context-item-value'>[R]</td>
+                    <td class='context-item-desc'>
+                      
+                      A <a href="Drill/Sergeant.html">Sergeant</a> object which executes the
+                      drill
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <div id='methods'>
+              <h2>Public class methods</h2>
+              <div class='public-class method' id='method-M000082'>
+                <a name='M000082'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>new</span>
+                  <span class='arguments'>(name, dtype, *drill_args, &amp;drill)</span>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000082-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000082-source'>    <span class="ruby-comment cmt"># File lib/tryouts/drill.rb, line 31</span>&#x000A;31:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">dtype</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">drill_args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">drill</span>)&#x000A;32:     <span class="ruby-ivar">@name</span>, <span class="ruby-ivar">@dtype</span>, <span class="ruby-ivar">@drill</span> = <span class="ruby-identifier">name</span>, <span class="ruby-identifier">dtype</span>, <span class="ruby-identifier">drill</span>&#x000A;33:     <span class="ruby-ivar">@sergeant</span> = <span class="ruby-identifier">hire_sergeant</span> <span class="ruby-operator">*</span><span class="ruby-identifier">drill_args</span>&#x000A;34:     <span class="ruby-comment cmt"># For CLI drills, a block takes precedence over inline args. </span>&#x000A;35:     <span class="ruby-comment cmt"># A block will contain multiple shell commands (see Rye::Box#batch)</span>&#x000A;36:     <span class="ruby-identifier">drill_args</span> = [] <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">dtype</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">:cli</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">drill</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Proc</span>)&#x000A;37:     <span class="ruby-ivar">@reality</span> = <span class="ruby-constant">Tryouts</span><span class="ruby-operator">::</span><span class="ruby-constant">Drill</span><span class="ruby-operator">::</span><span class="ruby-constant">Reality</span>.<span class="ruby-identifier">new</span>&#x000A;38:   <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <h2>Public instance methods</h2>
+              <div class='public-instance method' id='method-M000087'>
+                <a name='M000087'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>add_dream</span>
+                  <span class='arguments'>(d)</span>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000087-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000087-source'>    <span class="ruby-comment cmt"># File lib/tryouts/drill.rb, line 80</span>&#x000A;80:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_dream</span>(<span class="ruby-identifier">d</span>)&#x000A;81:     <span class="ruby-ivar">@dream</span> = <span class="ruby-identifier">d</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">d</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Tryouts</span><span class="ruby-operator">::</span><span class="ruby-constant">Drill</span><span class="ruby-operator">::</span><span class="ruby-constant">Dream</span>)&#x000A;82:   <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <div class='public-instance method' id='method-M000086'>
+                <a name='M000086'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>discrepency</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000086-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000086-source'>    <span class="ruby-comment cmt"># File lib/tryouts/drill.rb, line 70</span>&#x000A;70:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">discrepency</span>&#x000A;71:     <span class="ruby-identifier">diffs</span> = []&#x000A;72:     <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@dream</span>&#x000A;73:       <span class="ruby-identifier">diffs</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;rcode&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@dream</span>.<span class="ruby-identifier">rcode</span> <span class="ruby-operator">!=</span> <span class="ruby-ivar">@reality</span>.<span class="ruby-identifier">rcode</span>&#x000A;74:       <span class="ruby-identifier">diffs</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;output&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@dream</span>.<span class="ruby-identifier">compare_output</span>(<span class="ruby-ivar">@reality</span>)&#x000A;75:       <span class="ruby-identifier">diffs</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;emsg&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@dream</span>.<span class="ruby-identifier">emsg</span> <span class="ruby-operator">!=</span> <span class="ruby-ivar">@reality</span>.<span class="ruby-identifier">emsg</span>&#x000A;76:     <span class="ruby-keyword kw">end</span>&#x000A;77:     <span class="ruby-identifier">diffs</span>&#x000A;78:   <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <div class='public-instance method' id='method-M000083'>
+                <a name='M000083'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>hire_sergeant</span>
+                  <span class='arguments'>(*drill_args)</span>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000083-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000083-source'>    <span class="ruby-comment cmt"># File lib/tryouts/drill.rb, line 40</span>&#x000A;40:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">hire_sergeant</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">drill_args</span>)&#x000A;41:     <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@dtype</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">:cli</span>&#x000A;42:       <span class="ruby-constant">Tryouts</span><span class="ruby-operator">::</span><span class="ruby-constant">Drill</span><span class="ruby-operator">::</span><span class="ruby-constant">Sergeant</span><span class="ruby-operator">::</span><span class="ruby-constant">CLI</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">drill_args</span>)&#x000A;43:     <span class="ruby-keyword kw">elsif</span> <span class="ruby-ivar">@dtype</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">:api</span>&#x000A;44:       <span class="ruby-constant">Tryouts</span><span class="ruby-operator">::</span><span class="ruby-constant">Drill</span><span class="ruby-operator">::</span><span class="ruby-constant">Sergeant</span><span class="ruby-operator">::</span><span class="ruby-constant">API</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">drill_args</span>.<span class="ruby-identifier">first</span>)&#x000A;45:     <span class="ruby-keyword kw">else</span>&#x000A;46:       <span class="ruby-identifier">raise</span> <span class="ruby-constant">NoSergeant</span>, <span class="ruby-node">&quot;What is #{@dtype}?&quot;</span>&#x000A;47:     <span class="ruby-keyword kw">end</span>&#x000A;48:   <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <div class='public-instance method' id='method-M000084'>
+                <a name='M000084'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>run</span>
+                  <span class='arguments'>(context=nil)</span>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000084-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000084-source'>    <span class="ruby-comment cmt"># File lib/tryouts/drill.rb, line 50</span>&#x000A;50:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">run</span>(<span class="ruby-identifier">context</span>=<span class="ruby-keyword kw">nil</span>)&#x000A;51:     <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@dream</span>.<span class="ruby-identifier">nil?</span>&#x000A;52:     <span class="ruby-keyword kw">begin</span>&#x000A;53:       <span class="ruby-identifier">print</span> <span class="ruby-constant">Tryouts</span><span class="ruby-operator">::</span><span class="ruby-constant">DRILL_MSG</span> <span class="ruby-operator">%</span> <span class="ruby-ivar">@name</span>&#x000A;54:       <span class="ruby-ivar">@reality</span> = <span class="ruby-ivar">@sergeant</span>.<span class="ruby-identifier">run</span> <span class="ruby-ivar">@drill</span>, <span class="ruby-identifier">context</span>&#x000A;55:       <span class="ruby-identifier">process_reality</span>&#x000A;56:     <span class="ruby-keyword kw">rescue</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">ex</span>&#x000A;57:       <span class="ruby-ivar">@reality</span>.<span class="ruby-identifier">rcode</span> = <span class="ruby-value">-2</span>&#x000A;58:       <span class="ruby-ivar">@reality</span>.<span class="ruby-identifier">emsg</span>, <span class="ruby-ivar">@reality</span>.<span class="ruby-identifier">backtrace</span> = <span class="ruby-identifier">ex</span>.<span class="ruby-identifier">message</span>, <span class="ruby-identifier">ex</span>.<span class="ruby-identifier">backtrace</span>&#x000A;59:     <span class="ruby-keyword kw">end</span>  &#x000A;60:     <span class="ruby-identifier">note</span> = <span class="ruby-ivar">@dream</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">discrepency</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">', '</span>) <span class="ruby-operator">:</span> <span class="ruby-value str">'nodream'</span>&#x000A;61:     <span class="ruby-identifier">puts</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">success?</span> <span class="ruby-value">? </span><span class="ruby-value str">&quot;PASS&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-node">&quot;FAIL (#{note})&quot;</span>&#x000A;62:     <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">success?</span>&#x000A;63:   <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <div class='public-instance method' id='method-M000085'>
+                <a name='M000085'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>success?</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000085-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000085-source'>    <span class="ruby-comment cmt"># File lib/tryouts/drill.rb, line 65</span>&#x000A;65:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">success?</span>&#x000A;66:     <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@dream</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@reality</span>.<span class="ruby-identifier">nil?</span>&#x000A;67:     <span class="ruby-ivar">@dream</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@reality</span>&#x000A;68:   <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id='footer-push'></div>
+    </div>
+    <div id='footer'>
+      <a href="http://github.com/mislav/hanna/tree/master"><strong>Hanna</strong> RDoc template</a>
+    </div>
+  </body>
+</html>

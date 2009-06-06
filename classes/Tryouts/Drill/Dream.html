@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang='en'>
+  <head>
+    <title>: Tryouts::Drill::Dream [Tryouts are high-level tests for your Ruby code. May all your dreams come true!]</title>
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <link href='../../../rdoc-style.css' media='screen' rel='stylesheet' type='text/css'>
+    <script type='text/javascript'>
+      //<![CDATA[
+        function popupCode(url) {
+          window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+        }
+        
+        function toggleCode(id) {
+          var code = document.getElementById(id)
+        
+          code.style.display = code.style.display != 'block' ? 'block' : 'none'
+          return true
+        }
+        
+        // Make codeblocks hidden by default
+        document.writeln('<' + 'style type="text/css">.method .source pre { display: none }<\/style>')
+      //]]>
+    </script>
+  </head>
+  <body class='page'>
+    <div class='class' id='wrapper'>
+      <div class='header'>
+        <div class='name'>
+          <span class='type'>Class</span>
+          Tryouts::Drill::Dream
+        </div>
+        <ol class='paths'>
+          <li>
+            <a href="../../../files/lib/tryouts/drill/response_rb.html">lib/tryouts/drill/response.rb</a>
+          </li>
+        </ol>
+        <div class='parent'>
+          Parent:
+          <strong><a href="Response.html">Tryouts::Drill::Response</a></strong>
+        </div>
+      </div>
+      <div id='content'>
+        <div id='text'>
+          <div id='description'>
+            <h1><a href="Dream.html">Dream</a></h1>
+            <p>
+            Contains the expected response of a <a href="../Drill.html">Drill</a>
+            </p>
+          </div>
+          <div id='method-list'>
+            <h2>Methods</h2>
+            <h3>public class</h3>
+            <ol>
+              <li><a href="#M000104">from_block</a></li>
+            </ol>
+            <h3>public instance</h3>
+            <ol>
+              <li><a href="#M000105">from_block</a></li>
+              <li><a href="#M000106">inline</a></li>
+            </ol>
+          </div>
+          <div id='section'>
+            <div id='methods'>
+              <h2>Public class methods</h2>
+              <div class='public-class method' id='method-M000104'>
+                <a name='M000104'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>from_block</span>
+                  <span class='arguments'>(definition)</span>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000104-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000104-source'>    <span class="ruby-comment cmt"># File lib/tryouts/drill/response.rb, line 77</span>&#x000A;77:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">from_block</span>(<span class="ruby-identifier">definition</span>)&#x000A;78:       <span class="ruby-identifier">d</span> = <span class="ruby-constant">Tryouts</span><span class="ruby-operator">::</span><span class="ruby-constant">Drill</span><span class="ruby-operator">::</span><span class="ruby-constant">Dream</span>.<span class="ruby-identifier">new</span>&#x000A;79:       <span class="ruby-identifier">d</span>.<span class="ruby-identifier">from_block</span> <span class="ruby-identifier">definition</span>&#x000A;80:       <span class="ruby-identifier">d</span>&#x000A;81:     <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <h2>Public instance methods</h2>
+              <div class='public-instance method' id='method-M000105'>
+                <a name='M000105'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>from_block</span>
+                  <span class='arguments'>(definition)</span>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000105-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000105-source'>    <span class="ruby-comment cmt"># File lib/tryouts/drill/response.rb, line 83</span>&#x000A;83:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">from_block</span>(<span class="ruby-identifier">definition</span>)&#x000A;84:       <span class="ruby-identifier">instance_eval</span> <span class="ruby-operator">&amp;</span><span class="ruby-identifier">definition</span>&#x000A;85:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">normalize!</span>&#x000A;86:       <span class="ruby-keyword kw">self</span>&#x000A;87:     <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <div class='public-instance method' id='method-M000106'>
+                <a name='M000106'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>inline</span>
+                  <span class='arguments'>(val=nil)</span>
+                </div>
+                <div class='description'>
+                  <p>
+                  Takes a String <tt>val</tt> and splits the lines into an Array. Each line
+                  has
+                  </p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000106-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000106-source'>    <span class="ruby-comment cmt"># File lib/tryouts/drill/response.rb, line 91</span>&#x000A;91:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">inline</span>(<span class="ruby-identifier">val</span>=<span class="ruby-keyword kw">nil</span>)&#x000A;92:       <span class="ruby-identifier">lines</span> = (<span class="ruby-identifier">val</span>.<span class="ruby-identifier">split</span>(<span class="ruby-identifier">$/</span>) <span class="ruby-operator">||</span> [])&#x000A;93:       <span class="ruby-identifier">lines</span>.<span class="ruby-identifier">shift</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">lines</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">strip</span> <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;&quot;</span>&#x000A;94:       <span class="ruby-identifier">lines</span>.<span class="ruby-identifier">pop</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">lines</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">strip</span> <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;&quot;</span>&#x000A;95:       <span class="ruby-identifier">lines</span>&#x000A;96:     <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id='footer-push'></div>
+    </div>
+    <div id='footer'>
+      <a href="http://github.com/mislav/hanna/tree/master"><strong>Hanna</strong> RDoc template</a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang='en'>
+  <head>
+    <title>File: README.rdoc [Tryouts are high-level tests for your Ruby code. May all your dreams come true!]</title>
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <link href='../rdoc-style.css' media='screen' rel='stylesheet' type='text/css'>
+    <script type='text/javascript'>
+      //<![CDATA[
+        function popupCode(url) {
+          window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+        }
+        
+        function toggleCode(id) {
+          var code = document.getElementById(id)
+        
+          code.style.display = code.style.display != 'block' ? 'block' : 'none'
+          return true
+        }
+        
+        // Make codeblocks hidden by default
+        document.writeln('<' + 'style type="text/css">.method .source pre { display: none }<\/style>')
+      //]]>
+    </script>
+  </head>
+  <body class='page'>
+    <div class='file' id='wrapper'>
+      <div class='header'>
+        <div class='name'>README.rdoc</div>
+        <div class='paths'>
+          README.rdoc
+        </div>
+        <div class='last-update'>
+          Last Update:
+          <span class='datetime'>Sat Jun 06 13:00:25 -0400 2009</span>
+        </div>
+      </div>
+      <div id='content'>
+        <div id='text'>
+          <div id='description'>
+            <h1><a href="../classes/Tryouts.html">Tryouts</a> - v0.5 ALPHA</h1>
+            <p>
+            <a href="../classes/Tryouts.html">Tryouts</a> is a high-level testing
+            library for your command-line applications and Ruby codes.
+            </p>
+            <p>
+            *WORK IN PROGRESS*
+            </p>
+            <p>
+            2009-05-24 - A BBQ started nearby as I was writing this documentation.
+            It&#8217;s incomplete and I&#8217;m sorry about that but I can tell you
+            that this BBQ smells really, really good.
+            </p>
+            <h2>Terminology</h2>
+            <p>
+            <a href="../classes/Tryouts.html">Tryouts</a> is a bit different than other
+            testing libraries. Test definitions are organized in a similar way as
+            Shoulda tests (although the keywords in the syntax are different).
+            </p>
+            <ul>
+            <li>Tryout: a set of drills (like basketball tryouts)
+            
+            </li>
+            <li>Drill: a test.
+            
+            </li>
+            <li>Dream: the expected outcome of a drill.
+            
+            </li>
+            </ul>
+            <h2>Testing a command-line application (a CLI)</h2>
+            <p>
+            <a href="../classes/Tryouts.html">Tryouts</a> tests command-line
+            applications by comparing expected output with the actual output.
+            Let&#8217;s say we have an executable called mockout and we want to test
+            the following commands:
+            </p>
+            <pre>$ bin/executable&#x000A;$ bin/executable -f yaml</pre>
+            <p>
+            The tryout definition would look like this:
+            </p>
+            <pre>command :executable, &quot;path/2/executable&quot;&#x000A;&#x000A;tryout &quot;Common Usage&quot;, :cli do&#x000A;  drill  &quot;No Command&quot;&#x000A;  drill &quot;YAML Output&quot;, :f, 'yaml'&#x000A;end</pre>
+            <p>
+            And the expected output would be defined like this:
+            </p>
+            <pre>dream &quot;No Command&quot; do&#x000A;  output inline(%Q{&#x000A;        Date:                                   2009-02-16&#x000A;     Players:            d-bam, alberta, birds, condor man&#x000A;      Owners:            greg, rupaul, telly, prince kinko&#x000A;  })&#x000A;end&#x000A;dream &quot;YAML Output&quot; do&#x000A;  format :yaml&#x000A;  output ({&#x000A;    &quot;Date&quot; =&gt; &quot;2009-02-16&quot;,&#x000A;    &quot;Players&quot; =&gt; [&quot;d-bam&quot;, &quot;alberta&quot;, &quot;birds&quot;, &quot;condor man&quot;],&#x000A;    &quot;Owners&quot; =&gt; [&quot;greg&quot;, &quot;rupaul&quot;, &quot;telly&quot;, &quot;prince kinko&quot;]&#x000A;  })&#x000A;end</pre>
+            <h2>Testing Ruby codes (an API)</h2>
+            <p>
+            <a href="../classes/Tryouts.html">Tryouts</a> employs the same approach for
+            testing Ruby codes. The return value of the drill block is compared to the
+            expectation defined by the dream. Here is an example of including dreams
+            inside the tryout definition.
+            </p>
+            <pre>library :caesars, LIBRARY_PATH&#x000A;&#x000A;tryout &quot;Common Usage&quot;, :api do&#x000A;  dream &quot;Some Maths&quot;, 3&#x000A;  drill &quot;Some Maths&quot; do&#x000A;    12 / 4&#x000A;  end&#x000A;&#x000A;  dream &quot;A Block&quot;, Proc, :class  # Test the class type instead of the value&#x000A;  drill &quot;A Block&quot; do&#x000A;    Proc.new do&#x000A;      :anything&#x000A;    end&#x000A;  end&#x000A;end</pre>
+            <h2>ALPHA Notice</h2>
+            <p>
+            This library is very new (est. 2009-05-19) and has not been vetted by the
+            scrutiny of time. In particular you can expect:
+            </p>
+            <ul>
+            <li>Ugly/awkward output from the tryouts executable. I wrote the core
+            functionality that I needed to start writing tryouts for my other projects.
+            I haven&#8217;t spent very much time on reporting yet. However, this will
+            change!
+            
+            </li>
+            <li>The test definition syntax may change in future releases.
+            
+            </li>
+            <li>Unexpected errors.
+            
+            </li>
+            </ul>
+            <h2>3 Ways to define tryouts</h2>
+            <p>
+            There are three ways to define an instance of this class:
+            </p>
+            <ul>
+            <li>In <tt>_tryouts.rb</tt> files using the DSL syntax. One file per <a
+            href="../classes/Tryouts.html">Tryouts</a> object.
+            
+            <ul>
+            <li>See: <a
+            href="http://github.com/delano/tryouts/blob/master/tryouts/mockoutcli_tryouts.rb">github.com/delano/tryouts/blob/master/tryouts/mockoutcli_tryouts.rb</a>
+            
+            </li>
+            </ul>
+            </li>
+            <li>In standalone ruby files using a hybrid DSL/OO syntax. Supports multiple <a
+            href="../classes/Tryouts.html">Tryouts</a> objects per file.
+            
+            <ul>
+            <li>See: <a
+            href="http://github.com/delano/tryouts/blob/master/tryouts/standalone_test.rb">github.com/delano/tryouts/blob/master/tryouts/standalone_test.rb</a>
+            
+            </li>
+            </ul>
+            </li>
+            <li>With regular object-oriented syntax.
+            
+            <ul>
+            <li>See: <a href="http://tryouts.rubyforge.org/">tryouts.rubyforge.org/</a>
+            
+            </li>
+            </ul>
+            </li>
+            </ul>
+            <h2>On Threads</h2>
+            <p>
+            <a href="../classes/Tryouts.html">Tryouts</a> does some funky stuff to make
+            it simple to write tests. This &#8220;funky stuff&#8221; means that this
+            library is *not thread-safe at definition-time*. However, once all tryouts
+            files are parsed (or in OO-syntax, once all objects are created), this
+            class should be *thread-safe at drill-time*.
+            </p>
+            <h2>More Info</h2>
+            <ul>
+            <li>Check out the <a href="http://github.com/delano/tryouts">sourcecodes</a>
+            
+            </li>
+            <li>Read the <a href="http://tryouts.rubyforge.org/">rdocs</a>
+            
+            </li>
+            <li>About <a href="http://solutious.com/about/">Solutious</a>
+            
+            </li>
+            </ul>
+            <h2>Thanks</h2>
+            <ul>
+            <li>Everyone at Utrecht.rb
+            
+            </li>
+            </ul>
+            <h2>Credits</h2>
+            <ul>
+            <li>Delano (@solutious.com)
+            
+            </li>
+            </ul>
+            <h2>Related Projects</h2>
+            <ul>
+            <li><a href="http://github.com/jeremymcanally/context/tree/master">Context</a>
+            
+            </li>
+            <li><a href="http://github.com/ahoward/testy/tree/master">Testy</a>
+            
+            </li>
+            <li><a href="http://expectations.rubyforge.org/">Expectations</a>
+            
+            </li>
+            <li><a href="http://github.com/giraffesoft/zebra/tree/master">Zebra</a>
+            
+            </li>
+            </ul>
+            <h2>License</h2>
+            <p>
+            See: <a href="LICENSE_txt.html">LICENSE.txt</a>
+            </p>
+          </div>
+          <div id='section'>
+          </div>
+        </div>
+      </div>
+      <div id='footer-push'></div>
+    </div>
+    <div id='footer'>
+      <a href="http://github.com/mislav/hanna/tree/master"><strong>Hanna</strong> RDoc template</a>
+    </div>
+  </body>
+</html>
