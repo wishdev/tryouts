@@ -31,24 +31,16 @@
         </div>
         <div class='last-update'>
           Last Update:
-          <span class='datetime'>Sat Jun 06 13:00:25 -0400 2009</span>
+          <span class='datetime'>Sat Jun 06 18:12:44 -0400 2009</span>
         </div>
       </div>
       <div id='content'>
         <div id='text'>
           <div id='description'>
-            <h1><a href="../classes/Tryouts.html">Tryouts</a> - v0.5 ALPHA</h1>
+            <h1><a href="../classes/Tryouts.html">Tryouts</a> - v0.4 BETA</h1>
             <p>
             <a href="../classes/Tryouts.html">Tryouts</a> is a high-level testing
             library for your command-line applications and Ruby codes.
-            </p>
-            <p>
-            *WORK IN PROGRESS*
-            </p>
-            <p>
-            2009-05-24 - A BBQ started nearby as I was writing this documentation.
-            It&#8217;s incomplete and I&#8217;m sorry about that but I can tell you
-            that this BBQ smells really, really good.
             </p>
             <h2>Terminology</h2>
             <p>
@@ -78,7 +70,7 @@
             <p>
             The tryout definition would look like this:
             </p>
-            <pre>command :executable, &quot;path/2/executable&quot;&#x000A;&#x000A;tryout &quot;Common Usage&quot;, :cli do&#x000A;  drill  &quot;No Command&quot;&#x000A;  drill &quot;YAML Output&quot;, :f, 'yaml'&#x000A;end</pre>
+            <pre>command :executable, &quot;path/2/executable&quot;&#x000A;&#x000A;tryout &quot;Common Usage&quot; do&#x000A;  drill  &quot;No Command&quot;&#x000A;  drill &quot;YAML Output&quot;, :f, 'yaml'&#x000A;end</pre>
             <p>
             And the expected output would be defined like this:
             </p>
@@ -90,7 +82,7 @@
             expectation defined by the dream. Here is an example of including dreams
             inside the tryout definition.
             </p>
-            <pre>library :caesars, LIBRARY_PATH&#x000A;&#x000A;tryout &quot;Common Usage&quot;, :api do&#x000A;  dream &quot;Some Maths&quot;, 3&#x000A;  drill &quot;Some Maths&quot; do&#x000A;    12 / 4&#x000A;  end&#x000A;&#x000A;  dream &quot;A Block&quot;, Proc, :class  # Test the class type instead of the value&#x000A;  drill &quot;A Block&quot; do&#x000A;    Proc.new do&#x000A;      :anything&#x000A;    end&#x000A;  end&#x000A;end</pre>
+            <pre>library :caesars, LIBRARY_PATH&#x000A;&#x000A;tryout &quot;Common Usage&quot; do&#x000A;  dream &quot;Some Maths&quot;, 3&#x000A;  drill &quot;Some Maths&quot; do&#x000A;    12 / 4&#x000A;  end&#x000A;&#x000A;  dream &quot;A Block&quot;, Proc, :class  # Test the class type instead of the value&#x000A;  drill &quot;A Block&quot; do&#x000A;    Proc.new do&#x000A;      :anything&#x000A;    end&#x000A;  end&#x000A;end</pre>
             <h2>ALPHA Notice</h2>
             <p>
             This library is very new (est. 2009-05-19) and has not been vetted by the
