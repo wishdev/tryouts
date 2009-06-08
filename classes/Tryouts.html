@@ -92,39 +92,39 @@
             <h2>Methods</h2>
             <h3>public class</h3>
             <ol>
+              <li><a href="#M000009">command</a></li>
+              <li><a href="#M000024">dream</a></li>
+              <li><a href="#M000020">dreams</a></li>
+              <li><a href="#M000031">find_dreams_file</a></li>
+              <li><a href="#M000013">group</a></li>
+              <li><a href="#M000030">inherited</a></li>
+              <li><a href="#M000002">instances</a></li>
+              <li><a href="#M000011">library</a></li>
+              <li><a href="#M000004">new</a></li>
+              <li><a href="#M000028">parse_file</a></li>
+              <li><a href="#M000029">run</a></li>
+              <li><a href="#M000003">sysinfo</a></li>
+              <li><a href="#M000015">tryout</a></li>
+              <li><a href="#M000022">tryouts</a></li>
+              <li><a href="#M000026">xdream</a></li>
+              <li><a href="#M000018">xtryout</a></li>
+            </ol>
+            <h3>public instance</h3>
+            <ol>
               <li><a href="#M000008">command</a></li>
               <li><a href="#M000023">dream</a></li>
               <li><a href="#M000019">dreams</a></li>
-              <li><a href="#M000030">find_dreams_file</a></li>
+              <li><a href="#M000016">find_tryout</a></li>
+              <li><a href="#M000005">from_block</a></li>
               <li><a href="#M000012">group</a></li>
-              <li><a href="#M000029">inherited</a></li>
-              <li><a href="#M000001">instances</a></li>
               <li><a href="#M000010">library</a></li>
-              <li><a href="#M000003">new</a></li>
-              <li><a href="#M000027">parse_file</a></li>
-              <li><a href="#M000028">run</a></li>
-              <li><a href="#M000002">sysinfo</a></li>
+              <li><a href="#M000027">load_dreams_file</a></li>
+              <li><a href="#M000006">report</a></li>
+              <li><a href="#M000007">run</a></li>
               <li><a href="#M000014">tryout</a></li>
               <li><a href="#M000021">tryouts</a></li>
               <li><a href="#M000025">xdream</a></li>
               <li><a href="#M000017">xtryout</a></li>
-            </ol>
-            <h3>public instance</h3>
-            <ol>
-              <li><a href="#M000007">command</a></li>
-              <li><a href="#M000022">dream</a></li>
-              <li><a href="#M000018">dreams</a></li>
-              <li><a href="#M000015">find_tryout</a></li>
-              <li><a href="#M000004">from_block</a></li>
-              <li><a href="#M000011">group</a></li>
-              <li><a href="#M000009">library</a></li>
-              <li><a href="#M000026">load_dreams_file</a></li>
-              <li><a href="#M000005">report</a></li>
-              <li><a href="#M000006">run</a></li>
-              <li><a href="#M000013">tryout</a></li>
-              <li><a href="#M000020">tryouts</a></li>
-              <li><a href="#M000024">xdream</a></li>
-              <li><a href="#M000016">xtryout</a></li>
             </ol>
           </div>
           <div id='section'>
@@ -247,15 +247,15 @@
             </div>
             <div id='methods'>
               <h2>Public class methods</h2>
-              <div class='public-class method' id='method-M000008'>
-                <a name='M000008'>      </a>
+              <div class='public-class method' id='method-M000009'>
+                <a name='M000009'>      </a>
                 <div class='synopsis'>
                   <span class='name'>command</span>
                   <span class='arguments'>(*args)</span>
                 </div>
                 <div class='description'>
                   <p>
-                  Calls <a href="Tryouts.html#M000007">Tryouts#command</a> on the current
+                  Calls <a href="Tryouts.html#M000008">Tryouts#command</a> on the current
                   instance of <a href="Tryouts.html">Tryouts</a>
                   </p>
                   <p>
@@ -263,21 +263,21 @@
                   </p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000008-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000009-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000008-source'>     <span class="ruby-comment cmt"># File lib/tryouts.rb, line 118</span>&#x000A;118:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">command</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)&#x000A;119:     <span class="ruby-ivar">@@instances</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">command</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)&#x000A;120:   <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000009-source'>     <span class="ruby-comment cmt"># File lib/tryouts.rb, line 118</span>&#x000A;118:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">command</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)&#x000A;119:     <span class="ruby-ivar">@@instances</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">command</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)&#x000A;120:   <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='public-class method' id='method-M000023'>
-                <a name='M000023'>      </a>
+              <div class='public-class method' id='method-M000024'>
+                <a name='M000024'>      </a>
                 <div class='synopsis'>
                   <span class='name'>dream</span>
                   <span class='arguments'>(*args, &amp;block)</span>
                 </div>
                 <div class='description'>
                   <p>
-                  Calls <a href="Tryouts.html#M000022">Tryouts#dream</a> on the current
+                  Calls <a href="Tryouts.html#M000023">Tryouts#dream</a> on the current
                   instance of <a href="Tryouts.html">Tryouts</a>
                   </p>
                   <p>
@@ -285,14 +285,14 @@
                   </p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000023-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000024-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000023-source'>     <span class="ruby-comment cmt"># File lib/tryouts.rb, line 309</span>&#x000A;309:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">dream</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;310:     <span class="ruby-ivar">@@instances</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">dream</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;311:   <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000024-source'>     <span class="ruby-comment cmt"># File lib/tryouts.rb, line 309</span>&#x000A;309:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">dream</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;310:     <span class="ruby-ivar">@@instances</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">dream</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;311:   <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='public-class method' id='method-M000019'>
-                <a name='M000019'>      </a>
+              <div class='public-class method' id='method-M000020'>
+                <a name='M000020'>      </a>
                 <div class='synopsis'>
                   <span class='name'>dreams</span>
                   <span class='arguments'>(*args, &amp;block)</span>
@@ -301,7 +301,7 @@
                   <p>
                   Without arguments, returns a <a href="Hash.html">Hash</a> of all known
                   dreams. With arguments, it calls <a
-                  href="Tryouts.html#M000018">Tryouts#dreams</a> on the current instance of
+                  href="Tryouts.html#M000019">Tryouts#dreams</a> on the current instance of
                   <a href="Tryouts.html">Tryouts</a>.
                   </p>
                   <p>
@@ -309,14 +309,14 @@
                   </p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000019-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000020-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000019-source'>     <span class="ruby-comment cmt"># File lib/tryouts.rb, line 253</span>&#x000A;253:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">dreams</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;254:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">block</span>.<span class="ruby-identifier">nil?</span>&#x000A;255:       <span class="ruby-identifier">dreams</span> = {}&#x000A;256:       <span class="ruby-ivar">@@instances</span>.<span class="ruby-identifier">each_pair</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>,<span class="ruby-identifier">inst</span><span class="ruby-operator">|</span>&#x000A;257:         <span class="ruby-identifier">dreams</span>[<span class="ruby-identifier">name</span>] = <span class="ruby-identifier">inst</span>.<span class="ruby-identifier">dreams</span>&#x000A;258:       <span class="ruby-keyword kw">end</span>&#x000A;259:       <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">dreams</span>&#x000A;260:     <span class="ruby-keyword kw">else</span>&#x000A;261:       <span class="ruby-comment cmt"># Call the Tryouts#dreams instance method</span>&#x000A;262:       <span class="ruby-ivar">@@instances</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">dreams</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;263:     <span class="ruby-keyword kw">end</span>&#x000A;264:   <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000020-source'>     <span class="ruby-comment cmt"># File lib/tryouts.rb, line 253</span>&#x000A;253:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">dreams</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;254:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">block</span>.<span class="ruby-identifier">nil?</span>&#x000A;255:       <span class="ruby-identifier">dreams</span> = {}&#x000A;256:       <span class="ruby-ivar">@@instances</span>.<span class="ruby-identifier">each_pair</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>,<span class="ruby-identifier">inst</span><span class="ruby-operator">|</span>&#x000A;257:         <span class="ruby-identifier">dreams</span>[<span class="ruby-identifier">name</span>] = <span class="ruby-identifier">inst</span>.<span class="ruby-identifier">dreams</span>&#x000A;258:       <span class="ruby-keyword kw">end</span>&#x000A;259:       <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">dreams</span>&#x000A;260:     <span class="ruby-keyword kw">else</span>&#x000A;261:       <span class="ruby-comment cmt"># Call the Tryouts#dreams instance method</span>&#x000A;262:       <span class="ruby-ivar">@@instances</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">dreams</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;263:     <span class="ruby-keyword kw">end</span>&#x000A;264:   <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='public-class method' id='method-M000030'>
-                <a name='M000030'>      </a>
+              <div class='public-class method' id='method-M000031'>
+                <a name='M000031'>      </a>
                 <div class='synopsis'>
                   <span class='name'>find_dreams_file</span>
                   <span class='arguments'>(dir, group=nil)</span>
@@ -332,14 +332,14 @@
                   <pre>e.g.&#x000A;Tryouts.find_dreams_file &quot;dirpath&quot;   # =&gt; dirpath/tryouts_dreams.rb</pre>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000030-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000031-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000030-source'>     <span class="ruby-comment cmt"># File lib/tryouts.rb, line 399</span>&#x000A;399:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">find_dreams_file</span>(<span class="ruby-identifier">dir</span>, <span class="ruby-identifier">group</span>=<span class="ruby-keyword kw">nil</span>)&#x000A;400:     <span class="ruby-identifier">dpath</span> = <span class="ruby-keyword kw">nil</span>&#x000A;401:     <span class="ruby-identifier">group</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@@instances</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">group</span>&#x000A;402:     <span class="ruby-identifier">group</span> = <span class="ruby-identifier">group</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">downcase</span>.<span class="ruby-identifier">tr</span>(<span class="ruby-value str">' '</span>, <span class="ruby-value str">''</span>)&#x000A;403:     [<span class="ruby-identifier">:rb</span>, <span class="ruby-identifier">:yaml</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">ext</span><span class="ruby-operator">|</span>&#x000A;404:       <span class="ruby-identifier">tmp</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">dir</span>, <span class="ruby-node">&quot;#{group}_dreams.#{ext}&quot;</span>)&#x000A;405:       <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">tmp</span>)&#x000A;406:         <span class="ruby-identifier">dpath</span> = <span class="ruby-identifier">tmp</span>&#x000A;407:         <span class="ruby-keyword kw">break</span>&#x000A;408:       <span class="ruby-keyword kw">end</span>&#x000A;409:     <span class="ruby-keyword kw">end</span>&#x000A;410:     <span class="ruby-identifier">dpath</span>&#x000A;411:   <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000031-source'>     <span class="ruby-comment cmt"># File lib/tryouts.rb, line 399</span>&#x000A;399:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">find_dreams_file</span>(<span class="ruby-identifier">dir</span>, <span class="ruby-identifier">group</span>=<span class="ruby-keyword kw">nil</span>)&#x000A;400:     <span class="ruby-identifier">dpath</span> = <span class="ruby-keyword kw">nil</span>&#x000A;401:     <span class="ruby-identifier">group</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@@instances</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">group</span>&#x000A;402:     <span class="ruby-identifier">group</span> = <span class="ruby-identifier">group</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">downcase</span>.<span class="ruby-identifier">tr</span>(<span class="ruby-value str">' '</span>, <span class="ruby-value str">''</span>)&#x000A;403:     [<span class="ruby-identifier">:rb</span>, <span class="ruby-identifier">:yaml</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">ext</span><span class="ruby-operator">|</span>&#x000A;404:       <span class="ruby-identifier">tmp</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">dir</span>, <span class="ruby-node">&quot;#{group}_dreams.#{ext}&quot;</span>)&#x000A;405:       <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">tmp</span>)&#x000A;406:         <span class="ruby-identifier">dpath</span> = <span class="ruby-identifier">tmp</span>&#x000A;407:         <span class="ruby-keyword kw">break</span>&#x000A;408:       <span class="ruby-keyword kw">end</span>&#x000A;409:     <span class="ruby-keyword kw">end</span>&#x000A;410:     <span class="ruby-identifier">dpath</span>&#x000A;411:   <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='public-class method' id='method-M000012'>
-                <a name='M000012'>      </a>
+              <div class='public-class method' id='method-M000013'>
+                <a name='M000013'>      </a>
                 <div class='synopsis'>
                   <span class='name'>group</span>
                   <span class='arguments'>(*args)</span>
@@ -355,14 +355,14 @@
                   </p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000012-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000013-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000012-source'>     <span class="ruby-comment cmt"># File lib/tryouts.rb, line 152</span>&#x000A;152:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">group</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)&#x000A;153:     <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;Group is already set: #{@@instances.last.group}&quot;</span>&#x000A;154:   <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000013-source'>     <span class="ruby-comment cmt"># File lib/tryouts.rb, line 152</span>&#x000A;152:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">group</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)&#x000A;153:     <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;Group is already set: #{@@instances.last.group}&quot;</span>&#x000A;154:   <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='public-class method' id='method-M000029'>
-                <a name='M000029'>      </a>
+              <div class='public-class method' id='method-M000030'>
+                <a name='M000030'>      </a>
                 <div class='synopsis'>
                   <span class='name'>inherited</span>
                   <span class='arguments'>(klass)</span>
@@ -378,14 +378,14 @@
                   </p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000029-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000030-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000029-source'>     <span class="ruby-comment cmt"># File lib/tryouts.rb, line 373</span>&#x000A;373:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">inherited</span>(<span class="ruby-identifier">klass</span>)&#x000A;374:     <span class="ruby-identifier">to</span> = <span class="ruby-ivar">@@instances</span>[ <span class="ruby-identifier">klass</span> ]&#x000A;375:     <span class="ruby-identifier">to</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Tryouts</span>.<span class="ruby-identifier">new</span>&#x000A;376:     <span class="ruby-identifier">to</span>.<span class="ruby-identifier">paths</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword kw">__FILE__</span>&#x000A;377:     <span class="ruby-identifier">to</span>.<span class="ruby-identifier">group</span> = <span class="ruby-identifier">klass</span>&#x000A;378:     <span class="ruby-ivar">@@instances</span>[<span class="ruby-identifier">to</span>.<span class="ruby-identifier">group</span>] = <span class="ruby-identifier">to</span>&#x000A;379:   <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000030-source'>     <span class="ruby-comment cmt"># File lib/tryouts.rb, line 373</span>&#x000A;373:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">inherited</span>(<span class="ruby-identifier">klass</span>)&#x000A;374:     <span class="ruby-identifier">to</span> = <span class="ruby-ivar">@@instances</span>[ <span class="ruby-identifier">klass</span> ]&#x000A;375:     <span class="ruby-identifier">to</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Tryouts</span>.<span class="ruby-identifier">new</span>&#x000A;376:     <span class="ruby-identifier">to</span>.<span class="ruby-identifier">paths</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword kw">__FILE__</span>&#x000A;377:     <span class="ruby-identifier">to</span>.<span class="ruby-identifier">group</span> = <span class="ruby-identifier">klass</span>&#x000A;378:     <span class="ruby-ivar">@@instances</span>[<span class="ruby-identifier">to</span>.<span class="ruby-identifier">group</span>] = <span class="ruby-identifier">to</span>&#x000A;379:   <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='public-class method' id='method-M000001'>
-                <a name='M000001'>      </a>
+              <div class='public-class method' id='method-M000002'>
+                <a name='M000002'>      </a>
                 <div class='synopsis'>
                   <span class='name'>instances</span>
                   <span class='arguments'>()</span>
@@ -396,21 +396,21 @@
                   </p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000001-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000002-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000001-source'>    <span class="ruby-comment cmt"># File lib/tryouts.rb, line 54</span>&#x000A;54:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">instances</span>; <span class="ruby-ivar">@@instances</span>; <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000002-source'>    <span class="ruby-comment cmt"># File lib/tryouts.rb, line 54</span>&#x000A;54:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">instances</span>; <span class="ruby-ivar">@@instances</span>; <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='public-class method' id='method-M000010'>
-                <a name='M000010'>      </a>
+              <div class='public-class method' id='method-M000011'>
+                <a name='M000011'>      </a>
                 <div class='synopsis'>
                   <span class='name'>library</span>
                   <span class='arguments'>(*args)</span>
                 </div>
                 <div class='description'>
                   <p>
-                  Calls <a href="Tryouts.html#M000009">Tryouts#library</a> on the current
+                  Calls <a href="Tryouts.html#M000010">Tryouts#library</a> on the current
                   instance of <a href="Tryouts.html">Tryouts</a>
                   </p>
                   <p>
@@ -418,27 +418,27 @@
                   </p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000010-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000011-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000010-source'>     <span class="ruby-comment cmt"># File lib/tryouts.rb, line 136</span>&#x000A;136:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">library</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)&#x000A;137:     <span class="ruby-ivar">@@instances</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">library</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)&#x000A;138:   <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000011-source'>     <span class="ruby-comment cmt"># File lib/tryouts.rb, line 136</span>&#x000A;136:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">library</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)&#x000A;137:     <span class="ruby-ivar">@@instances</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">library</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)&#x000A;138:   <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='public-class method' id='method-M000003'>
-                <a name='M000003'>      </a>
+              <div class='public-class method' id='method-M000004'>
+                <a name='M000004'>      </a>
                 <div class='synopsis'>
                   <span class='name'>new</span>
                   <span class='arguments'>(group=nil)</span>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000003-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000004-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000003-source'>    <span class="ruby-comment cmt"># File lib/tryouts.rb, line 77</span>&#x000A;77:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">group</span>=<span class="ruby-keyword kw">nil</span>)&#x000A;78:     <span class="ruby-ivar">@group</span> = <span class="ruby-identifier">group</span> <span class="ruby-operator">||</span> <span class="ruby-value str">&quot;Default Group&quot;</span>&#x000A;79:     <span class="ruby-ivar">@tryouts</span> = <span class="ruby-constant">HASH_TYPE</span>.<span class="ruby-identifier">new</span>&#x000A;80:     <span class="ruby-ivar">@paths</span> = []&#x000A;81:     <span class="ruby-ivar">@command</span> = <span class="ruby-keyword kw">nil</span>&#x000A;82:     <span class="ruby-ivar">@dreams</span> = <span class="ruby-constant">HASH_TYPE</span>.<span class="ruby-identifier">new</span>&#x000A;83:     <span class="ruby-ivar">@dream_pointer</span> = <span class="ruby-keyword kw">nil</span>&#x000A;84:   <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000004-source'>    <span class="ruby-comment cmt"># File lib/tryouts.rb, line 77</span>&#x000A;77:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">group</span>=<span class="ruby-keyword kw">nil</span>)&#x000A;78:     <span class="ruby-ivar">@group</span> = <span class="ruby-identifier">group</span> <span class="ruby-operator">||</span> <span class="ruby-value str">&quot;Default Group&quot;</span>&#x000A;79:     <span class="ruby-ivar">@tryouts</span> = <span class="ruby-constant">HASH_TYPE</span>.<span class="ruby-identifier">new</span>&#x000A;80:     <span class="ruby-ivar">@paths</span> = []&#x000A;81:     <span class="ruby-ivar">@command</span> = <span class="ruby-keyword kw">nil</span>&#x000A;82:     <span class="ruby-ivar">@dreams</span> = <span class="ruby-constant">HASH_TYPE</span>.<span class="ruby-identifier">new</span>&#x000A;83:     <span class="ruby-ivar">@dream_pointer</span> = <span class="ruby-keyword kw">nil</span>&#x000A;84:   <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='public-class method' id='method-M000027'>
-                <a name='M000027'>      </a>
+              <div class='public-class method' id='method-M000028'>
+                <a name='M000028'>      </a>
                 <div class='synopsis'>
                   <span class='name'>parse_file</span>
                   <span class='arguments'>(fpath)</span>
@@ -453,14 +453,14 @@
                   </p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000027-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000028-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000027-source'>     <span class="ruby-comment cmt"># File lib/tryouts.rb, line 342</span>&#x000A;342:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">parse_file</span>(<span class="ruby-identifier">fpath</span>)&#x000A;343:     <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;No such file: #{fpath}&quot;</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">fpath</span>)&#x000A;344:     <span class="ruby-identifier">file_content</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">fpath</span>)&#x000A;345:     <span class="ruby-identifier">to</span> = <span class="ruby-constant">Tryouts</span>.<span class="ruby-identifier">new</span>&#x000A;346:     <span class="ruby-identifier">to</span>.<span class="ruby-identifier">instance_eval</span> <span class="ruby-identifier">file_content</span>, <span class="ruby-identifier">fpath</span>&#x000A;347:     <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@@instances</span>.<span class="ruby-identifier">has_key?</span> <span class="ruby-identifier">to</span>.<span class="ruby-identifier">group</span>&#x000A;348:       <span class="ruby-identifier">to</span> = <span class="ruby-ivar">@@instances</span>[<span class="ruby-identifier">to</span>.<span class="ruby-identifier">group</span>]&#x000A;349:       <span class="ruby-identifier">to</span>.<span class="ruby-identifier">instance_eval</span> <span class="ruby-identifier">file_content</span>, <span class="ruby-identifier">fpath</span>&#x000A;350:     <span class="ruby-keyword kw">end</span>&#x000A;351:     <span class="ruby-identifier">to</span>.<span class="ruby-identifier">paths</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">fpath</span>&#x000A;352:     <span class="ruby-ivar">@@instances</span>[<span class="ruby-identifier">to</span>.<span class="ruby-identifier">group</span>] = <span class="ruby-identifier">to</span>&#x000A;353:   <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000028-source'>     <span class="ruby-comment cmt"># File lib/tryouts.rb, line 342</span>&#x000A;342:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">parse_file</span>(<span class="ruby-identifier">fpath</span>)&#x000A;343:     <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;No such file: #{fpath}&quot;</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">fpath</span>)&#x000A;344:     <span class="ruby-identifier">file_content</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">fpath</span>)&#x000A;345:     <span class="ruby-identifier">to</span> = <span class="ruby-constant">Tryouts</span>.<span class="ruby-identifier">new</span>&#x000A;346:     <span class="ruby-identifier">to</span>.<span class="ruby-identifier">instance_eval</span> <span class="ruby-identifier">file_content</span>, <span class="ruby-identifier">fpath</span>&#x000A;347:     <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@@instances</span>.<span class="ruby-identifier">has_key?</span> <span class="ruby-identifier">to</span>.<span class="ruby-identifier">group</span>&#x000A;348:       <span class="ruby-identifier">to</span> = <span class="ruby-ivar">@@instances</span>[<span class="ruby-identifier">to</span>.<span class="ruby-identifier">group</span>]&#x000A;349:       <span class="ruby-identifier">to</span>.<span class="ruby-identifier">instance_eval</span> <span class="ruby-identifier">file_content</span>, <span class="ruby-identifier">fpath</span>&#x000A;350:     <span class="ruby-keyword kw">end</span>&#x000A;351:     <span class="ruby-identifier">to</span>.<span class="ruby-identifier">paths</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">fpath</span>&#x000A;352:     <span class="ruby-ivar">@@instances</span>[<span class="ruby-identifier">to</span>.<span class="ruby-identifier">group</span>] = <span class="ruby-identifier">to</span>&#x000A;353:   <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='public-class method' id='method-M000028'>
-                <a name='M000028'>      </a>
+              <div class='public-class method' id='method-M000029'>
+                <a name='M000029'>      </a>
                 <div class='synopsis'>
                   <span class='name'>run</span>
                   <span class='arguments'>()</span>
@@ -474,14 +474,14 @@
                   </p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000028-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000029-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000028-source'>     <span class="ruby-comment cmt"># File lib/tryouts.rb, line 358</span>&#x000A;358:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">run</span>&#x000A;359:     <span class="ruby-ivar">@@instances</span>.<span class="ruby-identifier">each_pair</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">group</span>, <span class="ruby-identifier">inst</span><span class="ruby-operator">|</span>&#x000A;360:       <span class="ruby-identifier">inst</span>.<span class="ruby-identifier">tryouts</span>.<span class="ruby-identifier">each_pair</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>,<span class="ruby-identifier">to</span><span class="ruby-operator">|</span>&#x000A;361:         <span class="ruby-identifier">to</span>.<span class="ruby-identifier">run</span>&#x000A;362:         <span class="ruby-identifier">to</span>.<span class="ruby-identifier">report</span>&#x000A;363:         <span class="ruby-constant">STDOUT</span>.<span class="ruby-identifier">flush</span>&#x000A;364:       <span class="ruby-keyword kw">end</span>&#x000A;365:     <span class="ruby-keyword kw">end</span>&#x000A;366:   <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000029-source'>     <span class="ruby-comment cmt"># File lib/tryouts.rb, line 358</span>&#x000A;358:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">run</span>&#x000A;359:     <span class="ruby-ivar">@@instances</span>.<span class="ruby-identifier">each_pair</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">group</span>, <span class="ruby-identifier">inst</span><span class="ruby-operator">|</span>&#x000A;360:       <span class="ruby-identifier">inst</span>.<span class="ruby-identifier">tryouts</span>.<span class="ruby-identifier">each_pair</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>,<span class="ruby-identifier">to</span><span class="ruby-operator">|</span>&#x000A;361:         <span class="ruby-identifier">to</span>.<span class="ruby-identifier">run</span>&#x000A;362:         <span class="ruby-identifier">to</span>.<span class="ruby-identifier">report</span>&#x000A;363:         <span class="ruby-constant">STDOUT</span>.<span class="ruby-identifier">flush</span>&#x000A;364:       <span class="ruby-keyword kw">end</span>&#x000A;365:     <span class="ruby-keyword kw">end</span>&#x000A;366:   <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='public-class method' id='method-M000002'>
-                <a name='M000002'>      </a>
+              <div class='public-class method' id='method-M000003'>
+                <a name='M000003'>      </a>
                 <div class='synopsis'>
                   <span class='name'>sysinfo</span>
                   <span class='arguments'>()</span>
@@ -492,21 +492,21 @@
                   </p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000002-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000003-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000002-source'>    <span class="ruby-comment cmt"># File lib/tryouts.rb, line 56</span>&#x000A;56:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">sysinfo</span>;   <span class="ruby-ivar">@@sysinfo</span>;   <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000003-source'>    <span class="ruby-comment cmt"># File lib/tryouts.rb, line 56</span>&#x000A;56:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">sysinfo</span>;   <span class="ruby-ivar">@@sysinfo</span>;   <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='public-class method' id='method-M000014'>
-                <a name='M000014'>      </a>
+              <div class='public-class method' id='method-M000015'>
+                <a name='M000015'>      </a>
                 <div class='synopsis'>
                   <span class='name'>tryout</span>
                   <span class='arguments'>(*args, &amp;block)</span>
                 </div>
                 <div class='description'>
                   <p>
-                  Calls <a href="Tryouts.html#M000013">Tryouts#tryout</a> on the current
+                  Calls <a href="Tryouts.html#M000014">Tryouts#tryout</a> on the current
                   instance of <a href="Tryouts.html">Tryouts</a>
                   </p>
                   <p>
@@ -514,32 +514,32 @@
                   </p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000014-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000015-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000014-source'>     <span class="ruby-comment cmt"># File lib/tryouts.rb, line 184</span>&#x000A;184:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">tryout</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;185:     <span class="ruby-ivar">@@instances</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">tryout</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;186:   <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000015-source'>     <span class="ruby-comment cmt"># File lib/tryouts.rb, line 184</span>&#x000A;184:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">tryout</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;185:     <span class="ruby-ivar">@@instances</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">tryout</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;186:   <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='public-class method' id='method-M000021'>
-                <a name='M000021'>      </a>
+              <div class='public-class method' id='method-M000022'>
+                <a name='M000022'>      </a>
                 <div class='synopsis'>
                   <span class='name'>tryouts</span>
                   <span class='arguments'>(*args, &amp;block)</span>
                 </div>
                 <div class='description'>
                   <p>
-                  An alias for <a href="Tryouts.html#M000013">Tryouts.tryout</a>.
+                  An alias for <a href="Tryouts.html#M000014">Tryouts.tryout</a>.
                   </p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000021-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000022-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000021-source'>     <span class="ruby-comment cmt"># File lib/tryouts.rb, line 275</span>&#x000A;275:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">tryouts</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;276:     <span class="ruby-identifier">tryout</span>(<span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;277:   <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000022-source'>     <span class="ruby-comment cmt"># File lib/tryouts.rb, line 275</span>&#x000A;275:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">tryouts</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;276:     <span class="ruby-identifier">tryout</span>(<span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;277:   <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='public-class method' id='method-M000025'>
-                <a name='M000025'>      </a>
+              <div class='public-class method' id='method-M000026'>
+                <a name='M000026'>      </a>
                 <div class='synopsis'>
                   <span class='name'>xdream</span>
                   <span class='arguments'>(*args, &amp;block)</span>
@@ -553,14 +553,14 @@
                   </p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000025-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000026-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000025-source'>     <span class="ruby-comment cmt"># File lib/tryouts.rb, line 320</span>&#x000A;320:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">xdream</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>); <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000026-source'>     <span class="ruby-comment cmt"># File lib/tryouts.rb, line 320</span>&#x000A;320:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">xdream</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>); <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='public-class method' id='method-M000017'>
-                <a name='M000017'>      </a>
+              <div class='public-class method' id='method-M000018'>
+                <a name='M000018'>      </a>
                 <div class='synopsis'>
                   <span class='name'>xtryout</span>
                   <span class='arguments'>(*args, &amp;block)</span>
@@ -574,15 +574,15 @@
                   </p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000017-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000018-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000017-source'>     <span class="ruby-comment cmt"># File lib/tryouts.rb, line 203</span>&#x000A;203:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">xtryout</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>); <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000018-source'>     <span class="ruby-comment cmt"># File lib/tryouts.rb, line 203</span>&#x000A;203:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">xtryout</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>); <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
               <h2>Public instance methods</h2>
-              <div class='public-instance method' id='method-M000007'>
-                <a name='M000007'>      </a>
+              <div class='public-instance method' id='method-M000008'>
+                <a name='M000008'>      </a>
                 <div class='synopsis'>
                   <span class='name'>command</span>
                   <span class='arguments'>(name=nil, path=nil)</span>
@@ -594,14 +594,14 @@
                   </p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000007-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000008-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000007-source'>     <span class="ruby-comment cmt"># File lib/tryouts.rb, line 104</span>&#x000A;104:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">command</span>(<span class="ruby-identifier">name</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">path</span>=<span class="ruby-keyword kw">nil</span>)&#x000A;105:     <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@command</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">nil?</span>&#x000A;106:     <span class="ruby-ivar">@command</span> = <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_sym</span>&#x000A;107:     <span class="ruby-ivar">@dtype</span> = <span class="ruby-identifier">:cli</span>&#x000A;108:     <span class="ruby-constant">Rye</span><span class="ruby-operator">::</span><span class="ruby-constant">Cmd</span>.<span class="ruby-identifier">module_eval</span> <span class="ruby-keyword kw">do</span>&#x000A;109:       <span class="ruby-identifier">define_method</span>(<span class="ruby-identifier">name</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-operator">*</span><span class="ruby-identifier">args</span><span class="ruby-operator">|</span>&#x000A;110:         <span class="ruby-identifier">cmd</span>(<span class="ruby-identifier">path</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">name</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)&#x000A;111:       <span class="ruby-keyword kw">end</span>&#x000A;112:     <span class="ruby-keyword kw">end</span>&#x000A;113:     <span class="ruby-ivar">@command</span>&#x000A;114:   <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000008-source'>     <span class="ruby-comment cmt"># File lib/tryouts.rb, line 104</span>&#x000A;104:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">command</span>(<span class="ruby-identifier">name</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">path</span>=<span class="ruby-keyword kw">nil</span>)&#x000A;105:     <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@command</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">nil?</span>&#x000A;106:     <span class="ruby-ivar">@command</span> = <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_sym</span>&#x000A;107:     <span class="ruby-ivar">@dtype</span> = <span class="ruby-identifier">:cli</span>&#x000A;108:     <span class="ruby-constant">Rye</span><span class="ruby-operator">::</span><span class="ruby-constant">Cmd</span>.<span class="ruby-identifier">module_eval</span> <span class="ruby-keyword kw">do</span>&#x000A;109:       <span class="ruby-identifier">define_method</span>(<span class="ruby-identifier">name</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-operator">*</span><span class="ruby-identifier">args</span><span class="ruby-operator">|</span>&#x000A;110:         <span class="ruby-identifier">cmd</span>(<span class="ruby-identifier">path</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">name</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)&#x000A;111:       <span class="ruby-keyword kw">end</span>&#x000A;112:     <span class="ruby-keyword kw">end</span>&#x000A;113:     <span class="ruby-ivar">@command</span>&#x000A;114:   <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='public-instance method' id='method-M000022'>
-                <a name='M000022'>      </a>
+              <div class='public-instance method' id='method-M000023'>
+                <a name='M000023'>      </a>
                 <div class='synopsis'>
                   <span class='name'>dream</span>
                   <span class='arguments'>(name, output=nil, format=nil, rcode=0, emsg=nil, &amp;definition)</span>
@@ -615,11 +615,11 @@
                   </p>
                   <p>
                   This method is different than <a
-                  href="Tryouts/Tryout.html#M000072">Tryout#dream</a> because this one stores
+                  href="Tryouts/Tryout.html#M000047">Tryout#dream</a> because this one stores
                   dreams inside an instance variable of the current <a
                   href="Tryouts.html">Tryouts</a> object. This allows for the situation where
                   the dreams block appears before the tryout block. See <a
-                  href="Tryouts.html#M000013">Tryouts#tryout</a>
+                  href="Tryouts.html#M000014">Tryouts#tryout</a>
                   </p>
                   <p>
                   NOTE: This method is DSL-only. It&#8217;s not intended to be used in OO
@@ -627,14 +627,14 @@
                   </p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000022-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000023-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000022-source'>     <span class="ruby-comment cmt"># File lib/tryouts.rb, line 289</span>&#x000A;289:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">dream</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">output</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">format</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">rcode</span>=<span class="ruby-value">0</span>, <span class="ruby-identifier">emsg</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">definition</span>)&#x000A;290:     <span class="ruby-identifier">to</span> = <span class="ruby-identifier">find_tryout</span>(<span class="ruby-ivar">@dream_pointer</span>, <span class="ruby-ivar">@dtype</span>)&#x000A;291:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">to</span>.<span class="ruby-identifier">nil?</span>&#x000A;292:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">output</span>.<span class="ruby-identifier">nil?</span>&#x000A;293:         <span class="ruby-identifier">dobj</span> = <span class="ruby-constant">Tryouts</span><span class="ruby-operator">::</span><span class="ruby-constant">Drill</span><span class="ruby-operator">::</span><span class="ruby-constant">Dream</span>.<span class="ruby-identifier">from_block</span> <span class="ruby-identifier">definition</span>&#x000A;294:       <span class="ruby-keyword kw">else</span>&#x000A;295:         <span class="ruby-identifier">dobj</span> = <span class="ruby-constant">Tryouts</span><span class="ruby-operator">::</span><span class="ruby-constant">Drill</span><span class="ruby-operator">::</span><span class="ruby-constant">Dream</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">output</span>)&#x000A;296:         <span class="ruby-identifier">dobj</span>.<span class="ruby-identifier">format</span>, <span class="ruby-identifier">dobj</span>.<span class="ruby-identifier">rcode</span>, <span class="ruby-identifier">dobj</span>.<span class="ruby-identifier">emsg</span> = <span class="ruby-identifier">format</span>, <span class="ruby-identifier">rcode</span>, <span class="ruby-identifier">emsg</span>&#x000A;297:       <span class="ruby-keyword kw">end</span>&#x000A;298:       <span class="ruby-ivar">@dreams</span>[<span class="ruby-ivar">@dream_pointer</span>][<span class="ruby-identifier">name</span>] = <span class="ruby-identifier">dobj</span>&#x000A;299:     <span class="ruby-keyword kw">else</span>&#x000A;300:       <span class="ruby-comment cmt"># Let the Tryout object process the dream DSL.</span>&#x000A;301:       <span class="ruby-comment cmt"># We'll get here if the dream is placed after </span>&#x000A;302:       <span class="ruby-comment cmt"># the drill with the same name in the same block.</span>&#x000A;303:       <span class="ruby-identifier">to</span>.<span class="ruby-identifier">dream</span> <span class="ruby-identifier">name</span>, <span class="ruby-identifier">output</span>, <span class="ruby-identifier">format</span>, <span class="ruby-identifier">rcode</span>, <span class="ruby-identifier">emsg</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">definition</span>&#x000A;304:     <span class="ruby-keyword kw">end</span>&#x000A;305:   <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000023-source'>     <span class="ruby-comment cmt"># File lib/tryouts.rb, line 289</span>&#x000A;289:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">dream</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">output</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">format</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">rcode</span>=<span class="ruby-value">0</span>, <span class="ruby-identifier">emsg</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">definition</span>)&#x000A;290:     <span class="ruby-identifier">to</span> = <span class="ruby-identifier">find_tryout</span>(<span class="ruby-ivar">@dream_pointer</span>, <span class="ruby-ivar">@dtype</span>)&#x000A;291:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">to</span>.<span class="ruby-identifier">nil?</span>&#x000A;292:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">output</span>.<span class="ruby-identifier">nil?</span>&#x000A;293:         <span class="ruby-identifier">dobj</span> = <span class="ruby-constant">Tryouts</span><span class="ruby-operator">::</span><span class="ruby-constant">Drill</span><span class="ruby-operator">::</span><span class="ruby-constant">Dream</span>.<span class="ruby-identifier">from_block</span> <span class="ruby-identifier">definition</span>&#x000A;294:       <span class="ruby-keyword kw">else</span>&#x000A;295:         <span class="ruby-identifier">dobj</span> = <span class="ruby-constant">Tryouts</span><span class="ruby-operator">::</span><span class="ruby-constant">Drill</span><span class="ruby-operator">::</span><span class="ruby-constant">Dream</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">output</span>)&#x000A;296:         <span class="ruby-identifier">dobj</span>.<span class="ruby-identifier">format</span>, <span class="ruby-identifier">dobj</span>.<span class="ruby-identifier">rcode</span>, <span class="ruby-identifier">dobj</span>.<span class="ruby-identifier">emsg</span> = <span class="ruby-identifier">format</span>, <span class="ruby-identifier">rcode</span>, <span class="ruby-identifier">emsg</span>&#x000A;297:       <span class="ruby-keyword kw">end</span>&#x000A;298:       <span class="ruby-ivar">@dreams</span>[<span class="ruby-ivar">@dream_pointer</span>][<span class="ruby-identifier">name</span>] = <span class="ruby-identifier">dobj</span>&#x000A;299:     <span class="ruby-keyword kw">else</span>&#x000A;300:       <span class="ruby-comment cmt"># Let the Tryout object process the dream DSL.</span>&#x000A;301:       <span class="ruby-comment cmt"># We'll get here if the dream is placed after </span>&#x000A;302:       <span class="ruby-comment cmt"># the drill with the same name in the same block.</span>&#x000A;303:       <span class="ruby-identifier">to</span>.<span class="ruby-identifier">dream</span> <span class="ruby-identifier">name</span>, <span class="ruby-identifier">output</span>, <span class="ruby-identifier">format</span>, <span class="ruby-identifier">rcode</span>, <span class="ruby-identifier">emsg</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">definition</span>&#x000A;304:     <span class="ruby-keyword kw">end</span>&#x000A;305:   <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='public-instance method' id='method-M000018'>
-                <a name='M000018'>      </a>
+              <div class='public-instance method' id='method-M000019'>
+                <a name='M000019'>      </a>
                 <div class='synopsis'>
                   <span class='name'>dreams</span>
                   <span class='arguments'>(tryout_name=nil, &amp;definition)</span>
@@ -658,14 +658,14 @@
                   </ul>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000018-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000019-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000018-source'>     <span class="ruby-comment cmt"># File lib/tryouts.rb, line 212</span>&#x000A;212:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">dreams</span>(<span class="ruby-identifier">tryout_name</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">definition</span>)&#x000A;213:     <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@dreams</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">tryout_name</span>&#x000A;214: &#x000A;215:     <span class="ruby-comment cmt">#</span>&#x000A;216:     <span class="ruby-comment cmt"># dreams &quot;path/2/dreams&quot;</span>&#x000A;217:     <span class="ruby-comment cmt">#  OR</span>&#x000A;218:     <span class="ruby-comment cmt"># dreams &quot;path/2/file_of_dreams.rb&quot;</span>&#x000A;219:     <span class="ruby-comment cmt">#</span>&#x000A;220:     <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">tryout_name</span>)&#x000A;221:       <span class="ruby-identifier">dfile</span> = <span class="ruby-identifier">tryout_name</span>&#x000A;222:       <span class="ruby-comment cmt"># If we're given a directory we'll build the filename using the class name</span>&#x000A;223:       <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-identifier">tryout_name</span>)&#x000A;224:         <span class="ruby-identifier">dfile</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">find_dreams_file</span>(<span class="ruby-identifier">tryout_name</span>, <span class="ruby-ivar">@group</span>) &#x000A;225:       <span class="ruby-keyword kw">end</span>&#x000A;226:       <span class="ruby-identifier">raise</span> <span class="ruby-constant">BadDreams</span>, <span class="ruby-node">&quot;Cannot find dreams file (#{tryout_name})&quot;</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">dfile</span>&#x000A;227:       <span class="ruby-ivar">@dreams</span> = <span class="ruby-identifier">load_dreams_file</span>( <span class="ruby-identifier">dfile</span>) <span class="ruby-operator">||</span> {}&#x000A;228:     &#x000A;229:     <span class="ruby-comment cmt">#</span>&#x000A;230:     <span class="ruby-comment cmt"># dreams &quot;Tryout Name&quot; do</span>&#x000A;231:     <span class="ruby-comment cmt">#   dream &quot;drill name&quot; ...</span>&#x000A;232:     <span class="ruby-comment cmt"># end</span>&#x000A;233:     <span class="ruby-comment cmt">#</span>&#x000A;234:     <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">tryout_name</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">String</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">definition</span>  &#x000A;235:       <span class="ruby-identifier">to</span> = <span class="ruby-identifier">find_tryout</span>(<span class="ruby-identifier">tryout_name</span>, <span class="ruby-ivar">@dtype</span>)&#x000A;236:       &#x000A;237:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">to</span>.<span class="ruby-identifier">nil?</span>&#x000A;238:         <span class="ruby-ivar">@dream_pointer</span> = <span class="ruby-identifier">tryout_name</span>  <span class="ruby-comment cmt"># Used in Tryouts.dream</span>&#x000A;239:         <span class="ruby-ivar">@dreams</span>[ <span class="ruby-ivar">@dream_pointer</span> ] <span class="ruby-operator">||=</span> {}&#x000A;240:         <span class="ruby-identifier">definition</span>.<span class="ruby-identifier">call</span>&#x000A;241:       <span class="ruby-keyword kw">else</span>&#x000A;242:         <span class="ruby-identifier">to</span>.<span class="ruby-identifier">from_block</span> <span class="ruby-operator">&amp;</span><span class="ruby-identifier">definition</span>&#x000A;243:       <span class="ruby-keyword kw">end</span>&#x000A;244:     <span class="ruby-keyword kw">else</span>&#x000A;245:       <span class="ruby-identifier">raise</span> <span class="ruby-constant">BadDreams</span>, <span class="ruby-identifier">tryout_name</span>&#x000A;246:     <span class="ruby-keyword kw">end</span>&#x000A;247:     <span class="ruby-ivar">@dreams</span>&#x000A;248:   <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000019-source'>     <span class="ruby-comment cmt"># File lib/tryouts.rb, line 212</span>&#x000A;212:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">dreams</span>(<span class="ruby-identifier">tryout_name</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">definition</span>)&#x000A;213:     <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@dreams</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">tryout_name</span>&#x000A;214: &#x000A;215:     <span class="ruby-comment cmt">#</span>&#x000A;216:     <span class="ruby-comment cmt"># dreams &quot;path/2/dreams&quot;</span>&#x000A;217:     <span class="ruby-comment cmt">#  OR</span>&#x000A;218:     <span class="ruby-comment cmt"># dreams &quot;path/2/file_of_dreams.rb&quot;</span>&#x000A;219:     <span class="ruby-comment cmt">#</span>&#x000A;220:     <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">tryout_name</span>)&#x000A;221:       <span class="ruby-identifier">dfile</span> = <span class="ruby-identifier">tryout_name</span>&#x000A;222:       <span class="ruby-comment cmt"># If we're given a directory we'll build the filename using the class name</span>&#x000A;223:       <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-identifier">tryout_name</span>)&#x000A;224:         <span class="ruby-identifier">dfile</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">find_dreams_file</span>(<span class="ruby-identifier">tryout_name</span>, <span class="ruby-ivar">@group</span>) &#x000A;225:       <span class="ruby-keyword kw">end</span>&#x000A;226:       <span class="ruby-identifier">raise</span> <span class="ruby-constant">BadDreams</span>, <span class="ruby-node">&quot;Cannot find dreams file (#{tryout_name})&quot;</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">dfile</span>&#x000A;227:       <span class="ruby-ivar">@dreams</span> = <span class="ruby-identifier">load_dreams_file</span>( <span class="ruby-identifier">dfile</span>) <span class="ruby-operator">||</span> {}&#x000A;228:     &#x000A;229:     <span class="ruby-comment cmt">#</span>&#x000A;230:     <span class="ruby-comment cmt"># dreams &quot;Tryout Name&quot; do</span>&#x000A;231:     <span class="ruby-comment cmt">#   dream &quot;drill name&quot; ...</span>&#x000A;232:     <span class="ruby-comment cmt"># end</span>&#x000A;233:     <span class="ruby-comment cmt">#</span>&#x000A;234:     <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">tryout_name</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">String</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">definition</span>  &#x000A;235:       <span class="ruby-identifier">to</span> = <span class="ruby-identifier">find_tryout</span>(<span class="ruby-identifier">tryout_name</span>, <span class="ruby-ivar">@dtype</span>)&#x000A;236:       &#x000A;237:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">to</span>.<span class="ruby-identifier">nil?</span>&#x000A;238:         <span class="ruby-ivar">@dream_pointer</span> = <span class="ruby-identifier">tryout_name</span>  <span class="ruby-comment cmt"># Used in Tryouts.dream</span>&#x000A;239:         <span class="ruby-ivar">@dreams</span>[ <span class="ruby-ivar">@dream_pointer</span> ] <span class="ruby-operator">||=</span> {}&#x000A;240:         <span class="ruby-identifier">definition</span>.<span class="ruby-identifier">call</span>&#x000A;241:       <span class="ruby-keyword kw">else</span>&#x000A;242:         <span class="ruby-identifier">to</span>.<span class="ruby-identifier">from_block</span> <span class="ruby-operator">&amp;</span><span class="ruby-identifier">definition</span>&#x000A;243:       <span class="ruby-keyword kw">end</span>&#x000A;244:     <span class="ruby-keyword kw">else</span>&#x000A;245:       <span class="ruby-identifier">raise</span> <span class="ruby-constant">BadDreams</span>, <span class="ruby-identifier">tryout_name</span>&#x000A;246:     <span class="ruby-keyword kw">end</span>&#x000A;247:     <span class="ruby-ivar">@dreams</span>&#x000A;248:   <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='public-instance method' id='method-M000015'>
-                <a name='M000015'>      </a>
+              <div class='public-instance method' id='method-M000016'>
+                <a name='M000016'>      </a>
                 <div class='synopsis'>
                   <span class='name'>find_tryout</span>
                   <span class='arguments'>(name, dtype=nil)</span>
@@ -678,14 +678,14 @@
                   </p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000015-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000016-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000015-source'>     <span class="ruby-comment cmt"># File lib/tryouts.rb, line 190</span>&#x000A;190:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">find_tryout</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">dtype</span>=<span class="ruby-keyword kw">nil</span>)&#x000A;191:     <span class="ruby-identifier">by_name</span> = <span class="ruby-ivar">@tryouts</span>.<span class="ruby-identifier">values</span>.<span class="ruby-identifier">select</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span> <span class="ruby-identifier">t</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">name</span> }&#x000A;192:     <span class="ruby-identifier">by_name</span> = <span class="ruby-identifier">by_name</span>.<span class="ruby-identifier">select</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span> <span class="ruby-identifier">t</span>.<span class="ruby-identifier">dtype</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">dtype</span> } <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">dtype</span>&#x000A;193:     <span class="ruby-identifier">by_name</span>.<span class="ruby-identifier">first</span>  <span class="ruby-comment cmt"># by_name is an Array. We just want the Object. </span>&#x000A;194:   <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000016-source'>     <span class="ruby-comment cmt"># File lib/tryouts.rb, line 190</span>&#x000A;190:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">find_tryout</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">dtype</span>=<span class="ruby-keyword kw">nil</span>)&#x000A;191:     <span class="ruby-identifier">by_name</span> = <span class="ruby-ivar">@tryouts</span>.<span class="ruby-identifier">values</span>.<span class="ruby-identifier">select</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span> <span class="ruby-identifier">t</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">name</span> }&#x000A;192:     <span class="ruby-identifier">by_name</span> = <span class="ruby-identifier">by_name</span>.<span class="ruby-identifier">select</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span> <span class="ruby-identifier">t</span>.<span class="ruby-identifier">dtype</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">dtype</span> } <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">dtype</span>&#x000A;193:     <span class="ruby-identifier">by_name</span>.<span class="ruby-identifier">first</span>  <span class="ruby-comment cmt"># by_name is an Array. We just want the Object. </span>&#x000A;194:   <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='public-instance method' id='method-M000004'>
-                <a name='M000004'>      </a>
+              <div class='public-instance method' id='method-M000005'>
+                <a name='M000005'>      </a>
                 <div class='synopsis'>
                   <span class='name'>from_block</span>
                   <span class='arguments'>(b, &amp;inline)</span>
@@ -697,27 +697,27 @@
                   </p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000004-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000005-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000004-source'>    <span class="ruby-comment cmt"># File lib/tryouts.rb, line 88</span>&#x000A;88:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">from_block</span>(<span class="ruby-identifier">b</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">inline</span>)&#x000A;89:     <span class="ruby-identifier">instance_eval</span> <span class="ruby-operator">&amp;</span><span class="ruby-identifier">b</span>&#x000A;90:   <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000005-source'>    <span class="ruby-comment cmt"># File lib/tryouts.rb, line 88</span>&#x000A;88:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">from_block</span>(<span class="ruby-identifier">b</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">inline</span>)&#x000A;89:     <span class="ruby-identifier">instance_eval</span> <span class="ruby-operator">&amp;</span><span class="ruby-identifier">b</span>&#x000A;90:   <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='public-instance method' id='method-M000011'>
-                <a name='M000011'>      </a>
+              <div class='public-instance method' id='method-M000012'>
+                <a name='M000012'>      </a>
                 <div class='synopsis'>
                   <span class='name'>group</span>
                   <span class='arguments'>(name=nil)</span>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000011-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000012-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000011-source'>     <span class="ruby-comment cmt"># File lib/tryouts.rb, line 140</span>&#x000A;140:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">group</span>(<span class="ruby-identifier">name</span>=<span class="ruby-keyword kw">nil</span>)&#x000A;141:     <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@group</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">nil?</span>&#x000A;142:     <span class="ruby-ivar">@group</span> = <span class="ruby-identifier">name</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">nil?</span>&#x000A;143:     <span class="ruby-comment cmt"># Preload dreams if possible</span>&#x000A;144:     <span class="ruby-identifier">dfile</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">find_dreams_file</span>(<span class="ruby-constant">GYMNASIUM_HOME</span>, <span class="ruby-ivar">@group</span>)&#x000A;145:     <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">load_dreams_file</span>(<span class="ruby-identifier">dfile</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">dfile</span>&#x000A;146:     <span class="ruby-ivar">@group</span>&#x000A;147:   <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000012-source'>     <span class="ruby-comment cmt"># File lib/tryouts.rb, line 140</span>&#x000A;140:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">group</span>(<span class="ruby-identifier">name</span>=<span class="ruby-keyword kw">nil</span>)&#x000A;141:     <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@group</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">nil?</span>&#x000A;142:     <span class="ruby-ivar">@group</span> = <span class="ruby-identifier">name</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">nil?</span>&#x000A;143:     <span class="ruby-comment cmt"># Preload dreams if possible</span>&#x000A;144:     <span class="ruby-identifier">dfile</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">find_dreams_file</span>(<span class="ruby-constant">GYMNASIUM_HOME</span>, <span class="ruby-ivar">@group</span>)&#x000A;145:     <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">load_dreams_file</span>(<span class="ruby-identifier">dfile</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">dfile</span>&#x000A;146:     <span class="ruby-ivar">@group</span>&#x000A;147:   <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='public-instance method' id='method-M000009'>
-                <a name='M000009'>      </a>
+              <div class='public-instance method' id='method-M000010'>
+                <a name='M000010'>      </a>
                 <div class='synopsis'>
                   <span class='name'>library</span>
                   <span class='arguments'>(name=nil, path=nil)</span>
@@ -742,14 +742,14 @@
                   </p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000009-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000010-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000009-source'>     <span class="ruby-comment cmt"># File lib/tryouts.rb, line 126</span>&#x000A;126:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">library</span>(<span class="ruby-identifier">name</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">path</span>=<span class="ruby-keyword kw">nil</span>)&#x000A;127:     <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@library</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">nil?</span>&#x000A;128:     <span class="ruby-ivar">@library</span> = <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_sym</span>&#x000A;129:     <span class="ruby-ivar">@dtype</span> = <span class="ruby-identifier">:api</span>&#x000A;130:     <span class="ruby-identifier">$LOAD_PATH</span>.<span class="ruby-identifier">unshift</span> <span class="ruby-identifier">path</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">path</span>.<span class="ruby-identifier">nil?</span>&#x000A;131:     <span class="ruby-identifier">require</span> <span class="ruby-ivar">@library</span>.<span class="ruby-identifier">to_s</span>&#x000A;132:   <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000010-source'>     <span class="ruby-comment cmt"># File lib/tryouts.rb, line 126</span>&#x000A;126:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">library</span>(<span class="ruby-identifier">name</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">path</span>=<span class="ruby-keyword kw">nil</span>)&#x000A;127:     <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@library</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">nil?</span>&#x000A;128:     <span class="ruby-ivar">@library</span> = <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_sym</span>&#x000A;129:     <span class="ruby-ivar">@dtype</span> = <span class="ruby-identifier">:api</span>&#x000A;130:     <span class="ruby-identifier">$LOAD_PATH</span>.<span class="ruby-identifier">unshift</span> <span class="ruby-identifier">path</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">path</span>.<span class="ruby-identifier">nil?</span>&#x000A;131:     <span class="ruby-identifier">require</span> <span class="ruby-ivar">@library</span>.<span class="ruby-identifier">to_s</span>&#x000A;132:   <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='public-instance method' id='method-M000026'>
-                <a name='M000026'>      </a>
+              <div class='public-instance method' id='method-M000027'>
+                <a name='M000027'>      </a>
                 <div class='synopsis'>
                   <span class='name'>load_dreams_file</span>
                   <span class='arguments'>(dpath)</span>
@@ -763,40 +763,21 @@
                   </p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000026-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000027-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000026-source'>     <span class="ruby-comment cmt"># File lib/tryouts.rb, line 325</span>&#x000A;325:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">load_dreams_file</span>(<span class="ruby-identifier">dpath</span>)&#x000A;326:     <span class="ruby-identifier">type</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">extname</span> <span class="ruby-identifier">dpath</span>&#x000A;327:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;.yaml&quot;</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;.yml&quot;</span>&#x000A;328:       <span class="ruby-ivar">@dreams</span> = <span class="ruby-constant">YAML</span>.<span class="ruby-identifier">load_file</span> <span class="ruby-identifier">dpath</span>&#x000A;329:     <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;.json&quot;</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;.js&quot;</span>&#x000A;330:       <span class="ruby-ivar">@dreams</span> = <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">load_file</span> <span class="ruby-identifier">dpath</span>&#x000A;331:     <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;.rb&quot;</span>&#x000A;332:       <span class="ruby-ivar">@dreams</span> = <span class="ruby-identifier">instance_eval</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">dpath</span>)&#x000A;333:     <span class="ruby-keyword kw">else</span>&#x000A;334:       <span class="ruby-identifier">raise</span> <span class="ruby-constant">BadDreams</span>, <span class="ruby-node">&quot;Unknown kind of dream: #{dpath}&quot;</span>&#x000A;335:     <span class="ruby-keyword kw">end</span>&#x000A;336:     <span class="ruby-ivar">@dreams</span>&#x000A;337:   <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000027-source'>     <span class="ruby-comment cmt"># File lib/tryouts.rb, line 325</span>&#x000A;325:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">load_dreams_file</span>(<span class="ruby-identifier">dpath</span>)&#x000A;326:     <span class="ruby-identifier">type</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">extname</span> <span class="ruby-identifier">dpath</span>&#x000A;327:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;.yaml&quot;</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;.yml&quot;</span>&#x000A;328:       <span class="ruby-ivar">@dreams</span> = <span class="ruby-constant">YAML</span>.<span class="ruby-identifier">load_file</span> <span class="ruby-identifier">dpath</span>&#x000A;329:     <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;.json&quot;</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;.js&quot;</span>&#x000A;330:       <span class="ruby-ivar">@dreams</span> = <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">load_file</span> <span class="ruby-identifier">dpath</span>&#x000A;331:     <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;.rb&quot;</span>&#x000A;332:       <span class="ruby-ivar">@dreams</span> = <span class="ruby-identifier">instance_eval</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">dpath</span>)&#x000A;333:     <span class="ruby-keyword kw">else</span>&#x000A;334:       <span class="ruby-identifier">raise</span> <span class="ruby-constant">BadDreams</span>, <span class="ruby-node">&quot;Unknown kind of dream: #{dpath}&quot;</span>&#x000A;335:     <span class="ruby-keyword kw">end</span>&#x000A;336:     <span class="ruby-ivar">@dreams</span>&#x000A;337:   <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='public-instance method' id='method-M000005'>
-                <a name='M000005'>      </a>
+              <div class='public-instance method' id='method-M000006'>
+                <a name='M000006'>      </a>
                 <div class='synopsis'>
                   <span class='name'>report</span>
                   <span class='arguments'>()</span>
                 </div>
                 <div class='description'>
                   <p>
-                  Execute <a href="Tryouts/Tryout.html#M000064">Tryout#report</a> for each <a
-                  href="Tryouts/Tryout.html">Tryout</a> in +@tryouts+
-                  </p>
-                </div>
-                <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000005-source'); return false">
-                    [show source]
-                  </a>
-                  <pre id='M000005-source'>    <span class="ruby-comment cmt"># File lib/tryouts.rb, line 93</span>&#x000A;93:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">report</span>&#x000A;94:     <span class="ruby-identifier">successes</span> = []&#x000A;95:     <span class="ruby-ivar">@tryouts</span>.<span class="ruby-identifier">each_pair</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">n</span>,<span class="ruby-identifier">to</span><span class="ruby-operator">|</span> <span class="ruby-identifier">successes</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">to</span>.<span class="ruby-identifier">report</span> }&#x000A;96:     <span class="ruby-identifier">puts</span> <span class="ruby-identifier">$/</span>, <span class="ruby-value str">&quot;All your dreams came true&quot;</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">successes</span>.<span class="ruby-identifier">member?</span>(<span class="ruby-keyword kw">false</span>)&#x000A;97:   <span class="ruby-keyword kw">end</span></pre>
-                </div>
-              </div>
-              <div class='public-instance method' id='method-M000006'>
-                <a name='M000006'>      </a>
-                <div class='synopsis'>
-                  <span class='name'>run</span>
-                  <span class='arguments'>()</span>
-                </div>
-                <div class='description'>
-                  <p>
-                  Execute <a href="Tryouts/Tryout.html#M000063">Tryout#run</a> for each <a
+                  Execute <a href="Tryouts/Tryout.html#M000039">Tryout#report</a> for each <a
                   href="Tryouts/Tryout.html">Tryout</a> in +@tryouts+
                   </p>
                 </div>
@@ -804,11 +785,30 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('M000006-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000006-source'>     <span class="ruby-comment cmt"># File lib/tryouts.rb, line 100</span>&#x000A;100:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">run</span>; <span class="ruby-ivar">@tryouts</span>.<span class="ruby-identifier">each_pair</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">n</span>,<span class="ruby-identifier">to</span><span class="ruby-operator">|</span> <span class="ruby-identifier">to</span>.<span class="ruby-identifier">run</span> }; <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000006-source'>    <span class="ruby-comment cmt"># File lib/tryouts.rb, line 93</span>&#x000A;93:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">report</span>&#x000A;94:     <span class="ruby-identifier">successes</span> = []&#x000A;95:     <span class="ruby-ivar">@tryouts</span>.<span class="ruby-identifier">each_pair</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">n</span>,<span class="ruby-identifier">to</span><span class="ruby-operator">|</span> <span class="ruby-identifier">successes</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">to</span>.<span class="ruby-identifier">report</span> }&#x000A;96:     <span class="ruby-identifier">puts</span> <span class="ruby-identifier">$/</span>, <span class="ruby-value str">&quot;All your dreams came true&quot;</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">successes</span>.<span class="ruby-identifier">member?</span>(<span class="ruby-keyword kw">false</span>)&#x000A;97:   <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='public-instance method' id='method-M000013'>
-                <a name='M000013'>      </a>
+              <div class='public-instance method' id='method-M000007'>
+                <a name='M000007'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>run</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='description'>
+                  <p>
+                  Execute <a href="Tryouts/Tryout.html#M000038">Tryout#run</a> for each <a
+                  href="Tryouts/Tryout.html">Tryout</a> in +@tryouts+
+                  </p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000007-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000007-source'>     <span class="ruby-comment cmt"># File lib/tryouts.rb, line 100</span>&#x000A;100:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">run</span>; <span class="ruby-ivar">@tryouts</span>.<span class="ruby-identifier">each_pair</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">n</span>,<span class="ruby-identifier">to</span><span class="ruby-operator">|</span> <span class="ruby-identifier">to</span>.<span class="ruby-identifier">run</span> }; <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <div class='public-instance method' id='method-M000014'>
+                <a name='M000014'>      </a>
                 <div class='synopsis'>
                   <span class='name'>tryout</span>
                   <span class='arguments'>(name, dtype=nil, command=nil, &amp;block)</span>
@@ -832,7 +832,7 @@
                   </li>
                   <li><tt>b</tt> is a block definition for the <a
                   href="Tryouts/Tryout.html">Tryout</a>. See <a
-                  href="Tryouts/Tryout.html#M000062">Tryout#from_block</a>
+                  href="Tryouts/Tryout.html#M000037">Tryout#from_block</a>
                   
                   </li>
                   </ul>
@@ -841,14 +841,14 @@
                   </p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000013-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000014-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000013-source'>     <span class="ruby-comment cmt"># File lib/tryouts.rb, line 163</span>&#x000A;163:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">tryout</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">dtype</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">command</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;164:     <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">nil?</span>&#x000A;165:     <span class="ruby-identifier">dtype</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@dtype</span>&#x000A;166:     <span class="ruby-identifier">command</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@command</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">dtype</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">:cli</span>&#x000A;167:     &#x000A;168:     <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;No drill type specified for #{name}.&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">dtype</span>.<span class="ruby-identifier">nil?</span>&#x000A;169:     &#x000A;170:     <span class="ruby-identifier">to</span> = <span class="ruby-identifier">find_tryout</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">dtype</span>)&#x000A;171:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">to</span>.<span class="ruby-identifier">nil?</span>&#x000A;172:       <span class="ruby-identifier">to</span> = <span class="ruby-constant">Tryouts</span><span class="ruby-operator">::</span><span class="ruby-constant">Tryout</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">dtype</span>, <span class="ruby-identifier">command</span>)&#x000A;173:       <span class="ruby-ivar">@tryouts</span>[<span class="ruby-identifier">name</span>] = <span class="ruby-identifier">to</span>&#x000A;174:     <span class="ruby-keyword kw">end</span>&#x000A;175:     <span class="ruby-comment cmt"># Populate the dreams if they've already been loaded</span>&#x000A;176:     <span class="ruby-identifier">to</span>.<span class="ruby-identifier">dreams</span> = <span class="ruby-ivar">@dreams</span>[<span class="ruby-identifier">name</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@dreams</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">name</span>)&#x000A;177:     <span class="ruby-comment cmt"># Process the rest of the DSL</span>&#x000A;178:     <span class="ruby-identifier">to</span>.<span class="ruby-identifier">from_block</span> <span class="ruby-identifier">block</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block</span>&#x000A;179:     <span class="ruby-identifier">to</span>&#x000A;180:   <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000014-source'>     <span class="ruby-comment cmt"># File lib/tryouts.rb, line 163</span>&#x000A;163:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">tryout</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">dtype</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">command</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;164:     <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">nil?</span>&#x000A;165:     <span class="ruby-identifier">dtype</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@dtype</span>&#x000A;166:     <span class="ruby-identifier">command</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@command</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">dtype</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">:cli</span>&#x000A;167:     &#x000A;168:     <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;No drill type specified for #{name}.&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">dtype</span>.<span class="ruby-identifier">nil?</span>&#x000A;169:     &#x000A;170:     <span class="ruby-identifier">to</span> = <span class="ruby-identifier">find_tryout</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">dtype</span>)&#x000A;171:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">to</span>.<span class="ruby-identifier">nil?</span>&#x000A;172:       <span class="ruby-identifier">to</span> = <span class="ruby-constant">Tryouts</span><span class="ruby-operator">::</span><span class="ruby-constant">Tryout</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">dtype</span>, <span class="ruby-identifier">command</span>)&#x000A;173:       <span class="ruby-ivar">@tryouts</span>[<span class="ruby-identifier">name</span>] = <span class="ruby-identifier">to</span>&#x000A;174:     <span class="ruby-keyword kw">end</span>&#x000A;175:     <span class="ruby-comment cmt"># Populate the dreams if they've already been loaded</span>&#x000A;176:     <span class="ruby-identifier">to</span>.<span class="ruby-identifier">dreams</span> = <span class="ruby-ivar">@dreams</span>[<span class="ruby-identifier">name</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@dreams</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">name</span>)&#x000A;177:     <span class="ruby-comment cmt"># Process the rest of the DSL</span>&#x000A;178:     <span class="ruby-identifier">to</span>.<span class="ruby-identifier">from_block</span> <span class="ruby-identifier">block</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block</span>&#x000A;179:     <span class="ruby-identifier">to</span>&#x000A;180:   <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='public-instance method' id='method-M000020'>
-                <a name='M000020'>      </a>
+              <div class='public-instance method' id='method-M000021'>
+                <a name='M000021'>      </a>
                 <div class='synopsis'>
                   <span class='name'>tryouts</span>
                   <span class='arguments'>(*args, &amp;block)</span>
@@ -858,20 +858,20 @@
                   Returns +@tryouts+.
                   </p>
                   <p>
-                  Also acts as a stub for <a href="Tryouts.html#M000013">Tryouts#tryout</a>
+                  Also acts as a stub for <a href="Tryouts.html#M000014">Tryouts#tryout</a>
                   in case someone specifies &#8220;tryouts &#8216;name&#8217; do
                   &#8230;&#8221; in the DSL.
                   </p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000020-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000021-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000020-source'>     <span class="ruby-comment cmt"># File lib/tryouts.rb, line 270</span>&#x000A;270:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">tryouts</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;271:     <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">tryout</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>) <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span>&#x000A;272:     <span class="ruby-ivar">@tryouts</span>&#x000A;273:   <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000021-source'>     <span class="ruby-comment cmt"># File lib/tryouts.rb, line 270</span>&#x000A;270:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">tryouts</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;271:     <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">tryout</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>) <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span>&#x000A;272:     <span class="ruby-ivar">@tryouts</span>&#x000A;273:   <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='public-instance method' id='method-M000024'>
-                <a name='M000024'>      </a>
+              <div class='public-instance method' id='method-M000025'>
+                <a name='M000025'>      </a>
                 <div class='synopsis'>
                   <span class='name'>xdream</span>
                   <span class='arguments'>(*args, &amp;block)</span>
@@ -885,14 +885,14 @@
                   </p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000024-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000025-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000024-source'>     <span class="ruby-comment cmt"># File lib/tryouts.rb, line 316</span>&#x000A;316:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">xdream</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>); <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000025-source'>     <span class="ruby-comment cmt"># File lib/tryouts.rb, line 316</span>&#x000A;316:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">xdream</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>); <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='public-instance method' id='method-M000016'>
-                <a name='M000016'>      </a>
+              <div class='public-instance method' id='method-M000017'>
+                <a name='M000017'>      </a>
                 <div class='synopsis'>
                   <span class='name'>xtryout</span>
                   <span class='arguments'>(*args, &amp;block)</span>
@@ -906,10 +906,10 @@
                   </p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000016-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000017-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000016-source'>     <span class="ruby-comment cmt"># File lib/tryouts.rb, line 199</span>&#x000A;199:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">xtryout</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>); <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000017-source'>     <span class="ruby-comment cmt"># File lib/tryouts.rb, line 199</span>&#x000A;199:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">xtryout</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>); <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
             </div>
