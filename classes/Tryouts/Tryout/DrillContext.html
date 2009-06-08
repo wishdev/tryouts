@@ -49,7 +49,70 @@
             are. The before and after blocks are also run in this context.
             </p>
           </div>
+          <div id='method-list'>
+            <h2>Methods</h2>
+            <h3>public class</h3>
+            <ol>
+              <li><a href="#M000074">new</a></li>
+            </ol>
+            <h3>public instance</h3>
+            <ol>
+              <li><a href="#M000075">stash</a></li>
+            </ol>
+          </div>
           <div id='section'>
+            <div id='attribute-list'>
+              <h2 class='section-bar'>Attributes</h2>
+              <div class='name-list'>
+                <table>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>stash</td>
+                    <td class='context-item-value'>[R]</td>
+                    <td class='context-item-desc'>
+                      
+                      An ordered <a href="../../Hash.html">Hash</a> of stashed objects.
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <div id='methods'>
+              <h2>Public class methods</h2>
+              <div class='public-class method' id='method-M000074'>
+                <a name='M000074'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>new</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000074-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000074-source'>    <span class="ruby-comment cmt"># File lib/tryouts/tryout.rb, line 40</span>&#x000A;40:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>; <span class="ruby-ivar">@stash</span> = <span class="ruby-constant">Tryouts</span><span class="ruby-operator">::</span><span class="ruby-constant">HASH_TYPE</span>.<span class="ruby-identifier">new</span>; <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <h2>Public instance methods</h2>
+              <div class='public-instance method' id='method-M000075'>
+                <a name='M000075'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>stash</span>
+                  <span class='arguments'>(*args)</span>
+                </div>
+                <div class='description'>
+                  <p>
+                  If called with no arguments, returns +@stash+. If called with arguments, it
+                  will add a new value to the +@stash+ and return the new value. e.g.
+                  </p>
+                  <pre>stash :name, 'some value'   # =&gt; 'some value'</pre>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000075-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000075-source'>    <span class="ruby-comment cmt"># File lib/tryouts/tryout.rb, line 47</span>&#x000A;47:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">stash</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)&#x000A;48:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span>&#x000A;49:         <span class="ruby-ivar">@stash</span>&#x000A;50:       <span class="ruby-keyword kw">else</span>&#x000A;51:         <span class="ruby-ivar">@stash</span>[<span class="ruby-identifier">args</span>[<span class="ruby-value">0</span>]] = <span class="ruby-identifier">args</span>[<span class="ruby-value">1</span>] &#x000A;52:         <span class="ruby-identifier">args</span>[<span class="ruby-value">1</span>] &#x000A;53:       <span class="ruby-keyword kw">end</span>&#x000A;54:     <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
