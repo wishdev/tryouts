@@ -51,7 +51,11 @@
             <h2>Methods</h2>
             <h3>public class</h3>
             <ol>
-              <li><a href="#M000121">new</a></li>
+              <li><a href="#M000064">new</a></li>
+            </ol>
+            <h3>public instance</h3>
+            <ol>
+              <li><a href="#M000065">==</a></li>
             </ol>
           </div>
           <div id='section'>
@@ -59,6 +63,21 @@
               <h2 class='section-bar'>Attributes</h2>
               <div class='name-list'>
                 <table>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>ecode</td>
+                    <td class='context-item-value'>[RW]</td>
+                    <td class='context-item-desc'></td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>error</td>
+                    <td class='context-item-value'>[RW]</td>
+                    <td class='context-item-desc'></td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>etype</td>
+                    <td class='context-item-value'>[RW]</td>
+                    <td class='context-item-desc'></td>
+                  </tr>
                   <tr class='top-aligned-row context-row'>
                     <td class='context-item-name'>stash</td>
                     <td class='context-item-value'>[RW]</td>
@@ -68,22 +87,41 @@
                       href="Reality.html">Reality</a>.
                     </td>
                   </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>trace</td>
+                    <td class='context-item-value'>[RW]</td>
+                    <td class='context-item-desc'></td>
+                  </tr>
                 </table>
               </div>
             </div>
             <div id='methods'>
               <h2>Public class methods</h2>
-              <div class='public-class method' id='method-M000121'>
-                <a name='M000121'>      </a>
+              <div class='public-class method' id='method-M000064'>
+                <a name='M000064'>      </a>
                 <div class='synopsis'>
                   <span class='name'>new</span>
                   <span class='arguments'>()</span>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000121-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000064-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000121-source'>     <span class="ruby-comment cmt"># File lib/tryouts/drill/response.rb, line 106</span>&#x000A;106:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>&#x000A;107:       <span class="ruby-ivar">@rcode</span> = <span class="ruby-value">0</span>&#x000A;108:       <span class="ruby-ivar">@stash</span> = <span class="ruby-constant">Tryouts</span><span class="ruby-operator">::</span><span class="ruby-constant">HASH_TYPE</span>.<span class="ruby-identifier">new</span>&#x000A;109:     <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000064-source'>    <span class="ruby-comment cmt"># File lib/tryouts/drill/response.rb, line 69</span>&#x000A;69:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>&#x000A;70:       <span class="ruby-ivar">@stash</span> = <span class="ruby-constant">Tryouts</span><span class="ruby-operator">::</span><span class="ruby-constant">HASH_TYPE</span>.<span class="ruby-identifier">new</span>&#x000A;71:     <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <h2>Public instance methods</h2>
+              <div class='public-instance method' id='method-M000065'>
+                <a name='M000065'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>==</span>
+                  <span class='arguments'>(dream)</span>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000065-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000065-source'>    <span class="ruby-comment cmt"># File lib/tryouts/drill/response.rb, line 73</span>&#x000A;73:     <span class="ruby-keyword kw">def</span> <span class="ruby-operator">==</span>(<span class="ruby-identifier">dream</span>)&#x000A;74:       <span class="ruby-constant">Response</span>.<span class="ruby-identifier">compare</span>(<span class="ruby-identifier">dream</span>, <span class="ruby-keyword kw">self</span>)&#x000A;75:     <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
             </div>

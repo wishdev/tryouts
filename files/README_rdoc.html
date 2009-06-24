@@ -31,16 +31,20 @@
         </div>
         <div class='last-update'>
           Last Update:
-          <span class='datetime'>Mon Jun 08 10:29:04 -0400 2009</span>
+          <span class='datetime'>2009-06-23 21:48:02 -0400</span>
         </div>
       </div>
       <div id='content'>
         <div id='text'>
           <div id='description'>
-            <h1><a href="../classes/Tryouts.html">Tryouts</a> - v0.5 BETA</h1>
+            <h1><a href="../classes/Tryouts.html">Tryouts</a> - v0.6 BETA</h1>
             <p>
             <a href="../classes/Tryouts.html">Tryouts</a> is a high-level testing
             library for your command-line applications and Ruby codes.
+            </p>
+            <p>
+            NOTE: The DSL syntax has changed significantly from 0.5 and command-line
+            app tests are currently disabled.
             </p>
             <h2>Terminology</h2>
             <p>
@@ -59,22 +63,6 @@
             
             </li>
             </ul>
-            <h2>Testing a command-line application (a CLI)</h2>
-            <p>
-            <a href="../classes/Tryouts.html">Tryouts</a> tests command-line
-            applications by comparing expected output with the actual output.
-            Let&#8217;s say we have an executable called mockout and we want to test
-            the following commands:
-            </p>
-            <pre>$ bin/executable&#x000A;$ bin/executable -f yaml</pre>
-            <p>
-            The tryout definition would look like this:
-            </p>
-            <pre>command :executable, &quot;path/2/executable&quot;&#x000A;&#x000A;tryout &quot;Common Usage&quot; do&#x000A;  drill  &quot;No Command&quot;&#x000A;  drill &quot;YAML Output&quot;, :f, 'yaml'&#x000A;end</pre>
-            <p>
-            And the expected output would be defined like this:
-            </p>
-            <pre>dream &quot;No Command&quot; do&#x000A;  output inline(%Q{&#x000A;        Date:                                   2009-02-16&#x000A;     Players:            d-bam, alberta, birds, condor man&#x000A;      Owners:            greg, rupaul, telly, prince kinko&#x000A;  })&#x000A;end&#x000A;dream &quot;YAML Output&quot; do&#x000A;  format :yaml&#x000A;  output ({&#x000A;    &quot;Date&quot; =&gt; &quot;2009-02-16&quot;,&#x000A;    &quot;Players&quot; =&gt; [&quot;d-bam&quot;, &quot;alberta&quot;, &quot;birds&quot;, &quot;condor man&quot;],&#x000A;    &quot;Owners&quot; =&gt; [&quot;greg&quot;, &quot;rupaul&quot;, &quot;telly&quot;, &quot;prince kinko&quot;]&#x000A;  })&#x000A;end</pre>
             <h2>Testing Ruby codes (an API)</h2>
             <p>
             <a href="../classes/Tryouts.html">Tryouts</a> employs the same approach for
@@ -82,7 +70,7 @@
             expectation defined by the dream. Here is an example of including dreams
             inside the tryout definition.
             </p>
-            <pre>library :caesars, LIBRARY_PATH&#x000A;&#x000A;tryout &quot;Common Usage&quot; do&#x000A;  dream &quot;Some Maths&quot;, 3&#x000A;  drill &quot;Some Maths&quot; do&#x000A;    12 / 4&#x000A;  end&#x000A;&#x000A;  dream &quot;A Block&quot;, Proc, :class  # Test the class type instead of the value&#x000A;  drill &quot;A Block&quot; do&#x000A;    Proc.new do&#x000A;      :anything&#x000A;    end&#x000A;  end&#x000A;end</pre>
+            <pre>library :caesars, LIBRARY_PATH&#x000A;&#x000A;tryout &quot;Common Usage&quot; do&#x000A;  dream 3&#x000A;  drill &quot;Check the return value&quot; do&#x000A;    12 / 4&#x000A;  end&#x000A;&#x000A;  dream :class, :Proc&#x000A;  drill &quot;Check the return value class&quot; do&#x000A;    Proc.new do&#x000A;      :anything&#x000A;    end&#x000A;  end&#x000A;&#x000A;  dream :exception, NameError&#x000A;  drill &quot;A test can pass based on the exception&quot; do&#x000A;    raise NameError&#x000A;  end&#x000A;end</pre>
             <h2>BETA Notice</h2>
             <p>
             This library is very new (est. 2009-05-19) and has not been vetted by the
@@ -94,40 +82,6 @@
             </li>
             <li>Unexpected errors.
             
-            </li>
-            </ul>
-            <h2>3 Ways to define tryouts</h2>
-            <p>
-            There are three ways to define an instance of this class:
-            </p>
-            <ul>
-            <li>In <tt>_tryouts.rb</tt> files using the DSL syntax. One file per <a
-            href="../classes/Tryouts.html">Tryouts</a> object.
-            
-            <ul>
-            <li>See: <a
-            href="http://github.com/delano/tryouts/blob/master/tryouts/mockoutcli_tryouts.rb">github.com/delano/tryouts/blob/master/tryouts/mockoutcli_tryouts.rb</a>
-            
-            </li>
-            </ul>
-            </li>
-            <li>In standalone ruby files using a hybrid DSL/OO syntax. Supports multiple <a
-            href="../classes/Tryouts.html">Tryouts</a> objects per file.
-            
-            <ul>
-            <li>See: <a
-            href="http://github.com/delano/tryouts/blob/master/tryouts/standalone_test.rb">github.com/delano/tryouts/blob/master/tryouts/standalone_test.rb</a>
-            
-            </li>
-            </ul>
-            </li>
-            <li>With regular object-oriented syntax.
-            
-            <ul>
-            <li>See: <a href="http://tryouts.rubyforge.org/">tryouts.rubyforge.org/</a>
-            
-            </li>
-            </ul>
             </li>
             </ul>
             <h2>On Threads</h2>
@@ -152,7 +106,7 @@
             </ul>
             <h2>Thanks</h2>
             <ul>
-            <li>Everyone at Utrecht.rb
+            <li>Everyone at Utrecht.rb and Amsterdam.rb
             
             </li>
             </ul>

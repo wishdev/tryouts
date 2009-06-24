@@ -51,61 +51,74 @@
             <h2>Methods</h2>
             <h3>public class</h3>
             <ol>
-              <li><a href="#M000118">from_block</a></li>
+              <li><a href="#M000060">from_block</a></li>
             </ol>
             <h3>public instance</h3>
             <ol>
-              <li><a href="#M000119">from_block</a></li>
-              <li><a href="#M000120">inline</a></li>
+              <li><a href="#M000063">==</a></li>
+              <li><a href="#M000061">from_block</a></li>
+              <li><a href="#M000062">inline</a></li>
             </ol>
           </div>
           <div id='section'>
             <div id='methods'>
               <h2>Public class methods</h2>
-              <div class='public-class method' id='method-M000118'>
-                <a name='M000118'>      </a>
+              <div class='public-class method' id='method-M000060'>
+                <a name='M000060'>      </a>
                 <div class='synopsis'>
                   <span class='name'>from_block</span>
                   <span class='arguments'>(definition)</span>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000118-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000060-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000118-source'>    <span class="ruby-comment cmt"># File lib/tryouts/drill/response.rb, line 77</span>&#x000A;77:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">from_block</span>(<span class="ruby-identifier">definition</span>)&#x000A;78:       <span class="ruby-identifier">d</span> = <span class="ruby-constant">Tryouts</span><span class="ruby-operator">::</span><span class="ruby-constant">Drill</span><span class="ruby-operator">::</span><span class="ruby-constant">Dream</span>.<span class="ruby-identifier">new</span>&#x000A;79:       <span class="ruby-identifier">d</span>.<span class="ruby-identifier">from_block</span> <span class="ruby-identifier">definition</span>&#x000A;80:       <span class="ruby-identifier">d</span>&#x000A;81:     <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000060-source'>    <span class="ruby-comment cmt"># File lib/tryouts/drill/response.rb, line 34</span>&#x000A;34:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">from_block</span>(<span class="ruby-identifier">definition</span>)&#x000A;35:       <span class="ruby-identifier">d</span> = <span class="ruby-constant">Tryouts</span><span class="ruby-operator">::</span><span class="ruby-constant">Drill</span><span class="ruby-operator">::</span><span class="ruby-constant">Dream</span>.<span class="ruby-identifier">new</span>&#x000A;36:       <span class="ruby-identifier">d</span>.<span class="ruby-identifier">from_block</span> <span class="ruby-identifier">definition</span>&#x000A;37:       <span class="ruby-identifier">d</span>&#x000A;38:     <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
               <h2>Public instance methods</h2>
-              <div class='public-instance method' id='method-M000119'>
-                <a name='M000119'>      </a>
+              <div class='public-instance method' id='method-M000063'>
+                <a name='M000063'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>==</span>
+                  <span class='arguments'>(reality)</span>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000063-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000063-source'>    <span class="ruby-comment cmt"># File lib/tryouts/drill/response.rb, line 53</span>&#x000A;53:     <span class="ruby-keyword kw">def</span> <span class="ruby-operator">==</span>(<span class="ruby-identifier">reality</span>)&#x000A;54:       <span class="ruby-constant">Response</span>.<span class="ruby-identifier">compare</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-identifier">reality</span>)&#x000A;55:     <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <div class='public-instance method' id='method-M000061'>
+                <a name='M000061'>      </a>
                 <div class='synopsis'>
                   <span class='name'>from_block</span>
                   <span class='arguments'>(definition)</span>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000119-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000061-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000119-source'>    <span class="ruby-comment cmt"># File lib/tryouts/drill/response.rb, line 83</span>&#x000A;83:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">from_block</span>(<span class="ruby-identifier">definition</span>)&#x000A;84:       <span class="ruby-identifier">instance_eval</span> <span class="ruby-operator">&amp;</span><span class="ruby-identifier">definition</span>&#x000A;85:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">normalize!</span>&#x000A;86:       <span class="ruby-keyword kw">self</span>&#x000A;87:     <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000061-source'>    <span class="ruby-comment cmt"># File lib/tryouts/drill/response.rb, line 40</span>&#x000A;40:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">from_block</span>(<span class="ruby-identifier">definition</span>)&#x000A;41:       <span class="ruby-identifier">instance_eval</span> <span class="ruby-operator">&amp;</span><span class="ruby-identifier">definition</span>&#x000A;42:       <span class="ruby-keyword kw">self</span>&#x000A;43:     <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='public-instance method' id='method-M000120'>
-                <a name='M000120'>      </a>
+              <div class='public-instance method' id='method-M000062'>
+                <a name='M000062'>      </a>
                 <div class='synopsis'>
                   <span class='name'>inline</span>
                   <span class='arguments'>(val=nil)</span>
                 </div>
                 <div class='description'>
                   <p>
-                  Takes a String <tt>val</tt> and splits the lines into an Array. Each line
-                  has
+                  Takes a String <tt>val</tt> and splits the lines into an Array.
                   </p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000120-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000062-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000120-source'>    <span class="ruby-comment cmt"># File lib/tryouts/drill/response.rb, line 91</span>&#x000A;91:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">inline</span>(<span class="ruby-identifier">val</span>=<span class="ruby-keyword kw">nil</span>)&#x000A;92:       <span class="ruby-identifier">lines</span> = (<span class="ruby-identifier">val</span>.<span class="ruby-identifier">split</span>(<span class="ruby-identifier">$/</span>) <span class="ruby-operator">||</span> [])&#x000A;93:       <span class="ruby-identifier">lines</span>.<span class="ruby-identifier">shift</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">lines</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">strip</span> <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;&quot;</span>&#x000A;94:       <span class="ruby-identifier">lines</span>.<span class="ruby-identifier">pop</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">lines</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">strip</span> <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;&quot;</span>&#x000A;95:       <span class="ruby-identifier">lines</span>&#x000A;96:     <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000062-source'>    <span class="ruby-comment cmt"># File lib/tryouts/drill/response.rb, line 46</span>&#x000A;46:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">inline</span>(<span class="ruby-identifier">val</span>=<span class="ruby-keyword kw">nil</span>)&#x000A;47:       <span class="ruby-identifier">lines</span> = (<span class="ruby-identifier">val</span>.<span class="ruby-identifier">split</span>(<span class="ruby-identifier">$/</span>) <span class="ruby-operator">||</span> [])&#x000A;48:       <span class="ruby-identifier">lines</span>.<span class="ruby-identifier">shift</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">lines</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">strip</span> <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;&quot;</span>&#x000A;49:       <span class="ruby-identifier">lines</span>.<span class="ruby-identifier">pop</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">lines</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">strip</span> <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;&quot;</span>&#x000A;50:       <span class="ruby-identifier">lines</span>&#x000A;51:     <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
             </div>
