@@ -31,7 +31,7 @@
         </div>
         <div class='last-update'>
           Last Update:
-          <span class='datetime'>2009-06-25 02:13:47 -0400</span>
+          <span class='datetime'>2009-06-25 19:27:07 -0400</span>
         </div>
       </div>
       <div id='content'>
@@ -44,7 +44,7 @@
             </p>
             <p>
             NOTE: The DSL syntax has changed significantly from 0.5 and command-line
-            app tests are currently disabled.
+            app testing is currently disabled.
             </p>
             <h2>Syntax</h2>
             <p>
@@ -64,15 +64,42 @@
             dream per drill.
             
             </li>
+            <li>Drill Sergeant: The class responsible for executing a drill. One of: api,
+            :benchmark
+            
+            </li>
             </ul>
-            <h2>Testing Ruby codes (an API)</h2>
+            <h2>Examples</h2>
             <p>
             <a href="../classes/Tryouts.html">Tryouts</a> employs the same approach for
             testing Ruby codes. The return value of the drill block is compared to the
             expectation defined by the dream. Here is an example of including dreams
             inside the tryout definition.
             </p>
-            <pre>library :caesars, &quot;../path/to/caesars/lib&quot;&#x000A;&#x000A;tryout &quot;Common Usage&quot; do&#x000A;  dream 3&#x000A;  drill &quot;Check the return value&quot; do&#x000A;    12 / 4&#x000A;  end&#x000A;&#x000A;  dream :Proc, :class&#x000A;  drill &quot;Check the return value class&quot; do&#x000A;    Proc.new do&#x000A;      :anything&#x000A;    end&#x000A;  end&#x000A;&#x000A;  dream NameError, :exception&#x000A;  drill &quot;A test can pass based on the exception&quot; do&#x000A;    raise NameError&#x000A;  end&#x000A;&#x000A;  dream /\w\d\w \d\w\d/, :match&#x000A;  drill &quot;Knows where Santa Claus lives&quot;, 'H0H 0H0'&#x000A;end</pre>
+            <h3>Testing Ruby Codes</h3>
+            <pre>library :caesars, &quot;../path/to/caesars/lib&quot;&#x000A;&#x000A;tryouts &quot;Common Usage&quot; do&#x000A;&#x000A;  # This drill block should return 3.&#x000A;  drill &quot;Maths R Us&quot;, 3 do&#x000A;    12 / 4&#x000A;  end&#x000A;&#x000A;  # You can specify a method to execute&#x000A;  # on the return value of the drill block.&#x000A;  drill &quot;We want a symbol&quot;, Symbol, :class do&#x000A;    orange.methods.first&#x000A;  end&#x000A;&#x000A;  # Dreams can also be specified explicitly which is&#x000A;  # important b/c it's possible to specify multiple.&#x000A;  dream Array, :class&#x000A;  dream [:a, :b, :c]&#x000A;  drill &quot;Should return a list of 3&quot; do&#x000A;    Letters.list(3)&#x000A;  end&#x000A;&#x000A;  # Drills can pass based on an exception too.&#x000A;  dream NameError, :exception&#x000A;  drill &quot;Something failed&quot; do&#x000A;    raise NameError&#x000A;  end&#x000A;&#x000A;  # We can even put simple drills on a single line.&#x000A;  drill &quot;Santa's postal code&quot;, 'H0H 0H0', /\w\d\w \d\w\d/, :match&#x000A;&#x000A;end</pre>
+            <h3>Benchmarks</h3>
+            <p>
+            You can also use <a href="../classes/Tryouts.html">Tryouts</a> to run
+            benchmarks using a second parameter to the tryout method. This parameter
+            determines which drill sergeant to use.
+            </p>
+            <pre>tryouts &quot;Benchmark examples&quot;, :benchmark do&#x000A;&#x000A;  # We create an Array and store it in a class&#x000A;  # variable so it's available to other drills&#x000A;  drill &quot;Create test array&quot; do&#x000A;    @@array = (1..100000).map { rand }&#x000A;  end&#x000A;&#x000A;  dream 3.0, :mean        # The mean should be &lt;= 3.0 seconds&#x000A;  dream 0.1, :sdev        # and the standard deviation &lt;= 0.1&#x000A;  drill(&quot;Array sort!&quot;) { @@array.dup.sort! }&#x000A;&#x000A;  # You can also include a dream inline&#x000A;  drill(&quot;Array sort&quot;, 3.0, :mean) { @@array.dup.sort }&#x000A;&#x000A;  # The 3rd argument is the number of times to&#x000A;  # execute the drill block. The mean and sdev&#x000A;  # are calculate based on all iterations. The&#x000A;  # default is 5.&#x000A;  dream 0.1, :sdev, 25&#x000A;  drill(&quot;Array sort&quot;) { @@array.dup.sort }&#x000A;&#x000A;end</pre>
+            <p>
+            The drill blocks for benchmarks return <a
+            href="../classes/Tryouts/Stats.html">Tryouts::Stats</a> objects.
+            </p>
+            <h2>Screenshots</h2>
+            <p>
+            Here is an example of <a href="../classes/Tryouts.html">Tryouts</a> output
+            from a <a
+            href="http://github.com/delano/gibbler/blob/gibbler-0.2.1/tryouts/gibbler_tryouts.rb">gibbler</a>:
+            </p>
+            <p>
+            <img
+            src="http://github.com/delano/tryouts/raw/gh-pages/screens/tryouts-1-failure.png"
+            />
+            </p>
             <h2>BETA Notice</h2>
             <p>
             This library is very new (est. 2009-05-19) and has not been vetted by the
@@ -90,9 +117,9 @@
             <p>
             <a href="../classes/Tryouts.html">Tryouts</a> does some funky stuff to make
             it simple to write tests. This &#8220;funky stuff&#8221; means that this
-            library is *not thread-safe at definition-time*. However, once all tryouts
-            files are parsed (or in OO-syntax, once all objects are created), this
-            class should be *thread-safe at drill-time*.
+            library is <em>not thread-safe at definition-time</em>. However, once all
+            tryouts files are parsed (or in OO-syntax, once all objects are created),
+            this class should be <em>thread-safe at drill-time</em>.
             </p>
             <h2>More Info</h2>
             <ul>

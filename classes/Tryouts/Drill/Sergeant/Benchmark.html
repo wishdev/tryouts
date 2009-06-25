@@ -77,11 +77,11 @@
                 <a name='M000066'>      </a>
                 <div class='synopsis'>
                   <span class='name'>new</span>
-                  <span class='arguments'>(reps=1)</span>
+                  <span class='arguments'>(reps=nil)</span>
                 </div>
                 <div class='description'>
                   <ul>
-                  <li><tt>reps</tt> Number of times to execute the block
+                  <li><tt>reps</tt> Number of times to execute drill (>= 0, <= 30). Default: 3
                   
                   </li>
                   </ul>
@@ -90,7 +90,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('M000066-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000066-source'>    <span class="ruby-comment cmt"># File lib/tryouts/drill/sergeant/benchmark.rb, line 18</span>&#x000A;18:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">reps</span>=<span class="ruby-value">1</span>)&#x000A;19:       <span class="ruby-ivar">@reps</span> = (<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">30</span>).<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">reps</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">reps</span> <span class="ruby-operator">:</span> <span class="ruby-value">1</span>&#x000A;20:       <span class="ruby-ivar">@stats</span> = <span class="ruby-constant">Tryouts</span><span class="ruby-operator">::</span><span class="ruby-constant">Stats</span>.<span class="ruby-identifier">new</span>&#x000A;21:     <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000066-source'>    <span class="ruby-comment cmt"># File lib/tryouts/drill/sergeant/benchmark.rb, line 18</span>&#x000A;18:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">reps</span>=<span class="ruby-keyword kw">nil</span>)&#x000A;19:       <span class="ruby-ivar">@reps</span> = (<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">30</span>).<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">reps</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">reps</span> <span class="ruby-operator">:</span> <span class="ruby-value">5</span>&#x000A;20:       <span class="ruby-ivar">@stats</span> = <span class="ruby-constant">Tryouts</span><span class="ruby-operator">::</span><span class="ruby-constant">Stats</span>.<span class="ruby-identifier">new</span>&#x000A;21:     <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
               <h2>Public instance methods</h2>
