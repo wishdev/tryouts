@@ -51,11 +51,12 @@
             <h2>Methods</h2>
             <h3>public class</h3>
             <ol>
-              <li><a href="#M000064">new</a></li>
+              <li><a href="#M000070">new</a></li>
             </ol>
             <h3>public instance</h3>
             <ol>
-              <li><a href="#M000065">==</a></li>
+              <li><a href="#M000071">==</a></li>
+              <li><a href="#M000072">comparison_value</a></li>
             </ol>
           </div>
           <div id='section'>
@@ -97,31 +98,44 @@
             </div>
             <div id='methods'>
               <h2>Public class methods</h2>
-              <div class='public-class method' id='method-M000064'>
-                <a name='M000064'>      </a>
+              <div class='public-class method' id='method-M000070'>
+                <a name='M000070'>      </a>
                 <div class='synopsis'>
                   <span class='name'>new</span>
                   <span class='arguments'>()</span>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000064-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000070-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000064-source'>    <span class="ruby-comment cmt"># File lib/tryouts/drill/response.rb, line 89</span>&#x000A;89:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>&#x000A;90:       <span class="ruby-ivar">@stash</span> = <span class="ruby-constant">Tryouts</span><span class="ruby-operator">::</span><span class="ruby-constant">HASH_TYPE</span>.<span class="ruby-identifier">new</span>&#x000A;91:     <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000070-source'>     <span class="ruby-comment cmt"># File lib/tryouts/drill/response.rb, line 161</span>&#x000A;161:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>&#x000A;162:       <span class="ruby-ivar">@stash</span> = <span class="ruby-constant">Tryouts</span><span class="ruby-operator">::</span><span class="ruby-constant">HASH_TYPE</span>.<span class="ruby-identifier">new</span>&#x000A;163:     <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
               <h2>Public instance methods</h2>
-              <div class='public-instance method' id='method-M000065'>
-                <a name='M000065'>      </a>
+              <div class='public-instance method' id='method-M000071'>
+                <a name='M000071'>      </a>
                 <div class='synopsis'>
                   <span class='name'>==</span>
                   <span class='arguments'>(dream)</span>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000065-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000071-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000065-source'>    <span class="ruby-comment cmt"># File lib/tryouts/drill/response.rb, line 93</span>&#x000A;93:     <span class="ruby-keyword kw">def</span> <span class="ruby-operator">==</span>(<span class="ruby-identifier">dream</span>)&#x000A;94:       <span class="ruby-constant">Response</span>.<span class="ruby-identifier">compare</span>(<span class="ruby-identifier">dream</span>, <span class="ruby-keyword kw">self</span>)&#x000A;95:     <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000071-source'>     <span class="ruby-comment cmt"># File lib/tryouts/drill/response.rb, line 165</span>&#x000A;165:     <span class="ruby-keyword kw">def</span> <span class="ruby-operator">==</span>(<span class="ruby-identifier">dream</span>)&#x000A;166:       <span class="ruby-constant">Response</span>.<span class="ruby-identifier">compare</span>(<span class="ruby-identifier">dream</span>, <span class="ruby-keyword kw">self</span>)&#x000A;167:     <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <div class='public-instance method' id='method-M000072'>
+                <a name='M000072'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>comparison_value</span>
+                  <span class='arguments'>(dream)</span>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000072-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000072-source'>     <span class="ruby-comment cmt"># File lib/tryouts/drill/response.rb, line 169</span>&#x000A;169:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">comparison_value</span>(<span class="ruby-identifier">dream</span>)&#x000A;170:       <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">dream</span>.<span class="ruby-identifier">format</span>&#x000A;171:       <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:exception</span>&#x000A;172:         <span class="ruby-ivar">@etype</span>&#x000A;173:       <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:respond_to?</span>, <span class="ruby-identifier">:is_a?</span>, <span class="ruby-identifier">:kind_of?</span>&#x000A;174:         <span class="ruby-ivar">@output</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">dream</span>.<span class="ruby-identifier">format</span>, <span class="ruby-identifier">dream</span>.<span class="ruby-identifier">output</span>)&#x000A;175:       <span class="ruby-keyword kw">when</span> <span class="ruby-keyword kw">nil</span>&#x000A;176:         <span class="ruby-ivar">@output</span>&#x000A;177:       <span class="ruby-keyword kw">else</span> &#x000A;178:         <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@output</span>.<span class="ruby-identifier">nil?</span> &#x000A;179:           <span class="ruby-ivar">@output</span>&#x000A;180:         <span class="ruby-keyword kw">elsif</span> <span class="ruby-ivar">@output</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">dream</span>.<span class="ruby-identifier">format</span>)&#x000A;181:           <span class="ruby-ivar">@output</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">dream</span>.<span class="ruby-identifier">format</span>)&#x000A;182:         <span class="ruby-keyword kw">else</span>&#x000A;183:           <span class="ruby-ivar">@output</span>&#x000A;184:         <span class="ruby-keyword kw">end</span>&#x000A;185:       <span class="ruby-keyword kw">end</span>&#x000A;186:     <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
             </div>

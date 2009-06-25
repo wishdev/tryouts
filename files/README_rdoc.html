@@ -31,7 +31,7 @@
         </div>
         <div class='last-update'>
           Last Update:
-          <span class='datetime'>2009-06-23 22:04:41 -0400</span>
+          <span class='datetime'>2009-06-25 01:18:18 -0400</span>
         </div>
       </div>
       <div id='content'>
@@ -46,20 +46,22 @@
             NOTE: The DSL syntax has changed significantly from 0.5 and command-line
             app tests are currently disabled.
             </p>
-            <h2>Terminology</h2>
+            <h2>Syntax</h2>
             <p>
             <a href="../classes/Tryouts.html">Tryouts</a> is a bit different than other
             testing libraries. Test definitions are organized in a similar way as
             Shoulda tests (although the keywords in the syntax are different).
             </p>
+            <h3>Terminology</h3>
             <ul>
-            <li>Tryout: a set of drills (like basketball tryouts)
+            <li>Tryout: a set of drills (just like basketball tryouts is a set of drills)
             
             </li>
-            <li>Drill: a test.
+            <li>Drill: a single test.
             
             </li>
-            <li>Dream: the expected outcome of a drill.
+            <li>Dream: the expected outcome of a drill. There&#8217;s always one or more
+            dream per drill.
             
             </li>
             </ul>
@@ -70,7 +72,7 @@
             expectation defined by the dream. Here is an example of including dreams
             inside the tryout definition.
             </p>
-            <pre>library :caesars, LIBRARY_PATH&#x000A;&#x000A;tryout &quot;Common Usage&quot; do&#x000A;  dream 3&#x000A;  drill &quot;Check the return value&quot; do&#x000A;    12 / 4&#x000A;  end&#x000A;&#x000A;  dream :class, :Proc&#x000A;  drill &quot;Check the return value class&quot; do&#x000A;    Proc.new do&#x000A;      :anything&#x000A;    end&#x000A;  end&#x000A;&#x000A;  dream :exception, NameError&#x000A;  drill &quot;A test can pass based on the exception&quot; do&#x000A;    raise NameError&#x000A;  end&#x000A;end</pre>
+            <pre>library :caesars, &quot;../path/to/caesars/lib&quot;&#x000A;&#x000A;tryout &quot;Common Usage&quot; do&#x000A;  dream 3&#x000A;  drill &quot;Check the return value&quot; do&#x000A;    12 / 4&#x000A;  end&#x000A;&#x000A;  dream :Proc, :class&#x000A;  drill &quot;Check the return value class&quot; do&#x000A;    Proc.new do&#x000A;      :anything&#x000A;    end&#x000A;  end&#x000A;&#x000A;  dream NameError, :exception&#x000A;  drill &quot;A test can pass based on the exception&quot; do&#x000A;    raise NameError&#x000A;  end&#x000A;&#x000A;  dream /\w\d\w \d\w\d/, :match&#x000A;  drill &quot;Knows where Santa Claus lives&quot;, 'H0H 0H0'&#x000A;end</pre>
             <h2>BETA Notice</h2>
             <p>
             This library is very new (est. 2009-05-19) and has not been vetted by the

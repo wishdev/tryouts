@@ -37,10 +37,10 @@
             <a href="../../files/lib/tryouts/drill/sergeant/api_rb.html">lib/tryouts/drill/sergeant/api.rb</a>
           </li>
           <li class='other'>
-            <a href="../../files/lib/tryouts/drill_rb.html">lib/tryouts/drill.rb</a>
+            <a href="../../files/lib/tryouts/drill/sergeant/cli_rb.html">lib/tryouts/drill/sergeant/cli.rb</a>
           </li>
           <li class='other'>
-            <a href="../../files/lib/tryouts/drill/sergeant/cli_rb.html">lib/tryouts/drill/sergeant/cli.rb</a>
+            <a href="../../files/lib/tryouts/drill_rb.html">lib/tryouts/drill.rb</a>
           </li>
           <li>
             <a class='show' href='#' onclick='this.parentNode.parentNode.className += " expanded"; this.parentNode.removeChild(this); return false'>show all</a>
@@ -63,14 +63,15 @@
             <h2>Methods</h2>
             <h3>public class</h3>
             <ol>
-              <li><a href="#M000047">new</a></li>
+              <li><a href="#M000049">new</a></li>
             </ol>
             <h3>public instance</h3>
             <ol>
-              <li><a href="#M000050">add_dream</a></li>
-              <li><a href="#M000051">add_dreams</a></li>
-              <li><a href="#M000048">run</a></li>
-              <li><a href="#M000049">success?</a></li>
+              <li><a href="#M000053">add_dream</a></li>
+              <li><a href="#M000054">add_dreams</a></li>
+              <li><a href="#M000051">run</a></li>
+              <li><a href="#M000050">skip?</a></li>
+              <li><a href="#M000052">success?</a></li>
             </ol>
           </div>
           <div id='section'>
@@ -81,6 +82,7 @@
               Class <a href="Drill/NoSergeant.html" class="link">Tryouts::Drill::NoSergeant</a><br />
               Class <a href="Drill/Reality.html" class="link">Tryouts::Drill::Reality</a><br />
               Class <a href="Drill/Response.html" class="link">Tryouts::Drill::Response</a><br />
+              Class <a href="Drill/UnknownFormat.html" class="link">Tryouts::Drill::UnknownFormat</a><br />
             </div>
             <div id='attribute-list'>
               <h2 class='section-bar'>Attributes</h2>
@@ -142,70 +144,83 @@
             </div>
             <div id='methods'>
               <h2>Public class methods</h2>
-              <div class='public-class method' id='method-M000047'>
-                <a name='M000047'>      </a>
+              <div class='public-class method' id='method-M000049'>
+                <a name='M000049'>      </a>
                 <div class='synopsis'>
                   <span class='name'>new</span>
                   <span class='arguments'>(name, dtype, *args, &amp;drill)</span>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000047-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000049-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000047-source'>    <span class="ruby-comment cmt"># File lib/tryouts/drill.rb, line 32</span>&#x000A;32:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">dtype</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">drill</span>)&#x000A;33:     <span class="ruby-ivar">@name</span>, <span class="ruby-ivar">@dtype</span>, <span class="ruby-ivar">@drill</span> = <span class="ruby-identifier">name</span>, <span class="ruby-identifier">dtype</span>, <span class="ruby-identifier">drill</span>&#x000A;34:     <span class="ruby-ivar">@dreams</span> = []&#x000A;35:     <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@dtype</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">:cli</span>&#x000A;36:       <span class="ruby-ivar">@sergeant</span> = <span class="ruby-constant">Tryouts</span><span class="ruby-operator">::</span><span class="ruby-constant">Drill</span><span class="ruby-operator">::</span><span class="ruby-constant">Sergeant</span><span class="ruby-operator">::</span><span class="ruby-constant">CLI</span>.<span class="ruby-identifier">new</span> <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>&#x000A;37:     <span class="ruby-keyword kw">elsif</span> <span class="ruby-ivar">@dtype</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">:api</span>&#x000A;38:       <span class="ruby-identifier">default_output</span> = <span class="ruby-identifier">drill</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-value">? </span><span class="ruby-identifier">args</span>.<span class="ruby-identifier">shift</span> <span class="ruby-operator">:</span> <span class="ruby-keyword kw">nil</span>&#x000A;39:       <span class="ruby-ivar">@sergeant</span> = <span class="ruby-constant">Tryouts</span><span class="ruby-operator">::</span><span class="ruby-constant">Drill</span><span class="ruby-operator">::</span><span class="ruby-constant">Sergeant</span><span class="ruby-operator">::</span><span class="ruby-constant">API</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">default_output</span>&#x000A;40:       <span class="ruby-ivar">@dreams</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Tryouts</span><span class="ruby-operator">::</span><span class="ruby-constant">Drill</span><span class="ruby-operator">::</span><span class="ruby-constant">Dream</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>) <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span>&#x000A;41:     <span class="ruby-keyword kw">else</span>&#x000A;42:       <span class="ruby-identifier">raise</span> <span class="ruby-constant">NoSergeant</span>, <span class="ruby-node">&quot;Weird drill sergeant: #{@dtype}&quot;</span>&#x000A;43:     <span class="ruby-keyword kw">end</span>&#x000A;44:     <span class="ruby-comment cmt"># For CLI drills, a block takes precedence over inline args. </span>&#x000A;45:     <span class="ruby-comment cmt"># A block will contain multiple shell commands (see Rye::Box#batch)</span>&#x000A;46:     <span class="ruby-identifier">drill_args</span> = [] <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">dtype</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">:cli</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">drill</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Proc</span>)&#x000A;47:     <span class="ruby-ivar">@reality</span> = <span class="ruby-constant">Tryouts</span><span class="ruby-operator">::</span><span class="ruby-constant">Drill</span><span class="ruby-operator">::</span><span class="ruby-constant">Reality</span>.<span class="ruby-identifier">new</span>&#x000A;48:   <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000049-source'>    <span class="ruby-comment cmt"># File lib/tryouts/drill.rb, line 33</span>&#x000A;33:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">dtype</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">drill</span>)&#x000A;34:     <span class="ruby-ivar">@name</span>, <span class="ruby-ivar">@dtype</span>, <span class="ruby-ivar">@drill</span>, <span class="ruby-ivar">@skip</span> = <span class="ruby-identifier">name</span>, <span class="ruby-identifier">dtype</span>, <span class="ruby-identifier">drill</span>, <span class="ruby-keyword kw">false</span>&#x000A;35:     <span class="ruby-ivar">@dreams</span> = []&#x000A;36:     <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@dtype</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">:cli</span>&#x000A;37:       <span class="ruby-ivar">@sergeant</span> = <span class="ruby-constant">Tryouts</span><span class="ruby-operator">::</span><span class="ruby-constant">Drill</span><span class="ruby-operator">::</span><span class="ruby-constant">Sergeant</span><span class="ruby-operator">::</span><span class="ruby-constant">CLI</span>.<span class="ruby-identifier">new</span> <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>&#x000A;38:     <span class="ruby-keyword kw">elsif</span> <span class="ruby-ivar">@dtype</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">:api</span>&#x000A;39:       <span class="ruby-identifier">default_output</span> = <span class="ruby-identifier">drill</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-value">? </span><span class="ruby-identifier">args</span>.<span class="ruby-identifier">shift</span> <span class="ruby-operator">:</span> <span class="ruby-keyword kw">nil</span>&#x000A;40:       <span class="ruby-ivar">@sergeant</span> = <span class="ruby-constant">Tryouts</span><span class="ruby-operator">::</span><span class="ruby-constant">Drill</span><span class="ruby-operator">::</span><span class="ruby-constant">Sergeant</span><span class="ruby-operator">::</span><span class="ruby-constant">API</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">default_output</span>&#x000A;41:       <span class="ruby-ivar">@dreams</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Tryouts</span><span class="ruby-operator">::</span><span class="ruby-constant">Drill</span><span class="ruby-operator">::</span><span class="ruby-constant">Dream</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>) <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span>&#x000A;42:     <span class="ruby-keyword kw">elsif</span> <span class="ruby-ivar">@dtype</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">:skip</span>&#x000A;43:       <span class="ruby-ivar">@skip</span> = <span class="ruby-keyword kw">true</span>&#x000A;44:     <span class="ruby-keyword kw">else</span>&#x000A;45:       <span class="ruby-identifier">raise</span> <span class="ruby-constant">NoSergeant</span>, <span class="ruby-node">&quot;Weird drill sergeant: #{@dtype}&quot;</span>&#x000A;46:     <span class="ruby-keyword kw">end</span>&#x000A;47:     <span class="ruby-comment cmt"># For CLI drills, a block takes precedence over inline args. </span>&#x000A;48:     <span class="ruby-comment cmt"># A block will contain multiple shell commands (see Rye::Box#batch)</span>&#x000A;49:     <span class="ruby-identifier">drill_args</span> = [] <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">dtype</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">:cli</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">drill</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Proc</span>)&#x000A;50:     <span class="ruby-ivar">@reality</span> = <span class="ruby-constant">Tryouts</span><span class="ruby-operator">::</span><span class="ruby-constant">Drill</span><span class="ruby-operator">::</span><span class="ruby-constant">Reality</span>.<span class="ruby-identifier">new</span>&#x000A;51:   <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
               <h2>Public instance methods</h2>
-              <div class='public-instance method' id='method-M000050'>
-                <a name='M000050'>      </a>
+              <div class='public-instance method' id='method-M000053'>
+                <a name='M000053'>      </a>
                 <div class='synopsis'>
                   <span class='name'>add_dream</span>
                   <span class='arguments'>(d)</span>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000050-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000053-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000050-source'>    <span class="ruby-comment cmt"># File lib/tryouts/drill.rb, line 74</span>&#x000A;74:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_dream</span>(<span class="ruby-identifier">d</span>); <span class="ruby-ivar">@dreams</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">d</span>; <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000053-source'>    <span class="ruby-comment cmt"># File lib/tryouts/drill.rb, line 84</span>&#x000A;84:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_dream</span>(<span class="ruby-identifier">d</span>); <span class="ruby-ivar">@dreams</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">d</span>; <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='public-instance method' id='method-M000051'>
-                <a name='M000051'>      </a>
+              <div class='public-instance method' id='method-M000054'>
+                <a name='M000054'>      </a>
                 <div class='synopsis'>
                   <span class='name'>add_dreams</span>
                   <span class='arguments'>(*d)</span>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000051-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000054-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000051-source'>    <span class="ruby-comment cmt"># File lib/tryouts/drill.rb, line 75</span>&#x000A;75:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_dreams</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">d</span>); <span class="ruby-ivar">@dreams</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">d</span>; <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000054-source'>    <span class="ruby-comment cmt"># File lib/tryouts/drill.rb, line 85</span>&#x000A;85:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_dreams</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">d</span>); <span class="ruby-ivar">@dreams</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">d</span>; <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='public-instance method' id='method-M000048'>
-                <a name='M000048'>      </a>
+              <div class='public-instance method' id='method-M000051'>
+                <a name='M000051'>      </a>
                 <div class='synopsis'>
                   <span class='name'>run</span>
                   <span class='arguments'>(context=nil)</span>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000048-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000051-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000048-source'>    <span class="ruby-comment cmt"># File lib/tryouts/drill.rb, line 50</span>&#x000A;50:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">run</span>(<span class="ruby-identifier">context</span>=<span class="ruby-keyword kw">nil</span>)&#x000A;51:     <span class="ruby-keyword kw">begin</span>&#x000A;52:       <span class="ruby-identifier">print</span> <span class="ruby-constant">Tryouts</span><span class="ruby-operator">::</span><span class="ruby-constant">DRILL_MSG</span> <span class="ruby-operator">%</span> <span class="ruby-ivar">@name</span>&#x000A;53:       <span class="ruby-ivar">@reality</span> = <span class="ruby-ivar">@sergeant</span>.<span class="ruby-identifier">run</span> <span class="ruby-ivar">@drill</span>, <span class="ruby-identifier">context</span>&#x000A;54:       <span class="ruby-comment cmt"># Store the stash from the drill block</span>&#x000A;55:       <span class="ruby-ivar">@reality</span>.<span class="ruby-identifier">stash</span> = <span class="ruby-identifier">context</span>.<span class="ruby-identifier">stash</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">context</span>.<span class="ruby-identifier">respond_to?</span> <span class="ruby-identifier">:stash</span>&#x000A;56:       <span class="ruby-comment cmt"># If the drill block returned true we assume success if there's no dream</span>&#x000A;57:       <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@dreams</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@reality</span>.<span class="ruby-identifier">output</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">true</span>&#x000A;58:         <span class="ruby-ivar">@dreams</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Tryouts</span><span class="ruby-operator">::</span><span class="ruby-constant">Drill</span><span class="ruby-operator">::</span><span class="ruby-constant">Dream</span>.<span class="ruby-identifier">new</span>&#x000A;59:         <span class="ruby-ivar">@dreams</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">output</span> = <span class="ruby-keyword kw">true</span>&#x000A;60:       <span class="ruby-keyword kw">end</span>&#x000A;61:     <span class="ruby-keyword kw">rescue</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">ex</span>&#x000A;62:       <span class="ruby-ivar">@reality</span>.<span class="ruby-identifier">ecode</span>, <span class="ruby-ivar">@reality</span>.<span class="ruby-identifier">etype</span> = <span class="ruby-value">-2</span>, <span class="ruby-identifier">ex</span>.<span class="ruby-identifier">class</span>&#x000A;63:       <span class="ruby-ivar">@reality</span>.<span class="ruby-identifier">error</span>, <span class="ruby-ivar">@reality</span>.<span class="ruby-identifier">trace</span> = <span class="ruby-identifier">ex</span>.<span class="ruby-identifier">message</span>, <span class="ruby-identifier">ex</span>.<span class="ruby-identifier">backtrace</span>&#x000A;64:     <span class="ruby-keyword kw">end</span>  &#x000A;65:     <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">success?</span>&#x000A;66:   <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000051-source'>    <span class="ruby-comment cmt"># File lib/tryouts/drill.rb, line 55</span>&#x000A;55:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">run</span>(<span class="ruby-identifier">context</span>=<span class="ruby-keyword kw">nil</span>)&#x000A;56:     <span class="ruby-keyword kw">begin</span>&#x000A;57:       <span class="ruby-ivar">@reality</span> = <span class="ruby-ivar">@sergeant</span>.<span class="ruby-identifier">run</span> <span class="ruby-ivar">@drill</span>, <span class="ruby-identifier">context</span>&#x000A;58:       <span class="ruby-comment cmt"># Store the stash from the drill block</span>&#x000A;59:       <span class="ruby-ivar">@reality</span>.<span class="ruby-identifier">stash</span> = <span class="ruby-identifier">context</span>.<span class="ruby-identifier">stash</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">context</span>.<span class="ruby-identifier">respond_to?</span> <span class="ruby-identifier">:stash</span>&#x000A;60:       <span class="ruby-comment cmt"># If the drill block returned true we assume success if there's no dream</span>&#x000A;61:       <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@dreams</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@reality</span>.<span class="ruby-identifier">output</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">true</span>&#x000A;62:         <span class="ruby-ivar">@dreams</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Tryouts</span><span class="ruby-operator">::</span><span class="ruby-constant">Drill</span><span class="ruby-operator">::</span><span class="ruby-constant">Dream</span>.<span class="ruby-identifier">new</span>&#x000A;63:         <span class="ruby-ivar">@dreams</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">output</span> = <span class="ruby-keyword kw">true</span>&#x000A;64:       <span class="ruby-keyword kw">end</span>&#x000A;65:     <span class="ruby-keyword kw">rescue</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">ex</span>&#x000A;66:       <span class="ruby-ivar">@reality</span>.<span class="ruby-identifier">ecode</span>, <span class="ruby-ivar">@reality</span>.<span class="ruby-identifier">etype</span> = <span class="ruby-value">-2</span>, <span class="ruby-identifier">ex</span>.<span class="ruby-identifier">class</span>&#x000A;67:       <span class="ruby-ivar">@reality</span>.<span class="ruby-identifier">error</span>, <span class="ruby-ivar">@reality</span>.<span class="ruby-identifier">trace</span> = <span class="ruby-identifier">ex</span>.<span class="ruby-identifier">message</span>, <span class="ruby-identifier">ex</span>.<span class="ruby-identifier">backtrace</span>&#x000A;68:     <span class="ruby-keyword kw">end</span>  &#x000A;69:     <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">success?</span>&#x000A;70:   <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='public-instance method' id='method-M000049'>
-                <a name='M000049'>      </a>
+              <div class='public-instance method' id='method-M000050'>
+                <a name='M000050'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>skip?</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000050-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000050-source'>    <span class="ruby-comment cmt"># File lib/tryouts/drill.rb, line 53</span>&#x000A;53:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">skip?</span>; <span class="ruby-ivar">@skip</span>; <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <div class='public-instance method' id='method-M000052'>
+                <a name='M000052'>      </a>
                 <div class='synopsis'>
                   <span class='name'>success?</span>
                   <span class='arguments'>()</span>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000049-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000052-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000049-source'>    <span class="ruby-comment cmt"># File lib/tryouts/drill.rb, line 68</span>&#x000A;68:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">success?</span>&#x000A;69:     <span class="ruby-ivar">@dreams</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">d</span><span class="ruby-operator">|</span> <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">d</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@reality</span> }&#x000A;70:     <span class="ruby-keyword kw">true</span>&#x000A;71:   <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000052-source'>    <span class="ruby-comment cmt"># File lib/tryouts/drill.rb, line 72</span>&#x000A;72:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">success?</span>&#x000A;73:     <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@dreams</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@reality</span>.<span class="ruby-identifier">output</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword kw">true</span>&#x000A;74:     <span class="ruby-keyword kw">begin</span>&#x000A;75:       <span class="ruby-ivar">@dreams</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">d</span><span class="ruby-operator">|</span> <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">d</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@reality</span> }&#x000A;76:     <span class="ruby-keyword kw">rescue</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">ex</span>&#x000A;77:       <span class="ruby-identifier">puts</span> <span class="ruby-identifier">ex</span>.<span class="ruby-identifier">message</span>, <span class="ruby-identifier">ex</span>.<span class="ruby-identifier">backtrace</span> <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Tryouts</span>.<span class="ruby-identifier">debug?</span>&#x000A;78:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span>&#x000A;79:     <span class="ruby-keyword kw">end</span>&#x000A;80:     <span class="ruby-keyword kw">true</span>&#x000A;81:   <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
             </div>
