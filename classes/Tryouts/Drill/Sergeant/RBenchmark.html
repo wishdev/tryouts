@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang='en'>
+  <head>
+    <title>: Tryouts::Drill::Sergeant::RBenchmark [Tryouts are high-level tests for your Ruby code. May all your dreams come true!]</title>
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <link href='../../../../rdoc-style.css' media='screen' rel='stylesheet' type='text/css'>
+    <script type='text/javascript'>
+      //<![CDATA[
+        function popupCode(url) {
+          window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+        }
+        
+        function toggleCode(id) {
+          var code = document.getElementById(id)
+        
+          code.style.display = code.style.display != 'block' ? 'block' : 'none'
+          return true
+        }
+        
+        // Make codeblocks hidden by default
+        document.writeln('<' + 'style type="text/css">.method .source pre { display: none }<\/style>')
+      //]]>
+    </script>
+  </head>
+  <body class='page'>
+    <div class='class' id='wrapper'>
+      <div class='header'>
+        <div class='name'>
+          <span class='type'>Module</span>
+          Tryouts::Drill::Sergeant::RBenchmark
+        </div>
+        <ol class='paths'>
+          <li>
+            <a href="../../../../files/lib/tryouts/drill/sergeant/rbenchmark_rb.html">lib/tryouts/drill/sergeant/rbenchmark.rb</a>
+          </li>
+        </ol>
+      </div>
+      <div id='content'>
+        <div id='text'>
+          <div id='description'>
+            <h1><a href="RBenchmark.html">RBenchmark</a></h1>
+            <p>
+            This is an implementation of Better-Benchmark: <a
+            href="http://github.com/Pistos/better-benchmark">github.com/Pistos/better-benchmark</a>/
+            </p>
+            <p>
+            NOTE: It&#8217;s a work in progress and currently not functioning
+            </p>
+          </div>
+          <div id='method-list'>
+            <h2>Methods</h2>
+            <h3>public class</h3>
+            <ol>
+              <li><a href="#M000059">compare_realtime</a></li>
+              <li><a href="#M000060">report_on</a></li>
+            </ol>
+          </div>
+          <div id='section'>
+            <div id='class-list'>
+              <h2>Classes and Modules</h2>
+              Class <a href="RBenchmark/ComparisonPartial.html" class="link">Tryouts::Drill::Sergeant::RBenchmark::ComparisonPartial</a><br />
+            </div>
+            <div id='constants-list'>
+              <h2>Constants</h2>
+              <div class='name-list'>
+                <table summary='Constants'>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>VERSION</td>
+                    <td>=</td>
+                    <td class='context-item-value'>'0.7.0'</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <div id='methods'>
+              <h2>Public class methods</h2>
+              <div class='public-class method' id='method-M000059'>
+                <a name='M000059'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>compare_realtime</span>
+                  <span class='arguments'>( options = {}, &amp;block1 )</span>
+                </div>
+                <div class='description'>
+                  <p>
+                  Options: :iterations The number of times to execute the pair of blocks.
+                  :inner_iterations Used to increase the time taken per iteration.
+                  :required_significance Maximum allowed p value in order to declare the
+                  results statistically significant. :verbose Whether to print a dot for each
+                  iteration (as a sort of progress meter).
+                  </p>
+                  <p>
+                  To use better-benchmark properly, it is important to set :iterations and
+                  :inner_iterations properly. There are a few things to bear in mind:
+                  </p>
+                  <p>
+                  (1) Do not set :iterations too high. It should normally be in the range of
+                  10-20, but can be lower. Over 25 should be considered too high. (2)
+                  Execution time for one run of the blocks under test should not be too small
+                  (or else random variance will muddle the results). Aim for at least 1.0
+                  seconds per iteration. (3) Minimize the proportion of any warmup time (and
+                  cooldown time) of one block run.
+                  </p>
+                  <p>
+                  In order to achieve these goals, you will need to tweak :inner_iterations
+                  based on your situation. The exact number you should use will depend on the
+                  strength of the hardware (CPU, RAM, disk), and the amount of work done by
+                  the blocks. For code blocks that execute extremely rapidly, you may need
+                  hundreds of thousands of :inner_iterations.
+                  </p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000059-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000059-source'>     <span class="ruby-comment cmt"># File lib/tryouts/drill/sergeant/rbenchmark.rb, line 95</span>&#x000A; 95:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">compare_realtime</span>( <span class="ruby-identifier">options</span> = {}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block1</span> )&#x000A; 96:       <span class="ruby-identifier">require</span> <span class="ruby-value str">'rsruby'</span>&#x000A; 97:       &#x000A; 98:       <span class="ruby-identifier">options</span>[ <span class="ruby-identifier">:iterations</span> ] <span class="ruby-operator">||=</span> <span class="ruby-value">20</span>&#x000A; 99:       <span class="ruby-identifier">options</span>[ <span class="ruby-identifier">:inner_iterations</span> ] <span class="ruby-operator">||=</span> <span class="ruby-value">1</span>&#x000A;100:       <span class="ruby-identifier">options</span>[ <span class="ruby-identifier">:required_significance</span> ] <span class="ruby-operator">||=</span> <span class="ruby-value">0</span><span class="ruby-value">.01</span>&#x000A;101: &#x000A;102:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>[ <span class="ruby-identifier">:iterations</span> ] <span class="ruby-operator">&gt;</span> <span class="ruby-value">30</span>&#x000A;103:         <span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;The number of iterations is set to #{options[ :iterations ]}. &quot;</span> <span class="ruby-operator">+</span>&#x000A;104:           <span class="ruby-value str">&quot;Using too many iterations may make the test results less reliable. &quot;</span> <span class="ruby-operator">+</span>&#x000A;105:           <span class="ruby-value str">&quot;It is recommended to increase the number of :inner_iterations instead.&quot;</span>&#x000A;106:       <span class="ruby-keyword kw">end</span>&#x000A;107: &#x000A;108:       <span class="ruby-constant">ComparisonPartial</span>.<span class="ruby-identifier">new</span>( <span class="ruby-identifier">block1</span>, <span class="ruby-identifier">options</span> )&#x000A;109:     <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <div class='public-class method' id='method-M000060'>
+                <a name='M000060'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>report_on</span>
+                  <span class='arguments'>( result )</span>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000060-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000060-source'>     <span class="ruby-comment cmt"># File lib/tryouts/drill/sergeant/rbenchmark.rb, line 111</span>&#x000A;111:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">report_on</span>( <span class="ruby-identifier">result</span> )&#x000A;112:       <span class="ruby-identifier">puts</span>&#x000A;113:       <span class="ruby-identifier">puts</span>( <span class="ruby-value str">&quot;Set 1 mean: %.3f s&quot;</span> <span class="ruby-operator">%</span> [ <span class="ruby-identifier">result</span>[ <span class="ruby-identifier">:results1</span> ][ <span class="ruby-identifier">:mean</span> ] ] )&#x000A;114:       <span class="ruby-identifier">puts</span>( <span class="ruby-value str">&quot;Set 1 std dev: %.3f&quot;</span> <span class="ruby-operator">%</span> [ <span class="ruby-identifier">result</span>[ <span class="ruby-identifier">:results1</span> ][ <span class="ruby-identifier">:stddev</span> ] ] )&#x000A;115:       <span class="ruby-identifier">puts</span>( <span class="ruby-value str">&quot;Set 2 mean: %.3f s&quot;</span> <span class="ruby-operator">%</span> [ <span class="ruby-identifier">result</span>[ <span class="ruby-identifier">:results2</span> ][ <span class="ruby-identifier">:mean</span> ] ] )&#x000A;116:       <span class="ruby-identifier">puts</span>( <span class="ruby-value str">&quot;Set 2 std dev: %.3f&quot;</span> <span class="ruby-operator">%</span> [ <span class="ruby-identifier">result</span>[ <span class="ruby-identifier">:results2</span> ][ <span class="ruby-identifier">:stddev</span> ] ] )&#x000A;117:       <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;p.value: #{result[ :p ]}&quot;</span>&#x000A;118:       <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;W: #{result[ :W ]}&quot;</span>&#x000A;119:       <span class="ruby-identifier">puts</span>(&#x000A;120:         <span class="ruby-value str">&quot;The difference (%+.1f%%) %s statistically significant.&quot;</span> <span class="ruby-operator">%</span> [&#x000A;121:           ( ( <span class="ruby-identifier">result</span>[ <span class="ruby-identifier">:results2</span> ][ <span class="ruby-identifier">:mean</span> ] <span class="ruby-operator">-</span> <span class="ruby-identifier">result</span>[ <span class="ruby-identifier">:results1</span> ][ <span class="ruby-identifier">:mean</span> ] ) <span class="ruby-operator">/</span> <span class="ruby-identifier">result</span>[ <span class="ruby-identifier">:results1</span> ][ <span class="ruby-identifier">:mean</span> ] ) <span class="ruby-operator">*</span> <span class="ruby-value">100</span>,&#x000A;122:           <span class="ruby-identifier">result</span>[ <span class="ruby-identifier">:significant</span> ] <span class="ruby-operator">?</span> <span class="ruby-value str">'IS'</span> <span class="ruby-operator">:</span> <span class="ruby-value str">'IS NOT'</span>&#x000A;123:         ]&#x000A;124:       )&#x000A;125:     <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id='footer-push'></div>
+    </div>
+    <div id='footer'>
+      <a href="http://github.com/mislav/hanna/tree/master"><strong>Hanna</strong> RDoc template</a>
+    </div>
+  </body>
+</html>

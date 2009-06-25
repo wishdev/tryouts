@@ -31,7 +31,7 @@
         </div>
         <div class='last-update'>
           Last Update:
-          <span class='datetime'>2009-06-25 01:20:04 -0400</span>
+          <span class='datetime'>2009-06-25 17:23:55 -0400</span>
         </div>
       </div>
       <div id='content'>
@@ -40,6 +40,32 @@
             <p>
             TRYOUTS, CHANGES
             </p>
+            <p>
+            #### 0.6.4 (2009-06-25) ###############################
+            </p>
+            <ul>
+            <li>FIXED: Stash wasn&#8217;t being displayed in the drill report
+            
+            </li>
+            <li>CHANGE: CLI is now formatted to be 80 characters wide.
+            
+            </li>
+            <li>ADDED: <a
+            href="../classes/Tryouts/Drill/Sergeant/Benchmark.html">Tryouts::Drill::Sergeant::Benchmark</a>
+            
+            </li>
+            <li>ADDED: <a href="../classes/Tryouts/Stats.html">Tryouts::Stats</a>
+            
+            </li>
+            <li>ADDED: new dream formats: :mean and :sdev which compare with <=.
+            
+            <pre>dream 10, :mean&#x000A;drill &quot;do something&quot; do; ...; end  # stats.mean &lt;= 10</pre>
+            </li>
+            <li>ADDED: new dream format: :proc
+            
+            <pre>dream lambda { |x| x.real &lt; 0.1 }, :proc&#x000A;drill(&quot;array sort!&quot;) { @@array.dup.sort! }</pre>
+            </li>
+            </ul>
             <p>
             #### 0.6.3 (2009-06-25) ###############################
             </p>
