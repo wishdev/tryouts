@@ -31,59 +31,57 @@
         </div>
         <div class='last-update'>
           Last Update:
-          <span class='datetime'>2009-06-25 20:03:43 -0400</span>
+          <span class='datetime'>2009-06-25 20:32:35 -0400</span>
         </div>
       </div>
       <div id='content'>
         <div id='text'>
           <div id='description'>
-            <h1><a href="../classes/Tryouts.html">Tryouts</a> - v0.6 BETA</h1>
+            <h1><a href="../classes/Tryouts.html">Tryouts</a> - v0.7 BETA</h1>
             <p>
             <a href="../classes/Tryouts.html">Tryouts</a> is a high-level testing
-            library for your command-line applications and Ruby codes.
+            library (DSL) for your Ruby codes.
             </p>
             <p>
-            NOTE: The DSL syntax has changed significantly from 0.5 and command-line
-            app testing is currently disabled.
-            </p>
-            <p>
-            <a href="../classes/Tryouts.html">Tryouts</a> are made up of one of more
-            drills. The return value of the drill block is compared to the expectations
-            defined by one or more dreams. The examples below are a complete overview
-            of <a href="../classes/Tryouts.html">Tryouts</a> syntax.
+            A tryout is made up of one of more drills. The return value of the drill
+            block is compared to the expectations defined by one or more dreams. The
+            goal is to achieve your dreams.
             </p>
             <h3>Terminology</h3>
             <ul>
-            <li>Tryout: a set of drills (just like basketball tryouts is a set of drills)
+            <li>Tryout: a set of drills (think: basketball tryouts)
             
             </li>
             <li>Drill: a single test.
+            
+            </li>
+            <li>Drill Sergeant: The class responsible for executing a drill.
             
             </li>
             <li>Dream: the expected outcome of a drill. There&#8217;s always one or more
             dream per drill.
             
             </li>
-            <li>Drill Sergeant: The class responsible for executing a drill. One of: api,
-            :benchmark
-            
-            </li>
             </ul>
             <h2>Examples</h2>
+            <p>
+            The examples below are a complete overview of <a
+            href="../classes/Tryouts.html">Tryouts</a> syntax.
+            </p>
             <h3>Testing Ruby Codes (:api)</h3>
             <pre>library :caesars, &quot;../path/to/caesars/lib&quot;&#x000A;&#x000A;tryouts &quot;Common Usage&quot; do&#x000A;&#x000A;  # This drill block should return 3.&#x000A;  drill &quot;Maths R Us&quot;, 3 do&#x000A;    12 / 4&#x000A;  end&#x000A;&#x000A;  # You can specify a method to execute&#x000A;  # on the return value of the drill block.&#x000A;  drill &quot;We want a symbol&quot;, Symbol, :class do&#x000A;    orange.methods.first&#x000A;  end&#x000A;&#x000A;  # Dreams can also be specified explicitly which is&#x000A;  # important b/c it's possible to specify multiple.&#x000A;  dream Array, :class&#x000A;  dream [:a, :b, :c]&#x000A;  drill &quot;Should return a list of 3&quot; do&#x000A;    Letters.list(3)&#x000A;  end&#x000A;&#x000A;  # Drills can pass based on an exception too.&#x000A;  dream NameError, :exception&#x000A;  drill &quot;Something failed&quot; do&#x000A;    raise NameError&#x000A;  end&#x000A;&#x000A;  # We can even put simple drills on a single line.&#x000A;  drill &quot;Santa's postal code&quot;, 'H0H 0H0', /\w\d\w \d\w\d/, :match&#x000A;&#x000A;end</pre>
             <h3>Benchmarks (:benchmark)</h3>
             <p>
             You can also use <a href="../classes/Tryouts.html">Tryouts</a> to run
-            benchmarks using a second parameter to the tryouts method. This parameter
-            determines which drill sergeant to use. Here we specify <tt>:benchmark</tt>
-            so each drill is timed while it&#8217;s executed (see <a
-            href="../classes/Tryouts/Drill/Sergeant/Benchmark.html">Tryouts::Drill::Sergeant::Benchmark</a>):
+            benchmarks. The tryouts method takes a second parameter which specifies
+            which drill sergeant to use. Below we specify <tt>:benchmark</tt> so each
+            drill is timed and executed multiple times.
             </p>
-            <pre>tryouts &quot;Benchmark examples&quot;, :benchmark do&#x000A;&#x000A;  # We create an Array and store it in a class&#x000A;  # variable so it's available to other drills&#x000A;  drill &quot;Create test array&quot; do&#x000A;    @@array = (1..100000).map { rand }&#x000A;  end&#x000A;&#x000A;  dream 3.0, :mean        # The mean should be &lt;= 3.0 seconds&#x000A;  dream 0.1, :sdev        # and the standard deviation &lt;= 0.1&#x000A;  drill(&quot;Array sort!&quot;) { @@array.dup.sort! }&#x000A;&#x000A;  # You can also include a dream inline&#x000A;  drill(&quot;Array sort&quot;, 3.0, :mean) { @@array.dup.sort }&#x000A;&#x000A;  # The 3rd argument is the number of times to&#x000A;  # execute the drill block. The mean and sdev&#x000A;  # are calculate based on all iterations. The&#x000A;  # default is 5.&#x000A;  dream 0.1, :sdev, 25&#x000A;  drill(&quot;Array sort&quot;) { @@array.dup.sort }&#x000A;&#x000A;end</pre>
+            <pre>tryouts &quot;Benchmark examples&quot;, :benchmark do&#x000A;&#x000A;  # We create an Array and store it in a class&#x000A;  # variable so it's available to other drills.&#x000A;  drill &quot;Create test array&quot; do&#x000A;    @@array = (1..100000).map { rand }&#x000A;  end&#x000A;&#x000A;  dream 3.0, :mean        # The mean should be &lt;= 3.0 seconds&#x000A;  dream 0.1, :sdev        # and the standard deviation &lt;= 0.1&#x000A;  drill(&quot;Array sort!&quot;) { @@array.dup.sort! }&#x000A;&#x000A;  # You can also include a dream inline&#x000A;  drill(&quot;Array sort&quot;, 3.0, :mean) { @@array.dup.sort }&#x000A;&#x000A;  # The 3rd argument is the number of times to&#x000A;  # execute the drill block. The mean and sdev&#x000A;  # are calculate based on all iterations. The&#x000A;  # default is 5 and the maximum is 30.&#x000A;  dream 0.1, :sdev, 15&#x000A;  drill(&quot;Array sort&quot;) { @@array.dup.sort }&#x000A;&#x000A;end</pre>
             <p>
             The drill blocks in a benchmark Tryout return <a
-            href="../classes/Tryouts/Stats.html">Tryouts::Stats</a> objects.
+            href="../classes/Tryouts/Stats.html">Tryouts::Stats</a> objects. See: <a
+            href="../classes/Tryouts/Drill/Sergeant/Benchmark.html">Tryouts::Drill::Sergeant::Benchmark</a>
             </p>
             <h2>Screenshots</h2>
             <p>
