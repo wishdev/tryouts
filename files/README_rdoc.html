@@ -31,7 +31,7 @@
         </div>
         <div class='last-update'>
           Last Update:
-          <span class='datetime'>2009-06-25 19:41:14 -0400</span>
+          <span class='datetime'>2009-06-25 20:03:43 -0400</span>
         </div>
       </div>
       <div id='content'>
@@ -46,11 +46,11 @@
             NOTE: The DSL syntax has changed significantly from 0.5 and command-line
             app testing is currently disabled.
             </p>
-            <h2>Syntax</h2>
             <p>
-            <a href="../classes/Tryouts.html">Tryouts</a> is a bit different than other
-            testing libraries. Test definitions are organized in a similar way as
-            Shoulda tests (although the keywords in the syntax are different).
+            <a href="../classes/Tryouts.html">Tryouts</a> are made up of one of more
+            drills. The return value of the drill block is compared to the expectations
+            defined by one or more dreams. The examples below are a complete overview
+            of <a href="../classes/Tryouts.html">Tryouts</a> syntax.
             </p>
             <h3>Terminology</h3>
             <ul>
@@ -70,12 +70,6 @@
             </li>
             </ul>
             <h2>Examples</h2>
-            <p>
-            <a href="../classes/Tryouts.html">Tryouts</a> are made up of one of more
-            drills. The return value of the drill block is compared to the expectations
-            defined by one or more dreams. The following is a complete overview of <a
-            href="../classes/Tryouts.html">Tryouts</a> syntax.
-            </p>
             <h3>Testing Ruby Codes (:api)</h3>
             <pre>library :caesars, &quot;../path/to/caesars/lib&quot;&#x000A;&#x000A;tryouts &quot;Common Usage&quot; do&#x000A;&#x000A;  # This drill block should return 3.&#x000A;  drill &quot;Maths R Us&quot;, 3 do&#x000A;    12 / 4&#x000A;  end&#x000A;&#x000A;  # You can specify a method to execute&#x000A;  # on the return value of the drill block.&#x000A;  drill &quot;We want a symbol&quot;, Symbol, :class do&#x000A;    orange.methods.first&#x000A;  end&#x000A;&#x000A;  # Dreams can also be specified explicitly which is&#x000A;  # important b/c it's possible to specify multiple.&#x000A;  dream Array, :class&#x000A;  dream [:a, :b, :c]&#x000A;  drill &quot;Should return a list of 3&quot; do&#x000A;    Letters.list(3)&#x000A;  end&#x000A;&#x000A;  # Drills can pass based on an exception too.&#x000A;  dream NameError, :exception&#x000A;  drill &quot;Something failed&quot; do&#x000A;    raise NameError&#x000A;  end&#x000A;&#x000A;  # We can even put simple drills on a single line.&#x000A;  drill &quot;Santa's postal code&quot;, 'H0H 0H0', /\w\d\w \d\w\d/, :match&#x000A;&#x000A;end</pre>
             <h3>Benchmarks (:benchmark)</h3>
@@ -139,10 +133,18 @@
             <li>About <a href="http://solutious.com/about/">Solutious</a>
             
             </li>
+            <li><a href="http://www.youtube.com/watch?v=iB9nhyosDVs">Inspiration</a>
+            
+            </li>
             </ul>
             <h2>Thanks</h2>
             <ul>
-            <li>Everyone at Utrecht.rb and Amsterdam.rb
+            <li>Everyone at Utrecht.rb and Amsterdam.rb for putting up with my Ruby
+            questions :]
+            
+            </li>
+            <li>Sam Aaron (<a href="http://sam.aaron.name">sam.aaron.name</a>) for the
+            early feedback.
             
             </li>
             </ul>
