@@ -31,7 +31,7 @@
         </div>
         <div class='last-update'>
           Last Update:
-          <span class='datetime'>2009-06-25 20:45:01 -0400</span>
+          <span class='datetime'>2009-06-25 22:27:21 -0400</span>
         </div>
       </div>
       <div id='content'>
@@ -63,21 +63,15 @@
             
             </li>
             </ul>
-            <h2>Installation ==</h2>
-            <p>
-            {{{
-            </p>
+            <h2>Installation</h2>
             <pre>$ gem install tryouts</pre>
-            <p>
-            }}}
-            </p>
             <h2>Examples</h2>
             <p>
             The examples below are a complete overview of <a
             href="../classes/Tryouts.html">Tryouts</a> syntax.
             </p>
             <h3>Testing Ruby Codes (:api)</h3>
-            <pre>library :caesars, &quot;../path/to/caesars/lib&quot;&#x000A;&#x000A;tryouts &quot;Common Usage&quot; do&#x000A;&#x000A;  # This drill block should return 3.&#x000A;  drill &quot;Maths R Us&quot;, 3 do&#x000A;    12 / 4&#x000A;  end&#x000A;&#x000A;  # You can specify a method to execute&#x000A;  # on the return value of the drill block.&#x000A;  drill &quot;We want a symbol&quot;, Symbol, :class do&#x000A;    orange.methods.first&#x000A;  end&#x000A;&#x000A;  # Dreams can also be specified explicitly which is&#x000A;  # important b/c it's possible to specify multiple.&#x000A;  dream Array, :class&#x000A;  dream [:a, :b, :c]&#x000A;  drill &quot;Should return a list of 3&quot; do&#x000A;    Letters.list(3)&#x000A;  end&#x000A;&#x000A;  # Drills can pass based on an exception too.&#x000A;  dream NameError, :exception&#x000A;  drill &quot;Something failed&quot; do&#x000A;    raise NameError&#x000A;  end&#x000A;&#x000A;  # We can even put simple drills on a single line.&#x000A;  drill &quot;Santa's postal code&quot;, 'H0H 0H0', /\w\d\w \d\w\d/, :match&#x000A;&#x000A;end</pre>
+            <pre>library :caesars, &quot;../path/to/caesars/lib&quot;&#x000A;&#x000A;tryouts &quot;Common Usage&quot; do&#x000A;&#x000A;  # This drill block should return 3.&#x000A;  drill &quot;Maths R Us&quot;, 3 do&#x000A;    12 / 4&#x000A;  end&#x000A;&#x000A;  # You can specify a method to execute&#x000A;  # on the return value of the drill block.&#x000A;  drill &quot;We want a symbol&quot;, Symbol, :class do&#x000A;    orange.methods.first&#x000A;  end&#x000A;&#x000A;  # Dreams can also be specified explicitly which is&#x000A;  # important b/c it's possible to specify multiple.&#x000A;  dream Array, :class&#x000A;  dream [:a, :b, :c]&#x000A;  drill &quot;Should return a list of 3&quot; do&#x000A;    Letters.list(3)&#x000A;  end&#x000A;&#x000A;  # Drills can pass based on an exception too.&#x000A;  dream NameError, :exception&#x000A;  drill &quot;Something failed&quot; do&#x000A;    raise NameError&#x000A;  end&#x000A;&#x000A;  # We can even put simple drills on a single line.&#x000A;  drill 'Small, fast, and furious', 'Muggsy Bogues', /Mug+sy Bogu?es/, :match&#x000A;&#x000A;end</pre>
             <h3>Benchmarks (:benchmark)</h3>
             <p>
             You can also use <a href="../classes/Tryouts.html">Tryouts</a> to run
@@ -109,14 +103,18 @@
             <pre>dream :to_gibble, :respond_to?&#x000A;dream 'ab33b9dec202d136d0e695a3a7b06ee678134882', :to_gibble&#x000A;drill &quot;Array&quot;, Array</pre>
             <h2>BETA Notice</h2>
             <p>
-            This library is very new (est. 2009-05-19) and has not been vetted by the
-            scrutiny of time. In particular you can expect:
+            <a href="../classes/Tryouts.html">Tryouts</a> is very new (est. 2009-05-19)
+            and has not been vetted by the scrutiny of time. In particular you can
+            expect:
             </p>
             <ul>
             <li>The test definition syntax may change in future releases.
             
             </li>
             <li>Unexpected errors.
+            
+            </li>
+            <li>Bugs! I love fixing bugs so if you find one let me know.
             
             </li>
             </ul>
