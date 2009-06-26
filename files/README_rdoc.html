@@ -31,7 +31,7 @@
         </div>
         <div class='last-update'>
           Last Update:
-          <span class='datetime'>2009-06-25 22:27:21 -0400</span>
+          <span class='datetime'>2009-06-26 12:25:40 -0400</span>
         </div>
       </div>
       <div id='content'>
@@ -65,13 +65,32 @@
             </ul>
             <h2>Installation</h2>
             <pre>$ gem install tryouts</pre>
+            <h2>NOTICE (2009-06-26): DSL Syntax Change</h2>
+            <p>
+            The order of dream arguments has reversed between 0.7.1 and 0.7.2. It is
+            now:
+            </p>
+            <ul>
+            <li><tt>dream :method, 'Expected value'</tt>
+            
+            </li>
+            </ul>
+            <p>
+            This is a return to the original syntax and I think it&#8217;s the right
+            way to go because it reads more naturally:
+            </p>
+            <ul>
+            <li><tt>drill 'test name', 'return value', :class, String</tt>
+            
+            </li>
+            </ul>
             <h2>Examples</h2>
             <p>
             The examples below are a complete overview of <a
             href="../classes/Tryouts.html">Tryouts</a> syntax.
             </p>
             <h3>Testing Ruby Codes (:api)</h3>
-            <pre>library :caesars, &quot;../path/to/caesars/lib&quot;&#x000A;&#x000A;tryouts &quot;Common Usage&quot; do&#x000A;&#x000A;  # This drill block should return 3.&#x000A;  drill &quot;Maths R Us&quot;, 3 do&#x000A;    12 / 4&#x000A;  end&#x000A;&#x000A;  # You can specify a method to execute&#x000A;  # on the return value of the drill block.&#x000A;  drill &quot;We want a symbol&quot;, Symbol, :class do&#x000A;    orange.methods.first&#x000A;  end&#x000A;&#x000A;  # Dreams can also be specified explicitly which is&#x000A;  # important b/c it's possible to specify multiple.&#x000A;  dream Array, :class&#x000A;  dream [:a, :b, :c]&#x000A;  drill &quot;Should return a list of 3&quot; do&#x000A;    Letters.list(3)&#x000A;  end&#x000A;&#x000A;  # Drills can pass based on an exception too.&#x000A;  dream NameError, :exception&#x000A;  drill &quot;Something failed&quot; do&#x000A;    raise NameError&#x000A;  end&#x000A;&#x000A;  # We can even put simple drills on a single line.&#x000A;  drill 'Small, fast, and furious', 'Muggsy Bogues', /Mug+sy Bogu?es/, :match&#x000A;&#x000A;end</pre>
+            <pre>library :gibbler, &quot;../path/to/gibbler/lib&quot;&#x000A;&#x000A;tryouts &quot;Common Usage&quot;, :api do&#x000A;&#x000A;  # This drill block should return 3.&#x000A;  drill &quot;Maths R Us&quot;, 3 do&#x000A;    12 / 4&#x000A;  end&#x000A;&#x000A;  # You can specify a method to execute&#x000A;  # on the return value of the drill block.&#x000A;  drill &quot;We want a symbol&quot;, :class, Symbol do&#x000A;    orange.methods.first&#x000A;  end&#x000A;&#x000A;  # Dreams can also be specified explicitly which is&#x000A;  # important b/c it's possible to specify multiple.&#x000A;  dream :class, Array&#x000A;  dream [:a, :b, :c]&#x000A;  drill &quot;Should return a list of 3&quot; do&#x000A;    Letters.list(3)&#x000A;  end&#x000A;&#x000A;  # Drills can pass based on an exception too.&#x000A;  dream :exception, NameError&#x000A;  drill &quot;Something failed&quot; do&#x000A;    raise NameError&#x000A;  end&#x000A;&#x000A;  # We can even put simple drills on a single line.&#x000A;  drill 'Small, fast, and furious', 'Muggsy Bogues', :match, /Mug+sy Bogu?es/&#x000A;&#x000A;end</pre>
             <h3>Benchmarks (:benchmark)</h3>
             <p>
             You can also use <a href="../classes/Tryouts.html">Tryouts</a> to run
@@ -79,7 +98,7 @@
             which drill sergeant to use. Below we specify <tt>:benchmark</tt> so each
             drill is timed and executed multiple times.
             </p>
-            <pre>tryouts &quot;Benchmark examples&quot;, :benchmark do&#x000A;&#x000A;  # We create an Array and store it in a class&#x000A;  # variable so it's available to other drills.&#x000A;  drill &quot;Create test array&quot; do&#x000A;    @@array = (1..100000).map { rand }&#x000A;  end&#x000A;&#x000A;  dream 3.0, :mean        # The mean should be &lt;= 3.0 seconds&#x000A;  dream 0.1, :sdev        # and the standard deviation &lt;= 0.1&#x000A;  drill(&quot;Array sort!&quot;) { @@array.dup.sort! }&#x000A;&#x000A;  # You can also include a dream inline&#x000A;  drill(&quot;Array sort&quot;, 3.0, :mean) { @@array.dup.sort }&#x000A;&#x000A;  # The 3rd argument is the number of times to&#x000A;  # execute the drill block. The mean and sdev&#x000A;  # are calculate based on all iterations. The&#x000A;  # default is 5 and the maximum is 30.&#x000A;  dream 0.1, :sdev, 15&#x000A;  drill(&quot;Array sort&quot;) { @@array.dup.sort }&#x000A;&#x000A;end</pre>
+            <pre>tryouts &quot;Benchmark examples&quot;, :benchmark do&#x000A;&#x000A;  # We create an Array and store it in a class&#x000A;  # variable so it's available to other drills.&#x000A;  drill &quot;Create test array&quot; do&#x000A;    @@array = (1..100000).map { rand }&#x000A;  end&#x000A;&#x000A;  dream :mean, 3.0        # The mean should be &lt;= 3.0 seconds&#x000A;  dream :sdev, 0.1        # and the standard deviation &lt;= 0.1&#x000A;  drill(&quot;Array sort!&quot;) { @@array.dup.sort! }&#x000A;&#x000A;  # You can also include a dream inline&#x000A;  drill(&quot;Array sort&quot;, :mean, 3.0) { @@array.dup.sort }&#x000A;&#x000A;  # The 3rd argument is the number of times to&#x000A;  # execute the drill block. The mean and sdev&#x000A;  # are calculate based on all iterations. The&#x000A;  # default is 5 and the maximum is 30.&#x000A;  dream :sdev, 0.1, 15&#x000A;  drill(&quot;Array sort&quot;) { @@array.dup.sort }&#x000A;&#x000A;end</pre>
             <p>
             The drill blocks in a benchmark Tryout return <a
             href="../classes/Tryouts/Stats.html">Tryouts::Stats</a> objects. See: <a
@@ -100,7 +119,7 @@
             <p>
             The drill that failed looks like this:
             </p>
-            <pre>dream :to_gibble, :respond_to?&#x000A;dream 'ab33b9dec202d136d0e695a3a7b06ee678134882', :to_gibble&#x000A;drill &quot;Array&quot;, Array</pre>
+            <pre>dream :respond_to?, :to_gibble&#x000A;dream :to_gibble, 'ab33b9dec202d136d0e695a3a7b06ee678134882'&#x000A;drill Array, &quot;Array&quot;</pre>
             <h2>BETA Notice</h2>
             <p>
             <a href="../classes/Tryouts.html">Tryouts</a> is very new (est. 2009-05-19)
