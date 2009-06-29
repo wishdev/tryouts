@@ -31,7 +31,7 @@
         </div>
         <div class='last-update'>
           Last Update:
-          <span class='datetime'>2009-06-26 12:25:40 -0400</span>
+          <span class='datetime'>2009-06-26 13:17:45 -0400</span>
         </div>
       </div>
       <div id='content'>
@@ -84,7 +84,7 @@
             
             </li>
             </ul>
-            <h2>Examples</h2>
+            <h2>Writing Tests</h2>
             <p>
             The examples below are a complete overview of <a
             href="../classes/Tryouts.html">Tryouts</a> syntax.
@@ -104,6 +104,33 @@
             href="../classes/Tryouts/Stats.html">Tryouts::Stats</a> objects. See: <a
             href="../classes/Tryouts/Drill/Sergeant/Benchmark.html">Tryouts::Drill::Sergeant::Benchmark</a>
             </p>
+            <h2>Running Tests</h2>
+            <p>
+            <a href="../classes/Tryouts.html">Tryouts</a> comes with an executable
+            called <tt>sergeant</tt>. This is the drill sergeant that tells you what
+            percentage of your dreams come true.
+            </p>
+            <pre>$ sergeant&#x000A;&#x000A;Gibbler Gazette&#x000A;&#x000A; Basic syntax with SHA1&#x000A;  &quot;Object&quot;                                                              PASS&#x000A;  &quot;Class&quot;                                                               PASS&#x000A;  ...&#x000A;  &quot;Knows when an Hash has changed&quot;                                      PASS&#x000A;&#x000A;All 9 dreams came true</pre>
+            <p>
+            The sergeant looks in the current working directory for a <tt>tryouts</tt>
+            directory and will automatically load all files ending in
+            <tt>_tryouts.rb</tt>.
+            </p>
+            <pre>$ ls -l tryouts/&#x000A;01_mixins_tryouts.rb&#x000A;10_syntax_tryouts.rb&#x000A;20_cli_tryouts.rb&#x000A;30_benchmark_tryouts.rb&#x000A;50_class_context_tryouts.rb</pre>
+            <p>
+            You can also specify specific files to load:
+            </p>
+            <pre>$ sergeant any/file.rb</pre>
+            <p>
+            Verbose mode gives you some extra information, including the return values
+            from the drills. The more v&#8217;s, the more information:
+            </p>
+            <pre>$ sergeant -v</pre>
+            <p>
+            In quiet mode, the sergeant returns only a PASS or FAIL message (in the
+            case of a FAIL, it will also return a non-zero exit code):
+            </p>
+            <pre>$ sergeant -q&#x000A;PASS</pre>
             <h2>Screenshots</h2>
             <p>
             Here is an example of <a href="../classes/Tryouts.html">Tryouts</a> output
