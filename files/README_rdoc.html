@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html lang='en'>
   <head>
-    <title>File: README.rdoc [Tryouts are high-level tests for your Ruby code. May all your dreams come true!]</title>
+    <title>File: README.rdoc [Basketball tryouts for your Ruby codes and command line apps. Go for it!]</title>
     <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
     <link href='../rdoc-style.css' media='screen' rel='stylesheet' type='text/css'>
     <script type='text/javascript'>
@@ -31,16 +31,16 @@
         </div>
         <div class='last-update'>
           Last Update:
-          <span class='datetime'>2009-06-28 21:22:22 -0400</span>
+          <span class='datetime'>2009-07-01 13:20:17 -0400</span>
         </div>
       </div>
       <div id='content'>
         <div id='text'>
           <div id='description'>
-            <h1><a href="../classes/Tryouts.html">Tryouts</a> - v0.7 BETA</h1>
+            <h1><a href="../classes/Tryouts.html">Tryouts</a> - v0.8 BETA</h1>
             <p>
             <a href="../classes/Tryouts.html">Tryouts</a> is a high-level testing
-            library (DSL) for your Ruby codes.
+            library (DSL) for your Ruby codes and command-line applications.
             </p>
             <p>
             A tryout is made up of one of more drills. The return value of the drill
@@ -65,25 +65,6 @@
             </ul>
             <h2>Installation</h2>
             <pre>$ gem install tryouts</pre>
-            <h2>NOTICE (2009-06-26): DSL Syntax Change</h2>
-            <p>
-            The order of dream arguments has reversed between 0.7.1 and 0.7.2. It is
-            now:
-            </p>
-            <ul>
-            <li><tt>dream :method, 'Expected value'</tt>
-            
-            </li>
-            </ul>
-            <p>
-            This is a return to the original syntax and I think it&#8217;s the right
-            way to go because it reads more naturally:
-            </p>
-            <ul>
-            <li><tt>drill 'test name', 'return value', :class, String</tt>
-            
-            </li>
-            </ul>
             <h2>Writing Tests</h2>
             <p>
             The examples below are a complete overview of <a
@@ -91,7 +72,12 @@
             </p>
             <h3>Testing Ruby Codes (:api)</h3>
             <pre>library :gibbler, &quot;../path/to/gibbler/lib&quot;&#x000A;&#x000A;tryouts &quot;Common Usage&quot;, :api do&#x000A;&#x000A;  # This drill block should return 3.&#x000A;  drill &quot;Maths R Us&quot;, 3 do&#x000A;    12 / 4&#x000A;  end&#x000A;&#x000A;  # You can specify a method to execute&#x000A;  # on the return value of the drill block.&#x000A;  drill &quot;We want a symbol&quot;, :class, Symbol do&#x000A;    orange.methods.first&#x000A;  end&#x000A;&#x000A;  # Dreams can also be specified explicitly which is&#x000A;  # important b/c it's possible to specify multiple.&#x000A;  dream :class, Array&#x000A;  dream [:a, :b, :c]&#x000A;  drill &quot;Should return a list of 3&quot; do&#x000A;    Letters.list(3)&#x000A;  end&#x000A;&#x000A;  # Drills can pass based on an exception too.&#x000A;  dream :exception, NameError&#x000A;  drill &quot;Something failed&quot; do&#x000A;    raise NameError&#x000A;  end&#x000A;&#x000A;  # We can even put simple drills on a single line.&#x000A;  drill 'Small, fast, and furious', 'Muggsy Bogues', :match, /Mug+sy Bogu?es/&#x000A;&#x000A;end</pre>
-            <h3>Benchmarks (:benchmark)</h3>
+            <h3>Testing Command-Line Applications (:cli)</h3>
+            <p>
+            You can execute drills on command-line applications.
+            </p>
+            <pre>command :rudy, &quot;path/2/rudy&quot;&#x000A;&#x000A;tryouts &quot;Rudy CLI&quot;, :cli do&#x000A;&#x000A;  # We have specified the name of the command above so&#x000A;  # we only need to specify the arguments in the drill.&#x000A;  # $ rudy myaddress -e&#x000A;  drill &quot;can display my IP addresses&quot;, :myaddress, :e&#x000A;&#x000A;  # The drill returns an Array of lines from STDOUT so&#x000A;  # we can use Array#grep to check the command output.&#x000A;  # If any lines match, this test will pass.&#x000A;  dream :grep, /No machines running/&#x000A;  drill &quot;can call with no arguments&quot;&#x000A;&#x000A;  # Drills can also be defined with a block which gets&#x000A;  # executed via Rye::Box#batch. Methods in the block&#x000A;  # are executed as commands. The return value of the&#x000A;  # block is considered the test output.&#x000A;  dream :match, /\d+\.\d+\.\d+\.\d+/&#x000A;  drill &quot;can execute a block of commands&quot; do&#x000A;    ret = rudy :q, :myaddress, :e&#x000A;    ret.first&#x000A;  end&#x000A;&#x000A;end</pre>
+            <h3>Running Performance Benchmarks (:benchmark)</h3>
             <p>
             You can also use <a href="../classes/Tryouts.html">Tryouts</a> to run
             benchmarks. The tryouts method takes a second parameter which specifies
@@ -132,21 +118,56 @@
             </p>
             <pre>$ sergeant -q&#x000A;PASS</pre>
             <h2>Screenshots</h2>
+            <h3>:api <a href="../classes/Tryouts.html">Tryouts</a></h3>
             <p>
-            Here is an example of <a href="../classes/Tryouts.html">Tryouts</a> output
-            from a <a
-            href="http://github.com/delano/gibbler/blob/gibbler-0.2.1/tryouts/gibbler_tryouts.rb">gibbler</a>
-            tryout:
+            <img src="http://delano.github.com/tryouts/screens/tryouts-0.8-api.png" />
             </p>
+            <p>
+            <em>from <a
+            href="http://github.com/delano/gibbler/blob/master/tryouts/10_basic_tryouts.rb">gibbler</a></em>
+            </p>
+            <h3>:cli <a href="../classes/Tryouts.html">Tryouts</a> (verbose)</h3>
+            <p>
+            <img src="http://delano.github.com/tryouts/screens/tryouts-0.8-cli.png" />
+            </p>
+            <p>
+            <em>from <a
+            href="http://github.com/delano/tryouts/blob/master/tryouts/20_cli_tryouts.rb">tryouts</a></em>
+            </p>
+            <h3>:benchmark <a href="../classes/Tryouts.html">Tryouts</a> (verbose)</h3>
             <p>
             <img
-            src="http://github.com/delano/tryouts/raw/gh-pages/screens/tryouts-1-failure.png"
-            />
+            src="http://delano.github.com/tryouts/screens/tryouts-0.8-benchmark.png" />
             </p>
             <p>
-            The drill that failed looks like this:
+            <em>from <a
+            href="http://github.com/delano/gibbler/blob/master/tryouts/80_performance_tryouts.rb">gibbler</a></em>
             </p>
-            <pre>dream :respond_to?, :to_gibble&#x000A;dream :to_gibble, 'ab33b9dec202d136d0e695a3a7b06ee678134882'&#x000A;drill Array, &quot;Array&quot;</pre>
+            <h2>News</h2>
+            <h3>2009-07-01: Drills for command-line applications</h3>
+            <p>
+            Support for testing command-line applications has been re-introduced in
+            0.8. See example code further down in this README.
+            </p>
+            <h3>2009-06-26: DSL Syntax Change</h3>
+            <p>
+            The order of dream arguments has reversed between 0.7.1 and 0.7.2. It is
+            now:
+            </p>
+            <ul>
+            <li><tt>dream :method, 'Expected value'</tt>
+            
+            </li>
+            </ul>
+            <p>
+            This is a return to the original syntax and I think it&#8217;s the right
+            way to go because it reads more naturally in the one-liner format:
+            </p>
+            <ul>
+            <li><tt>drill 'test name', 'return value', :class, String</tt>
+            
+            </li>
+            </ul>
             <h2>BETA Notice</h2>
             <p>
             <a href="../classes/Tryouts.html">Tryouts</a> is very new (est. 2009-05-19)
@@ -195,6 +216,9 @@
             </li>
             <li>Sam Aaron (<a href="http://sam.aaron.name">sam.aaron.name</a>) for the
             early feedback.
+            
+            </li>
+            <li>Kalin Harvey for the encouragement.
             
             </li>
             </ul>
