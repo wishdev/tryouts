@@ -45,15 +45,15 @@
             <h2>Methods</h2>
             <h3>public instance</h3>
             <ol>
-              <li><a href="#M000137">deepest_point</a></li>
-              <li><a href="#M000138">last</a></li>
+              <li><a href="#M000138">deepest_point</a></li>
+              <li><a href="#M000139">last</a></li>
             </ol>
           </div>
           <div id='section'>
             <div id='methods'>
               <h2>Public instance methods</h2>
-              <div class='public-instance method' id='method-M000137'>
-                <a name='M000137'>      </a>
+              <div class='public-instance method' id='method-M000138'>
+                <a name='M000138'>      </a>
                 <div class='synopsis'>
                   <span class='name'>deepest_point</span>
                   <span class='arguments'>(h=self, steps=0)</span>
@@ -68,21 +68,21 @@
                   <pre>ahash = { :level1 =&gt; { :level2 =&gt; {} } }&#x000A;ahash.deepest_point  # =&gt; 3</pre>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000137-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000138-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000137-source'>    <span class="ruby-comment cmt"># File lib/tryouts/mixins/hash.rb, line 11</span>&#x000A;11:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">deepest_point</span>(<span class="ruby-identifier">h</span>=<span class="ruby-keyword kw">self</span>, <span class="ruby-identifier">steps</span>=<span class="ruby-value">0</span>)&#x000A;12:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">h</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)&#x000A;13:       <span class="ruby-identifier">steps</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>&#x000A;14:       <span class="ruby-identifier">h</span>.<span class="ruby-identifier">each_pair</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">n</span>,<span class="ruby-identifier">possible_h</span><span class="ruby-operator">|</span>&#x000A;15:         <span class="ruby-identifier">ret</span> = <span class="ruby-identifier">deepest_point</span>(<span class="ruby-identifier">possible_h</span>, <span class="ruby-identifier">steps</span>)&#x000A;16:         <span class="ruby-identifier">steps</span> = <span class="ruby-identifier">ret</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">steps</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">ret</span>&#x000A;17:       <span class="ruby-keyword kw">end</span>&#x000A;18:     <span class="ruby-keyword kw">else</span>&#x000A;19:       <span class="ruby-keyword kw">return</span> <span class="ruby-value">0</span>&#x000A;20:     <span class="ruby-keyword kw">end</span>&#x000A;21:     <span class="ruby-identifier">steps</span>&#x000A;22:   <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000138-source'>    <span class="ruby-comment cmt"># File lib/tryouts/mixins/hash.rb, line 11</span>&#x000A;11:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">deepest_point</span>(<span class="ruby-identifier">h</span>=<span class="ruby-keyword kw">self</span>, <span class="ruby-identifier">steps</span>=<span class="ruby-value">0</span>)&#x000A;12:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">h</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)&#x000A;13:       <span class="ruby-identifier">steps</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>&#x000A;14:       <span class="ruby-identifier">h</span>.<span class="ruby-identifier">each_pair</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">n</span>,<span class="ruby-identifier">possible_h</span><span class="ruby-operator">|</span>&#x000A;15:         <span class="ruby-identifier">ret</span> = <span class="ruby-identifier">deepest_point</span>(<span class="ruby-identifier">possible_h</span>, <span class="ruby-identifier">steps</span>)&#x000A;16:         <span class="ruby-identifier">steps</span> = <span class="ruby-identifier">ret</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">steps</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">ret</span>&#x000A;17:       <span class="ruby-keyword kw">end</span>&#x000A;18:     <span class="ruby-keyword kw">else</span>&#x000A;19:       <span class="ruby-keyword kw">return</span> <span class="ruby-value">0</span>&#x000A;20:     <span class="ruby-keyword kw">end</span>&#x000A;21:     <span class="ruby-identifier">steps</span>&#x000A;22:   <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='public-instance method' id='method-M000138'>
-                <a name='M000138'>      </a>
+              <div class='public-instance method' id='method-M000139'>
+                <a name='M000139'>      </a>
                 <div class='synopsis'>
                   <span class='name'>last</span>
                   <span class='arguments'>()</span>
                 </div>
                 <div class='description'>
                   <p>
-                  Ruby 1.9 doesn&#8217;t have a <a href="Hash.html#M000138">Hash#last</a>
+                  Ruby 1.9 doesn&#8217;t have a <a href="Hash.html#M000139">Hash#last</a>
                   (but <a href="Tryouts/OrderedHash.html">Tryouts::OrderedHash</a> does).
                   It&#8217;s used in <a href="Tryouts.html">Tryouts</a> to return the most
                   recently added instance of <a href="Tryouts.html">Tryouts</a> to
@@ -94,10 +94,10 @@
                   </p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000138-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000139-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000138-source'>    <span class="ruby-comment cmt"># File lib/tryouts/mixins/hash.rb, line 31</span>&#x000A;31:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">last</span>&#x000A;32:       <span class="ruby-keyword kw">self</span>[ <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">last</span> ]&#x000A;33:     <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000139-source'>    <span class="ruby-comment cmt"># File lib/tryouts/mixins/hash.rb, line 31</span>&#x000A;31:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">last</span>&#x000A;32:       <span class="ruby-keyword kw">self</span>[ <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">last</span> ]&#x000A;33:     <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
             </div>

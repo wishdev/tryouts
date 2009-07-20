@@ -31,7 +31,7 @@
         </div>
         <div class='last-update'>
           Last Update:
-          <span class='datetime'>2009-07-15 14:43:13 -0400</span>
+          <span class='datetime'>2009-07-20 09:39:04 -0400</span>
         </div>
       </div>
       <div id='content'>
@@ -87,7 +87,7 @@
             href="../classes/Tryouts.html">Tryouts</a> syntax.
             </p>
             <h3>Testing Ruby Codes (:api)</h3>
-            <pre>library :gibbler, &quot;../path/to/gibbler/lib&quot;&#x000A;&#x000A;tryouts &quot;Common Usage&quot;, :api do&#x000A;&#x000A;  # This drill block should return 3.&#x000A;  drill &quot;Maths R Us&quot;, 3 do&#x000A;    12 / 4&#x000A;  end&#x000A;&#x000A;  # You can specify a method to execute&#x000A;  # on the return value of the drill block.&#x000A;  drill &quot;We want a symbol&quot;, :class, Symbol do&#x000A;    orange.methods.first&#x000A;  end&#x000A;&#x000A;  # Dreams can also be specified explicitly which is&#x000A;  # important b/c it's possible to specify multiple.&#x000A;  dream :class, Array&#x000A;  dream [:a, :b, :c]&#x000A;  drill &quot;Should return a list of 3&quot; do&#x000A;    Letters.list(3)&#x000A;  end&#x000A;&#x000A;  # Drills can pass based on an exception too.&#x000A;  dream :exception, NameError&#x000A;  drill &quot;Something failed&quot; do&#x000A;    raise NameError&#x000A;  end&#x000A;&#x000A;  # We can even put simple drills on a single line.&#x000A;  drill 'Small, fast, and furious', 'Muggsy Bogues', :match, /Mug+sy Bogu?es/&#x000A;&#x000A;end</pre>
+            <pre>library :gibbler, &quot;../path/to/gibbler/lib&quot;&#x000A;&#x000A;tryouts &quot;Common Usage&quot;, :api do&#x000A;&#x000A;  # Define variables available only within&#x000A;  # in the current tryout definition.&#x000A;  set :local_variable, 3&#x000A;&#x000A;  setup do&#x000A;    # do stuff before all drills&#x000A;  end&#x000A;&#x000A;  clean do&#x000A;    # do stuff after all drills&#x000A;  end&#x000A;&#x000A;  # This drill block should return 3.&#x000A;  drill &quot;Maths R Us&quot;, local_variable do&#x000A;    12 / 4&#x000A;  end&#x000A;&#x000A;  # You can specify a method to execute&#x000A;  # on the return value of the drill block.&#x000A;  drill &quot;We want a symbol&quot;, :class, Symbol do&#x000A;    Class.methods.first&#x000A;  end&#x000A;&#x000A;  # Dreams can also be specified explicitly which is&#x000A;  # important b/c it's possible to specify multiple.&#x000A;  dream :class, Array&#x000A;  dream ['b', 'c', 'd']&#x000A;  drill &quot;Should return a list of 3&quot; do&#x000A;    letters = 'a'..'z'&#x000A;    letters.to_a[1..local_variable]&#x000A;  end&#x000A;&#x000A;  # Drills can pass based on an exception too.&#x000A;  dream :exception, NameError&#x000A;  drill &quot;Something failed&quot; do&#x000A;    raise NameError&#x000A;  end&#x000A;&#x000A;  # We can even put simple drills on a single line.&#x000A;  drill 'Small, fast, and furious', 'Muggsy Bogues', :match, /Mug+sy Bogu?es/&#x000A;&#x000A;end</pre>
             <h3>Testing Command-Line Applications (:cli)</h3>
             <p>
             You can execute drills on command-line applications.
@@ -160,30 +160,17 @@
             href="http://github.com/delano/gibbler/blob/master/tryouts/80_performance_tryouts.rb">gibbler</a></em>
             </p>
             <h2>News</h2>
+            <h3>2009-07-20: New DSL keyword &#8220;set&#8220;</h3>
+            <p>
+            The &#8220;set&#8221; keyword has been introduced in 0.8.4 for defining
+            variables available only to the Tryout definition they were declared in.
+            See Example 1.
+            </p>
             <h3>2009-07-01: Drills for command-line applications</h3>
             <p>
             Support for testing command-line applications has been re-introduced in
             0.8. See example code further down in this README.
             </p>
-            <h3>2009-06-26: DSL Syntax Change</h3>
-            <p>
-            The order of dream arguments has reversed between 0.7.1 and 0.7.2. It is
-            now:
-            </p>
-            <ul>
-            <li><tt>dream :method, 'Expected value'</tt>
-            
-            </li>
-            </ul>
-            <p>
-            This is a return to the original syntax and I think it&#8217;s the right
-            way to go because it reads more naturally in the one-liner format:
-            </p>
-            <ul>
-            <li><tt>drill 'test name', 'return value', :class, String</tt>
-            
-            </li>
-            </ul>
             <h2>BETA Notice</h2>
             <p>
             <a href="../classes/Tryouts.html">Tryouts</a> is very new (est. 2009-05-19)

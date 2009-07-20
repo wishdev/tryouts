@@ -53,12 +53,12 @@
             <h2>Methods</h2>
             <h3>public class</h3>
             <ol>
-              <li><a href="#M000048">new</a></li>
+              <li><a href="#M000049">new</a></li>
             </ol>
             <h3>public instance</h3>
             <ol>
-              <li><a href="#M000049">has_dream?</a></li>
-              <li><a href="#M000050">stash</a></li>
+              <li><a href="#M000050">has_dream?</a></li>
+              <li><a href="#M000051">stash</a></li>
             </ol>
           </div>
           <div id='section'>
@@ -79,22 +79,22 @@
             </div>
             <div id='methods'>
               <h2>Public class methods</h2>
-              <div class='public-class method' id='method-M000048'>
-                <a name='M000048'>      </a>
+              <div class='public-class method' id='method-M000049'>
+                <a name='M000049'>      </a>
                 <div class='synopsis'>
                   <span class='name'>new</span>
                   <span class='arguments'>()</span>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000048-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000049-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000048-source'>    <span class="ruby-comment cmt"># File lib/tryouts/drill/context.rb, line 14</span>&#x000A;14:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>; <span class="ruby-ivar">@stash</span> = <span class="ruby-constant">Tryouts</span><span class="ruby-operator">::</span><span class="ruby-constant">HASH_TYPE</span>.<span class="ruby-identifier">new</span>; <span class="ruby-ivar">@has_dream</span> = <span class="ruby-keyword kw">false</span>; <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000049-source'>    <span class="ruby-comment cmt"># File lib/tryouts/drill/context.rb, line 14</span>&#x000A;14:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>; <span class="ruby-ivar">@stash</span> = <span class="ruby-constant">Tryouts</span><span class="ruby-operator">::</span><span class="ruby-constant">HASH_TYPE</span>.<span class="ruby-identifier">new</span>; <span class="ruby-ivar">@has_dream</span> = <span class="ruby-keyword kw">false</span>; <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
               <h2>Public instance methods</h2>
-              <div class='public-instance method' id='method-M000049'>
-                <a name='M000049'>      </a>
+              <div class='public-instance method' id='method-M000050'>
+                <a name='M000050'>      </a>
                 <div class='synopsis'>
                   <span class='name'>has_dream?</span>
                   <span class='arguments'>()</span>
@@ -105,14 +105,14 @@
                   </p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000049-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000050-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000049-source'>    <span class="ruby-comment cmt"># File lib/tryouts/drill/context.rb, line 17</span>&#x000A;17:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">has_dream?</span>; <span class="ruby-ivar">@has_dream</span>; <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000050-source'>    <span class="ruby-comment cmt"># File lib/tryouts/drill/context.rb, line 17</span>&#x000A;17:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">has_dream?</span>; <span class="ruby-ivar">@has_dream</span>; <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='public-instance method' id='method-M000050'>
-                <a name='M000050'>      </a>
+              <div class='public-instance method' id='method-M000051'>
+                <a name='M000051'>      </a>
                 <div class='synopsis'>
                   <span class='name'>stash</span>
                   <span class='arguments'>(*args)</span>
@@ -125,10 +125,10 @@
                   <pre>stash :name, 'some value'   # =&gt; 'some value'</pre>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000050-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000051-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000050-source'>    <span class="ruby-comment cmt"># File lib/tryouts/drill/context.rb, line 25</span>&#x000A;25:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">stash</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)&#x000A;26:         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@stash</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span>&#x000A;27:         <span class="ruby-ivar">@stash</span>[<span class="ruby-identifier">args</span>[<span class="ruby-value">0</span>]] = <span class="ruby-identifier">args</span>[<span class="ruby-value">1</span>] &#x000A;28:         <span class="ruby-identifier">args</span>[<span class="ruby-value">1</span>] &#x000A;29:       <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000051-source'>    <span class="ruby-comment cmt"># File lib/tryouts/drill/context.rb, line 25</span>&#x000A;25:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">stash</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)&#x000A;26:         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@stash</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span>&#x000A;27:         <span class="ruby-ivar">@stash</span>[<span class="ruby-identifier">args</span>[<span class="ruby-value">0</span>]] = <span class="ruby-identifier">args</span>[<span class="ruby-value">1</span>] &#x000A;28:         <span class="ruby-identifier">args</span>[<span class="ruby-value">1</span>] &#x000A;29:       <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
             </div>
