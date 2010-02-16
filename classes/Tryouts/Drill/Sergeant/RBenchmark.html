@@ -78,7 +78,7 @@
             </div>
             <div id='methods'>
               <h2>Public class methods</h2>
-              <div class='public-class method' id='method-M000064'>
+              <div class='method public-class' id='method-M000064'>
                 <a name='M000064'>      </a>
                 <div class='synopsis'>
                   <span class='name'>compare_realtime</span>
@@ -119,7 +119,7 @@
                   <pre id='M000064-source'>     <span class="ruby-comment cmt"># File lib/tryouts/drill/sergeant/rbenchmark.rb, line 97</span>&#x000A; 97:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">compare_realtime</span>( <span class="ruby-identifier">options</span> = {}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block1</span> )&#x000A; 98:       <span class="ruby-identifier">require</span> <span class="ruby-value str">'rsruby'</span>&#x000A; 99:       &#x000A;100:       <span class="ruby-identifier">options</span>[ <span class="ruby-identifier">:iterations</span> ] <span class="ruby-operator">||=</span> <span class="ruby-value">20</span>&#x000A;101:       <span class="ruby-identifier">options</span>[ <span class="ruby-identifier">:inner_iterations</span> ] <span class="ruby-operator">||=</span> <span class="ruby-value">1</span>&#x000A;102:       <span class="ruby-identifier">options</span>[ <span class="ruby-identifier">:required_significance</span> ] <span class="ruby-operator">||=</span> <span class="ruby-value">0</span><span class="ruby-value">.01</span>&#x000A;103: &#x000A;104:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>[ <span class="ruby-identifier">:iterations</span> ] <span class="ruby-operator">&gt;</span> <span class="ruby-value">30</span>&#x000A;105:         <span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;The number of iterations is set to #{options[ :iterations ]}. &quot;</span> <span class="ruby-operator">+</span>&#x000A;106:           <span class="ruby-value str">&quot;Using too many iterations may make the test results less reliable. &quot;</span> <span class="ruby-operator">+</span>&#x000A;107:           <span class="ruby-value str">&quot;It is recommended to increase the number of :inner_iterations instead.&quot;</span>&#x000A;108:       <span class="ruby-keyword kw">end</span>&#x000A;109: &#x000A;110:       <span class="ruby-constant">ComparisonPartial</span>.<span class="ruby-identifier">new</span>( <span class="ruby-identifier">block1</span>, <span class="ruby-identifier">options</span> )&#x000A;111:     <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='public-class method' id='method-M000065'>
+              <div class='method public-class' id='method-M000065'>
                 <a name='M000065'>      </a>
                 <div class='synopsis'>
                   <span class='name'>report_on</span>
