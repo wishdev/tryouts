@@ -1,8 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html lang='en'>
   <head>
-    <title>File: tryouts.rb [Tryouts is a high-level testing library (DSL) for your Ruby codes and command-line applications.]</title>
-    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <title>File: tryouts.rb [stella 2.0.0.001]</title>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
     <link href='../../rdoc-style.css' media='screen' rel='stylesheet' type='text/css'>
     <script type='text/javascript'>
       //<![CDATA[
@@ -31,26 +31,24 @@
         </div>
         <div class='last-update'>
           Last Update:
-          <span class='datetime'>2010-02-20 13:06:32 -0500</span>
+          <span class='datetime'>2010-07-18 14:42:51 -0400</span>
         </div>
       </div>
       <div id='content'>
         <div id='text'>
+          <div id='description'>
+            <p>
+            require &#8216;pathname&#8217; p
+            Pathname(caller.last.split(&#8217;:&#8217;).first)
+            </p>
+          </div>
           <div id='context'>
             <div id='requires'>
               <h2>Required files</h2>
               <ol>
-                <li>time</li>
-                <li>digest/sha1</li>
-                <li>attic</li>
-                <li>sysinfo</li>
+                <li>ostruct</li>
                 <li>yaml</li>
-                <li>json</li>
-                <li>tryouts/mixins</li>
-                <li>tryouts/tryout</li>
-                <li>tryouts/drill</li>
-                <li>tryouts/orderedhash</li>
-                <li>rye</li>
+                <li>sysinfo</li>
               </ol>
             </div>
           </div>
@@ -60,14 +58,9 @@
               <div class='name-list'>
                 <table summary='Constants'>
                   <tr class='top-aligned-row context-row'>
-                    <td class='context-item-name'>GYMNASIUM_HOME</td>
+                    <td class='context-item-name'>TRYOUTS_LIB_HOME</td>
                     <td>=</td>
-                    <td class='context-item-value'>File.join(Dir.pwd, '{tryouts,try}')</td>
-                  </tr>
-                  <tr class='top-aligned-row context-row'>
-                    <td class='context-item-name'>GYMNASIUM_GLOB</td>
-                    <td>=</td>
-                    <td class='context-item-value'>File.join(GYMNASIUM_HOME, '**', '*_tryouts.rb')</td>
+                    <td class='context-item-value'>File.expand_path File.dirname(__FILE__)</td>
                   </tr>
                 </table>
               </div>

@@ -1,8 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html lang='en'>
   <head>
-    <title>File: README.rdoc [Tryouts is a high-level testing library (DSL) for your Ruby codes and command-line applications.]</title>
-    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <title>File: README.rdoc [stella 2.0.0.001]</title>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
     <link href='../rdoc-style.css' media='screen' rel='stylesheet' type='text/css'>
     <script type='text/javascript'>
       //<![CDATA[
@@ -31,224 +31,86 @@
         </div>
         <div class='last-update'>
           Last Update:
-          <span class='datetime'>2010-02-15 22:03:02 -0500</span>
+          <span class='datetime'>2010-07-18 14:42:51 -0400</span>
         </div>
       </div>
       <div id='content'>
         <div id='text'>
           <div id='description'>
-            <h1><a href="../classes/Tryouts.html">Tryouts</a> - v0.8 BETA</h1>
+            <h1><a href="../classes/Tryouts.html">Tryouts</a> v2.0 ALPHA</h1>
             <p>
-            <a href="../classes/Tryouts.html">Tryouts</a> is a high-level testing
-            library (DSL) for your Ruby codes and command-line applications.
+            <em>Put your Ruby tests in comments.</em>
             </p>
             <p>
-            A tryout is made up of one of more drills. The return value of the drill
-            block is compared to the expectations defined by one or more dreams. The
-            goal is to achieve your dreams.
+            <b>NOTE: <a href="../classes/Tryouts.html">Tryouts</a> syntax changed 0.x.
+            The old version is still available in the 0.8-FINAL branch.</b>
             </p>
-            <h3>Terminology</h3>
-            <ul>
-            <li>Tryout: a set of drills (think: basketball tryouts)
-            
-            </li>
-            <li>Drill: a single test.
-            
-            </li>
-            <li>Drill Sergeant: The class responsible for executing a drill.
-            
-            </li>
-            <li>Dream: the expected outcome of a drill. There&#8217;s always one or more
-            dream per drill.
-            
-            </li>
-            </ul>
-            <h2>Installation</h2>
+            <h2>Basic syntax</h2>
+            <pre>## A very simple test&#x000A;  1 + 1&#x000A;#=&gt; 2&#x000A;&#x000A;## The test description can spread&#x000A;## across multiple lines. The same&#x000A;## is true for test definitions.&#x000A;  a = 'foo'&#x000A;  b = 'bar'&#x000A;  a + b&#x000A;#=&gt; 'foobar'&#x000A;&#x000A;## A test will pass when its return&#x000A;## value equals the expectation.&#x000A;  'foo'.class&#x000A;#=&gt; String&#x000A;&#x000A;## The expectations are evaluated.&#x000A;  1 + 1&#x000A;#=&gt; 1 + 1&#x000A;&#x000A;## Here's an example of testing errors&#x000A;  begin&#x000A;    raise RuntimeError&#x000A;  rescue RuntimeError&#x000A;    :success&#x000A;  end&#x000A;#=&gt; :success</pre>
             <p>
-            Via Rubygems, one of:
+            For real world examples, see the <a
+            href="http://github.com/delano/gibbler/tree/master/try/">Gibbler</a>
+            tryouts.
             </p>
-            <pre>$ gem install tryouts&#x000A;$ gem install delano-tryouts</pre>
+            <h2>Setup / Cleanup</h2>
             <p>
-            or via download:
+            All code before the first test definition is assumed to be setup code. All
+            code after the last definition is assumed to be cleanup code. Here is an
+            example:
             </p>
-            <ul>
-            <li><a
-            href="http://github.com/delano/tryouts/tarball/latest">tryouts-latest.tar.gz</a>
-            
-            </li>
-            <li><a
-            href="http://github.com/delano/tryouts/zipball/latest">tryouts-latest.zip</a>
-            
-            </li>
-            </ul>
-            <h2>Writing Tests</h2>
-            <p>
-            The examples below are a complete overview of <a
-            href="../classes/Tryouts.html">Tryouts</a> syntax.
-            </p>
-            <h3>Testing Ruby Codes (:api)</h3>
-            <pre>library :gibbler, &quot;../path/to/gibbler/lib&quot;&#x000A;&#x000A;tryouts &quot;Common Usage&quot;, :api do&#x000A;&#x000A;  # Define variables available only within&#x000A;  # in the current tryout definition.&#x000A;  set :local_variable, 3&#x000A;&#x000A;  setup do&#x000A;    # do stuff before all drills&#x000A;  end&#x000A;&#x000A;  clean do&#x000A;    # do stuff after all drills&#x000A;  end&#x000A;&#x000A;  # This drill block should return 3.&#x000A;  drill &quot;Maths R Us&quot;, local_variable do&#x000A;    12 / 4&#x000A;  end&#x000A;&#x000A;  # You can specify a method to execute&#x000A;  # on the return value of the drill block.&#x000A;  drill &quot;We want a symbol&quot;, :class, Symbol do&#x000A;    Class.methods.first&#x000A;  end&#x000A;&#x000A;  # Dreams can also be specified explicitly which is&#x000A;  # important b/c it's possible to specify multiple.&#x000A;  dream :class, Array&#x000A;  dream ['b', 'c', 'd']&#x000A;  drill &quot;Should return a list of 3&quot; do&#x000A;    letters = 'a'..'z'&#x000A;    letters.to_a[1..local_variable]&#x000A;  end&#x000A;&#x000A;  # Drills can pass based on an exception too.&#x000A;  dream :exception, NameError&#x000A;  drill &quot;Something failed&quot; do&#x000A;    raise NameError&#x000A;  end&#x000A;&#x000A;  # We can even put simple drills on a single line.&#x000A;  drill 'Small, fast, and furious', 'Muggsy Bogues', :match, /Mug+sy Bogu?es/&#x000A;&#x000A;end</pre>
-            <h3>Testing Command-Line Applications (:cli)</h3>
-            <p>
-            You can execute drills on command-line applications.
-            </p>
-            <pre>command :rudy, &quot;path/2/rudy&quot;&#x000A;&#x000A;tryouts &quot;Rudy CLI&quot;, :cli do&#x000A;&#x000A;  # We have specified the name of the command above so&#x000A;  # we only need to specify the arguments in the drill.&#x000A;  # $ rudy myaddress -e&#x000A;  drill &quot;can display my IP addresses&quot;, :myaddress, :e&#x000A;&#x000A;  # The drill returns an Array of lines from STDOUT so&#x000A;  # we can use Array#grep to check the command output.&#x000A;  # If any lines match, this test will pass.&#x000A;  dream :grep, /No machines running/&#x000A;  drill &quot;can call with no arguments&quot;&#x000A;&#x000A;  # Drills can also be defined with a block which gets&#x000A;  # executed via Rye::Box#batch. Methods in the block&#x000A;  # are executed as commands. The return value of the&#x000A;  # block is considered the test output.&#x000A;  dream :match, /\d+\.\d+\.\d+\.\d+/&#x000A;  drill &quot;can execute a block of commands&quot; do&#x000A;    ret = rudy :q, :myaddress, :e&#x000A;    ret.first&#x000A;  end&#x000A;&#x000A;end</pre>
-            <h3>Running Performance Benchmarks (:benchmark)</h3>
-            <p>
-            You can also use <a href="../classes/Tryouts.html">Tryouts</a> to run
-            benchmarks. The tryouts method takes a second parameter which specifies
-            which drill sergeant to use. Below we specify <tt>:benchmark</tt> so each
-            drill is timed and executed multiple times.
-            </p>
-            <pre>tryouts &quot;Benchmark examples&quot;, :benchmark do&#x000A;&#x000A;  # We create an Array and store it in a class&#x000A;  # variable so it's available to other drills.&#x000A;  drill &quot;Create test array&quot; do&#x000A;    @@array = (1..100000).map { rand }&#x000A;  end&#x000A;&#x000A;  dream :mean, 3.0        # The mean should be &lt;= 3.0 seconds&#x000A;  dream :sdev, 0.1        # and the standard deviation &lt;= 0.1&#x000A;  drill(&quot;Array sort!&quot;) { @@array.dup.sort! }&#x000A;&#x000A;  # You can also include a dream inline&#x000A;  drill(&quot;Array sort&quot;, :mean, 3.0) { @@array.dup.sort }&#x000A;&#x000A;  # The 3rd argument is the number of times to&#x000A;  # execute the drill block. The mean and sdev&#x000A;  # are calculate based on all iterations. The&#x000A;  # default is 5 and the maximum is 30.&#x000A;  dream :sdev, 0.1, 15&#x000A;  drill(&quot;Array sort&quot;) { @@array.dup.sort }&#x000A;&#x000A;end</pre>
-            <p>
-            The drill blocks in a benchmark Tryout return <a
-            href="../classes/Tryouts/Stats.html">Tryouts::Stats</a> objects. See: <a
-            href="../classes/Tryouts/Drill/Sergeant/Benchmark.html">Tryouts::Drill::Sergeant::Benchmark</a>
-            </p>
+            <pre># This is called after all tests&#x000A;require 'gibbler'&#x000A;Gibbler.digest_type = Digest::SHA256&#x000A;&#x000A;## A Symbol can gibbler&#x000A;  :anything.gibbler&#x000A;#=&gt; '754f87ca720ec256633a286d9270d68478850b2abd7b0ae65021cb769ae70c08'&#x000A;&#x000A;# This will be called after all tests&#x000A;Gibbler.digest_type = Digest::SHA1</pre>
             <h2>Running Tests</h2>
             <p>
-            <a href="../classes/Tryouts.html">Tryouts</a> comes with an executable
-            called <tt>sergeant</tt>. This is the drill sergeant that tells you what
-            percentage of your dreams come true.
-            </p>
-            <pre>$ sergeant&#x000A;&#x000A;Gibbler Gazette&#x000A;&#x000A; Basic syntax with SHA1&#x000A;  &quot;Object&quot;                                                              PASS&#x000A;  &quot;Class&quot;                                                               PASS&#x000A;  ...&#x000A;  &quot;Knows when an Hash has changed&quot;                                      PASS&#x000A;&#x000A;All 9 dreams came true</pre>
-            <p>
-            The sergeant looks in the current working directory for a <tt>tryouts</tt>
-            directory and will automatically load all files ending in
-            <tt>_tryouts.rb</tt>.
-            </p>
-            <pre>$ ls -l tryouts/&#x000A;01_mixins_tryouts.rb&#x000A;10_syntax_tryouts.rb&#x000A;20_cli_tryouts.rb&#x000A;30_benchmark_tryouts.rb&#x000A;50_class_context_tryouts.rb</pre>
-            <p>
-            You can also specify specific files to load:
-            </p>
-            <pre>$ sergeant any/file.rb</pre>
-            <p>
-            Verbose mode gives you some extra information, including the return values
-            from the drills. The more v&#8217;s, the more information:
-            </p>
-            <pre>$ sergeant -v</pre>
-            <p>
-            In quiet mode, the sergeant returns only a PASS or FAIL message (in the
-            case of a FAIL, it will also return a non-zero exit code):
-            </p>
-            <pre>$ sergeant -q&#x000A;PASS</pre>
-            <h2>Screenshots</h2>
-            <h3>:api <a href="../classes/Tryouts.html">Tryouts</a></h3>
-            <p>
-            <img src="http://delano.github.com/tryouts/screens/tryouts-0.8-api.png" />
+            Try ships with a command-line tool called <tt>try</tt>. When called with no
+            arguments, it will look for files ending with _try.rb in the current
+            directory, or in the subfolder try.
             </p>
             <p>
-            <em>from <a
-            href="http://github.com/delano/gibbler/blob/master/tryouts/10_basic_tryouts.rb">gibbler</a></em>
-            </p>
-            <h3>:cli <a href="../classes/Tryouts.html">Tryouts</a> (verbose)</h3>
-            <p>
-            <img src="http://delano.github.com/tryouts/screens/tryouts-0.8-cli.png" />
+            <img src="http://delano.github.com/tryouts/screens/tryouts-2.0-success.png"
+            />
             </p>
             <p>
-            <em>from <a
-            href="http://github.com/delano/tryouts/blob/master/tryouts/20_cli_tryouts.rb">tryouts</a></em>
+            You can also supply a specific file to test.
             </p>
-            <h3>:benchmark <a href="../classes/Tryouts.html">Tryouts</a> (verbose)</h3>
+            <pre>$ try path/2/test.rb</pre>
             <p>
-            <img
-            src="http://delano.github.com/tryouts/screens/tryouts-0.8-benchmark.png" />
+            If all tests pass, try exits with a 0. Otherwise it exits with the number
+            of tests that failed.
             </p>
             <p>
-            <em>from <a
-            href="http://github.com/delano/gibbler/blob/master/tryouts/80_performance_tryouts.rb">gibbler</a></em>
+            <img src="http://delano.github.com/tryouts/screens/tryouts-2.0-failure.png"
+            />
             </p>
-            <h2>News</h2>
-            <h3>2009-07-20: New DSL keyword &#8220;set&#8220;</h3>
+            <h2>Installation</h2>
             <p>
-            The &#8220;set&#8221; keyword has been introduced in 0.8.4 for defining
-            variables available only to the Tryout definition they were declared in.
-            See Example 1.
+            One of:
             </p>
-            <h3>2009-07-01: Drills for command-line applications</h3>
-            <p>
-            Support for testing command-line applications has been re-introduced in
-            0.8. See example code further down in this README.
-            </p>
-            <h2>BETA Notice</h2>
-            <p>
-            <a href="../classes/Tryouts.html">Tryouts</a> is very new (est. 2009-05-19)
-            and has not been vetted by the scrutiny of time. In particular you can
-            expect:
-            </p>
+            <pre>$ gem install tryouts</pre>
+            <h2>Credits</h2>
             <ul>
-            <li>The test definition syntax may change in future releases.
-            
-            </li>
-            <li>Unexpected errors.
-            
-            </li>
-            <li>Bugs! I love fixing bugs so if you find one let me know.
+            <li><a href="http://github.com/delano">delano</a>
             
             </li>
             </ul>
-            <h2>On Threads</h2>
             <p>
-            <a href="../classes/Tryouts.html">Tryouts</a> does some funky stuff to make
-            it simple to write tests. This &#8220;funky stuff&#8221; means that this
-            library is <em>not thread-safe at definition-time</em>. However, once all
-            tryouts files are parsed (or in OO-syntax, once all objects are created),
-            this class should be <em>thread-safe at drill-time</em>.
+            With help from:
             </p>
-            <h2>More Info</h2>
             <ul>
-            <li>Check out the <a href="http://github.com/delano/tryouts">sourcecodes</a>
+            <li><a href="http://github.com/cloudhead">cloudhead</a>
             
             </li>
-            <li>Read the <a href="http://tryouts.rubyforge.org/">rdocs</a>
-            
-            </li>
-            <li>About <a href="http://solutious.com/about/">Solutious</a>
-            
-            </li>
-            <li><a href="http://www.youtube.com/watch?v=iB9nhyosDVs">Inspiration</a>
+            <li><a href="http://github.com/mynyml">mynyml</a>
             
             </li>
             </ul>
             <h2>Thanks</h2>
             <ul>
-            <li>Everyone at Utrecht.rb and Amsterdam.rb for putting up with my Ruby
-            questions :]
-            
-            </li>
-            <li>Sam Aaron (<a href="http://sam.aaron.name">sam.aaron.name</a>) for the
-            early feedback.
-            
-            </li>
-            <li>Kalin Harvey for the encouragement.
+            <li><a href="http://syntenic.com/">Syntenic</a> for the hackfest venue.
             
             </li>
             </ul>
-            <h2>Credits</h2>
-            <ul>
-            <li>Delano (@solutious.com)
-            
-            </li>
-            </ul>
-            <h2>Related Projects</h2>
-            <ul>
-            <li><a href="http://github.com/jeremymcanally/context/tree/master">Context</a>
-            
-            </li>
-            <li><a href="http://github.com/ahoward/testy/tree/master">Testy</a>
-            
-            </li>
-            <li><a href="http://expectations.rubyforge.org/">Expectations</a>
-            
-            </li>
-            <li><a href="http://github.com/giraffesoft/zebra/tree/master">Zebra</a>
-            
-            </li>
-            </ul>
-            <h2>License</h2>
             <p>
-            See: <a href="LICENSE_txt.html">LICENSE.txt</a>
+            <em>This collision was brought to you by Montreal.rb.</em>
             </p>
           </div>
           <div id='section'>
