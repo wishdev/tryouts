@@ -31,7 +31,7 @@
         </div>
         <div class='last-update'>
           Last Update:
-          <span class='datetime'>2010-07-21 06:30:59 -0400</span>
+          <span class='datetime'>2010-10-20 12:08:36 -0400</span>
         </div>
       </div>
       <div id='content'>
@@ -39,11 +39,16 @@
           <div id='description'>
             <h1><a href="../classes/Tryouts.html">Tryouts</a> v2.0 ALPHA</h1>
             <p>
-            <em>Put your Ruby tests in comments.</em>
+            <em>Don&#8217;t waste your time writing tests.</em>
             </p>
             <p>
-            <b>NOTE: <a href="../classes/Tryouts.html">Tryouts</a> syntax changed 0.x.
-            The old version is still available in the 0.8-FINAL branch.</b>
+            <b>NOTE: <a href="../classes/Tryouts.html">Tryouts</a> syntax changed since
+            0.x. The old version is still available in the 0.8-FINAL branch.</b>
+            </p>
+            <p>
+            Check out the <a
+            href="http://www.rubypulse.com/episode-0.46_tryouts.html">screencast</a>
+            created by Alex Peuchert.
             </p>
             <h2>Basic syntax</h2>
             <pre>## A very simple test&#x000A;  1 + 1&#x000A;#=&gt; 2&#x000A;&#x000A;## The test description can spread&#x000A;## across multiple lines. The same&#x000A;## is true for test definitions.&#x000A;  a = 'foo'&#x000A;  b = 'bar'&#x000A;  a + b&#x000A;#=&gt; 'foobar'&#x000A;&#x000A;## A test will pass when its return&#x000A;## value equals the expectation.&#x000A;  'foo'.class&#x000A;#=&gt; String&#x000A;&#x000A;## The expectations are evaluated.&#x000A;  1 + 1&#x000A;#=&gt; 1 + 1&#x000A;&#x000A;## Here's an example of testing errors&#x000A;  begin&#x000A;    raise RuntimeError&#x000A;  rescue RuntimeError&#x000A;    :success&#x000A;  end&#x000A;#=&gt; :success</pre>
@@ -106,6 +111,9 @@
             <h2>Thanks</h2>
             <ul>
             <li><a href="http://syntenic.com/">Syntenic</a> for the hackfest venue.
+            
+            </li>
+            <li><a href="http://www.rubypulse.com/">AlexPeuchert</a> for the screencast.
             
             </li>
             </ul>
