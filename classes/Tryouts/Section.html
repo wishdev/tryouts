@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html lang='en'>
   <head>
-    <title>: Tryouts::Section [stella 2.0.1.002]</title>
+    <title>: Tryouts::Section [stella 2.0.2.001]</title>
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
     <link href='../../rdoc-style.css' media='screen' rel='stylesheet' type='text/css'>
     <script type='text/javascript'>
@@ -45,13 +45,13 @@
             <h2>Methods</h2>
             <h3>public class</h3>
             <ol>
-              <li><a href="#M000050">new</a></li>
+              <li><a href="#M000051">new</a></li>
             </ol>
             <h3>public instance</h3>
             <ol>
-              <li><a href="#M000052">inspect</a></li>
-              <li><a href="#M000051">range</a></li>
-              <li><a href="#M000053">to_s</a></li>
+              <li><a href="#M000053">inspect</a></li>
+              <li><a href="#M000052">range</a></li>
+              <li><a href="#M000054">to_s</a></li>
             </ol>
           </div>
           <div id='section'>
@@ -79,57 +79,57 @@
             </div>
             <div id='methods'>
               <h2>Public class methods</h2>
-              <div class='method public-class' id='method-M000050'>
-                <a name='M000050'>      </a>
+              <div class='method public-class' id='method-M000051'>
+                <a name='M000051'>      </a>
                 <div class='synopsis'>
                   <span class='name'>new</span>
                   <span class='arguments'>(path, start=0)</span>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000050-source'); return false">
-                    [show source]
-                  </a>
-                  <pre id='M000050-source'><span class="ruby-comment cmt"># File lib/tryouts.rb, line 320</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span> <span class="ruby-identifier">path</span>, <span class="ruby-identifier">start</span>=<span class="ruby-value">0</span>&#x000A;      <span class="ruby-ivar">@path</span> = <span class="ruby-identifier">path</span>&#x000A;      <span class="ruby-ivar">@first</span>, <span class="ruby-ivar">@last</span> = <span class="ruby-identifier">start</span>, <span class="ruby-identifier">start</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
-                </div>
-              </div>
-              <h2>Public instance methods</h2>
-              <div class='method public-instance' id='method-M000052'>
-                <a name='M000052'>      </a>
-                <div class='synopsis'>
-                  <span class='name'>inspect</span>
-                  <span class='arguments'>()</span>
-                </div>
-                <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000052-source'); return false">
-                    [show source]
-                  </a>
-                  <pre id='M000052-source'><span class="ruby-comment cmt"># File lib/tryouts.rb, line 327</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">inspect</span>&#x000A;      <span class="ruby-identifier">range</span>.<span class="ruby-identifier">to_a</span>.<span class="ruby-identifier">zip</span>(<span class="ruby-keyword kw">self</span>).<span class="ruby-identifier">collect</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>&#x000A;        <span class="ruby-value str">&quot;%-4d %s\n&quot;</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">line</span>&#x000A;      <span class="ruby-keyword kw">end</span>.<span class="ruby-identifier">join</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
-                </div>
-              </div>
-              <div class='method public-instance' id='method-M000051'>
-                <a name='M000051'>      </a>
-                <div class='synopsis'>
-                  <span class='name'>range</span>
-                  <span class='arguments'>()</span>
-                </div>
-                <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('M000051-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000051-source'><span class="ruby-comment cmt"># File lib/tryouts.rb, line 324</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">range</span>&#x000A;      <span class="ruby-ivar">@first</span><span class="ruby-operator">..</span><span class="ruby-ivar">@last</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000051-source'><span class="ruby-comment cmt"># File lib/tryouts.rb, line 336</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span> <span class="ruby-identifier">path</span>, <span class="ruby-identifier">start</span>=<span class="ruby-value">0</span>&#x000A;      <span class="ruby-ivar">@path</span> = <span class="ruby-identifier">path</span>&#x000A;      <span class="ruby-ivar">@first</span>, <span class="ruby-ivar">@last</span> = <span class="ruby-identifier">start</span>, <span class="ruby-identifier">start</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
+              <h2>Public instance methods</h2>
               <div class='method public-instance' id='method-M000053'>
                 <a name='M000053'>      </a>
                 <div class='synopsis'>
-                  <span class='name'>to_s</span>
+                  <span class='name'>inspect</span>
                   <span class='arguments'>()</span>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('M000053-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000053-source'><span class="ruby-comment cmt"># File lib/tryouts.rb, line 332</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_s</span>&#x000A;      <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">$/</span>)&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000053-source'><span class="ruby-comment cmt"># File lib/tryouts.rb, line 343</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">inspect</span>&#x000A;      <span class="ruby-identifier">range</span>.<span class="ruby-identifier">to_a</span>.<span class="ruby-identifier">zip</span>(<span class="ruby-keyword kw">self</span>).<span class="ruby-identifier">collect</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>&#x000A;        <span class="ruby-value str">&quot;%-4d %s\n&quot;</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">line</span>&#x000A;      <span class="ruby-keyword kw">end</span>.<span class="ruby-identifier">join</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-M000052'>
+                <a name='M000052'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>range</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000052-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000052-source'><span class="ruby-comment cmt"># File lib/tryouts.rb, line 340</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">range</span>&#x000A;      <span class="ruby-ivar">@first</span><span class="ruby-operator">..</span><span class="ruby-ivar">@last</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-M000054'>
+                <a name='M000054'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>to_s</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000054-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000054-source'><span class="ruby-comment cmt"># File lib/tryouts.rb, line 348</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_s</span>&#x000A;      <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">$/</span>)&#x000A;    <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
             </div>
