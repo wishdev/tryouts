@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html lang='en'>
   <head>
-    <title>: Tryouts::Console [stella 2.0.3.001]</title>
+    <title>: Tryouts::Console [stella 2.0.4.001]</title>
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
     <link href='../../rdoc-style.css' media='screen' rel='stylesheet' type='text/css'>
     <script type='text/javascript'>
@@ -41,11 +41,11 @@
             <h2>Methods</h2>
             <h3>public class</h3>
             <ol>
-              <li><a href="#M000018">att</a></li>
-              <li><a href="#M000019">bgcolor</a></li>
-              <li><a href="#M000015">bright</a></li>
-              <li><a href="#M000017">color</a></li>
-              <li><a href="#M000016">reverse</a></li>
+              <li><a href="#M000030">att</a></li>
+              <li><a href="#M000031">bgcolor</a></li>
+              <li><a href="#M000027">bright</a></li>
+              <li><a href="#M000029">color</a></li>
+              <li><a href="#M000028">reverse</a></li>
             </ol>
           </div>
           <div id='section'>
@@ -92,69 +92,69 @@
             </div>
             <div id='methods'>
               <h2>Public class methods</h2>
-              <div class='method public-class' id='method-M000018'>
-                <a name='M000018'>      </a>
+              <div class='method public-class' id='method-M000030'>
+                <a name='M000030'>      </a>
                 <div class='synopsis'>
                   <span class='name'>att</span>
                   <span class='arguments'>(name, str)</span>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000018-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000030-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000018-source'><span class="ruby-comment cmt"># File lib/tryouts.rb, line 429</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">att</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">str</span>)&#x000A;      <span class="ruby-identifier">str</span> = [<span class="ruby-identifier">style</span>(<span class="ruby-constant">ATTRIBUTES</span>[<span class="ruby-identifier">name</span>]), <span class="ruby-identifier">str</span>, <span class="ruby-identifier">default_style</span>].<span class="ruby-identifier">join</span>&#x000A;      <span class="ruby-identifier">str</span>.<span class="ruby-identifier">extend</span> <span class="ruby-constant">Console</span><span class="ruby-operator">::</span><span class="ruby-constant">InstanceMethods</span>&#x000A;      <span class="ruby-identifier">str</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000030-source'><span class="ruby-comment cmt"># File lib/tryouts.rb, line 430</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">att</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">str</span>)&#x000A;      <span class="ruby-identifier">str</span> = [<span class="ruby-identifier">style</span>(<span class="ruby-constant">ATTRIBUTES</span>[<span class="ruby-identifier">name</span>]), <span class="ruby-identifier">str</span>, <span class="ruby-identifier">default_style</span>].<span class="ruby-identifier">join</span>&#x000A;      <span class="ruby-identifier">str</span>.<span class="ruby-identifier">extend</span> <span class="ruby-constant">Console</span><span class="ruby-operator">::</span><span class="ruby-constant">InstanceMethods</span>&#x000A;      <span class="ruby-identifier">str</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='method public-class' id='method-M000019'>
-                <a name='M000019'>      </a>
+              <div class='method public-class' id='method-M000031'>
+                <a name='M000031'>      </a>
                 <div class='synopsis'>
                   <span class='name'>bgcolor</span>
                   <span class='arguments'>(col, str)</span>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000019-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000031-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000019-source'><span class="ruby-comment cmt"># File lib/tryouts.rb, line 434</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">bgcolor</span>(<span class="ruby-identifier">col</span>, <span class="ruby-identifier">str</span>)&#x000A;      <span class="ruby-identifier">str</span> = [<span class="ruby-identifier">style</span>(<span class="ruby-constant">ATTRIBUTES</span>[<span class="ruby-identifier">col</span>]), <span class="ruby-identifier">str</span>, <span class="ruby-identifier">default_style</span>].<span class="ruby-identifier">join</span>&#x000A;      <span class="ruby-identifier">str</span>.<span class="ruby-identifier">extend</span> <span class="ruby-constant">Console</span><span class="ruby-operator">::</span><span class="ruby-constant">InstanceMethods</span>&#x000A;      <span class="ruby-identifier">str</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000031-source'><span class="ruby-comment cmt"># File lib/tryouts.rb, line 435</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">bgcolor</span>(<span class="ruby-identifier">col</span>, <span class="ruby-identifier">str</span>)&#x000A;      <span class="ruby-identifier">str</span> = [<span class="ruby-identifier">style</span>(<span class="ruby-constant">ATTRIBUTES</span>[<span class="ruby-identifier">col</span>]), <span class="ruby-identifier">str</span>, <span class="ruby-identifier">default_style</span>].<span class="ruby-identifier">join</span>&#x000A;      <span class="ruby-identifier">str</span>.<span class="ruby-identifier">extend</span> <span class="ruby-constant">Console</span><span class="ruby-operator">::</span><span class="ruby-constant">InstanceMethods</span>&#x000A;      <span class="ruby-identifier">str</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='method public-class' id='method-M000015'>
-                <a name='M000015'>      </a>
+              <div class='method public-class' id='method-M000027'>
+                <a name='M000027'>      </a>
                 <div class='synopsis'>
                   <span class='name'>bright</span>
                   <span class='arguments'>(str)</span>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000015-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000027-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000015-source'><span class="ruby-comment cmt"># File lib/tryouts.rb, line 414</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">bright</span>(<span class="ruby-identifier">str</span>)&#x000A;      <span class="ruby-identifier">str</span> = [<span class="ruby-identifier">style</span>(<span class="ruby-constant">ATTRIBUTES</span>[<span class="ruby-identifier">:bright</span>]), <span class="ruby-identifier">str</span>, <span class="ruby-identifier">default_style</span>].<span class="ruby-identifier">join</span>&#x000A;      <span class="ruby-identifier">str</span>.<span class="ruby-identifier">extend</span> <span class="ruby-constant">Console</span><span class="ruby-operator">::</span><span class="ruby-constant">InstanceMethods</span>&#x000A;      <span class="ruby-identifier">str</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000027-source'><span class="ruby-comment cmt"># File lib/tryouts.rb, line 415</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">bright</span>(<span class="ruby-identifier">str</span>)&#x000A;      <span class="ruby-identifier">str</span> = [<span class="ruby-identifier">style</span>(<span class="ruby-constant">ATTRIBUTES</span>[<span class="ruby-identifier">:bright</span>]), <span class="ruby-identifier">str</span>, <span class="ruby-identifier">default_style</span>].<span class="ruby-identifier">join</span>&#x000A;      <span class="ruby-identifier">str</span>.<span class="ruby-identifier">extend</span> <span class="ruby-constant">Console</span><span class="ruby-operator">::</span><span class="ruby-constant">InstanceMethods</span>&#x000A;      <span class="ruby-identifier">str</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='method public-class' id='method-M000017'>
-                <a name='M000017'>      </a>
+              <div class='method public-class' id='method-M000029'>
+                <a name='M000029'>      </a>
                 <div class='synopsis'>
                   <span class='name'>color</span>
                   <span class='arguments'>(col, str)</span>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000017-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000029-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000017-source'><span class="ruby-comment cmt"># File lib/tryouts.rb, line 424</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">color</span>(<span class="ruby-identifier">col</span>, <span class="ruby-identifier">str</span>)&#x000A;      <span class="ruby-identifier">str</span> = [<span class="ruby-identifier">style</span>(<span class="ruby-constant">COLOURS</span>[<span class="ruby-identifier">col</span>]), <span class="ruby-identifier">str</span>, <span class="ruby-identifier">default_style</span>].<span class="ruby-identifier">join</span>&#x000A;      <span class="ruby-identifier">str</span>.<span class="ruby-identifier">extend</span> <span class="ruby-constant">Console</span><span class="ruby-operator">::</span><span class="ruby-constant">InstanceMethods</span>&#x000A;      <span class="ruby-identifier">str</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000029-source'><span class="ruby-comment cmt"># File lib/tryouts.rb, line 425</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">color</span>(<span class="ruby-identifier">col</span>, <span class="ruby-identifier">str</span>)&#x000A;      <span class="ruby-identifier">str</span> = [<span class="ruby-identifier">style</span>(<span class="ruby-constant">COLOURS</span>[<span class="ruby-identifier">col</span>]), <span class="ruby-identifier">str</span>, <span class="ruby-identifier">default_style</span>].<span class="ruby-identifier">join</span>&#x000A;      <span class="ruby-identifier">str</span>.<span class="ruby-identifier">extend</span> <span class="ruby-constant">Console</span><span class="ruby-operator">::</span><span class="ruby-constant">InstanceMethods</span>&#x000A;      <span class="ruby-identifier">str</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='method public-class' id='method-M000016'>
-                <a name='M000016'>      </a>
+              <div class='method public-class' id='method-M000028'>
+                <a name='M000028'>      </a>
                 <div class='synopsis'>
                   <span class='name'>reverse</span>
                   <span class='arguments'>(str)</span>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000016-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000028-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000016-source'><span class="ruby-comment cmt"># File lib/tryouts.rb, line 419</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">reverse</span>(<span class="ruby-identifier">str</span>)&#x000A;      <span class="ruby-identifier">str</span> = [<span class="ruby-identifier">style</span>(<span class="ruby-constant">ATTRIBUTES</span>[<span class="ruby-identifier">:reverse</span>]), <span class="ruby-identifier">str</span>, <span class="ruby-identifier">default_style</span>].<span class="ruby-identifier">join</span>&#x000A;      <span class="ruby-identifier">str</span>.<span class="ruby-identifier">extend</span> <span class="ruby-constant">Console</span><span class="ruby-operator">::</span><span class="ruby-constant">InstanceMethods</span>&#x000A;      <span class="ruby-identifier">str</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000028-source'><span class="ruby-comment cmt"># File lib/tryouts.rb, line 420</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">reverse</span>(<span class="ruby-identifier">str</span>)&#x000A;      <span class="ruby-identifier">str</span> = [<span class="ruby-identifier">style</span>(<span class="ruby-constant">ATTRIBUTES</span>[<span class="ruby-identifier">:reverse</span>]), <span class="ruby-identifier">str</span>, <span class="ruby-identifier">default_style</span>].<span class="ruby-identifier">join</span>&#x000A;      <span class="ruby-identifier">str</span>.<span class="ruby-identifier">extend</span> <span class="ruby-constant">Console</span><span class="ruby-operator">::</span><span class="ruby-constant">InstanceMethods</span>&#x000A;      <span class="ruby-identifier">str</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
             </div>

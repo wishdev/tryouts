@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html lang='en'>
   <head>
-    <title>: Tryouts::VERSION [stella 2.0.3.001]</title>
+    <title>: Tryouts::VERSION [stella 2.0.4.001]</title>
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
     <link href='../../rdoc-style.css' media='screen' rel='stylesheet' type='text/css'>
     <script type='text/javascript'>
@@ -41,51 +41,51 @@
             <h2>Methods</h2>
             <h3>public class</h3>
             <ol>
-              <li><a href="#M000013">inspect</a></li>
-              <li><a href="#M000014">load_config</a></li>
-              <li><a href="#M000012">to_s</a></li>
+              <li><a href="#M000025">inspect</a></li>
+              <li><a href="#M000026">load_config</a></li>
+              <li><a href="#M000024">to_s</a></li>
             </ol>
           </div>
           <div id='section'>
             <div id='methods'>
               <h2>Public class methods</h2>
-              <div class='method public-class' id='method-M000013'>
-                <a name='M000013'>      </a>
+              <div class='method public-class' id='method-M000025'>
+                <a name='M000025'>      </a>
                 <div class='synopsis'>
                   <span class='name'>inspect</span>
                   <span class='arguments'>()</span>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000013-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000025-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000013-source'><span class="ruby-comment cmt"># File lib/tryouts.rb, line 15</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">inspect</span>&#x000A;      <span class="ruby-identifier">load_config</span>&#x000A;      [<span class="ruby-ivar">@version</span>[<span class="ruby-identifier">:MAJOR</span>], <span class="ruby-ivar">@version</span>[<span class="ruby-identifier">:MINOR</span>], <span class="ruby-ivar">@version</span>[<span class="ruby-identifier">:PATCH</span>], <span class="ruby-ivar">@version</span>[<span class="ruby-identifier">:BUILD</span>]].<span class="ruby-identifier">join</span>(<span class="ruby-value str">'.'</span>)&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000025-source'><span class="ruby-comment cmt"># File lib/tryouts.rb, line 15</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">inspect</span>&#x000A;      <span class="ruby-identifier">load_config</span>&#x000A;      [<span class="ruby-ivar">@version</span>[<span class="ruby-identifier">:MAJOR</span>], <span class="ruby-ivar">@version</span>[<span class="ruby-identifier">:MINOR</span>], <span class="ruby-ivar">@version</span>[<span class="ruby-identifier">:PATCH</span>], <span class="ruby-ivar">@version</span>[<span class="ruby-identifier">:BUILD</span>]].<span class="ruby-identifier">join</span>(<span class="ruby-value str">'.'</span>)&#x000A;    <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='method public-class' id='method-M000014'>
-                <a name='M000014'>      </a>
+              <div class='method public-class' id='method-M000026'>
+                <a name='M000026'>      </a>
                 <div class='synopsis'>
                   <span class='name'>load_config</span>
                   <span class='arguments'>()</span>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000014-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000026-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000014-source'><span class="ruby-comment cmt"># File lib/tryouts.rb, line 19</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">load_config</span>&#x000A;      <span class="ruby-identifier">require</span> <span class="ruby-value str">'yaml'</span>&#x000A;      <span class="ruby-ivar">@version</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">YAML</span>.<span class="ruby-identifier">load_file</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">TRYOUTS_LIB_HOME</span>, <span class="ruby-value str">'..'</span>, <span class="ruby-value str">'VERSION.yml'</span>))&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000026-source'><span class="ruby-comment cmt"># File lib/tryouts.rb, line 19</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">load_config</span>&#x000A;      <span class="ruby-identifier">require</span> <span class="ruby-value str">'yaml'</span>&#x000A;      <span class="ruby-ivar">@version</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">YAML</span>.<span class="ruby-identifier">load_file</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">TRYOUTS_LIB_HOME</span>, <span class="ruby-value str">'..'</span>, <span class="ruby-value str">'VERSION.yml'</span>))&#x000A;    <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
-              <div class='method public-class' id='method-M000012'>
-                <a name='M000012'>      </a>
+              <div class='method public-class' id='method-M000024'>
+                <a name='M000024'>      </a>
                 <div class='synopsis'>
                   <span class='name'>to_s</span>
                   <span class='arguments'>()</span>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000012-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000024-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000012-source'><span class="ruby-comment cmt"># File lib/tryouts.rb, line 11</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">to_s</span>&#x000A;      <span class="ruby-identifier">load_config</span>&#x000A;      [<span class="ruby-ivar">@version</span>[<span class="ruby-identifier">:MAJOR</span>], <span class="ruby-ivar">@version</span>[<span class="ruby-identifier">:MINOR</span>], <span class="ruby-ivar">@version</span>[<span class="ruby-identifier">:PATCH</span>]].<span class="ruby-identifier">join</span>(<span class="ruby-value str">'.'</span>)&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000024-source'><span class="ruby-comment cmt"># File lib/tryouts.rb, line 11</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">to_s</span>&#x000A;      <span class="ruby-identifier">load_config</span>&#x000A;      [<span class="ruby-ivar">@version</span>[<span class="ruby-identifier">:MAJOR</span>], <span class="ruby-ivar">@version</span>[<span class="ruby-identifier">:MINOR</span>], <span class="ruby-ivar">@version</span>[<span class="ruby-identifier">:PATCH</span>]].<span class="ruby-identifier">join</span>(<span class="ruby-value str">'.'</span>)&#x000A;    <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
             </div>
