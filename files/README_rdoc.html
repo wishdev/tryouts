@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html lang='en'>
   <head>
-    <title>File: README.rdoc [stella 2.0.4.001]</title>
+    <title>File: README.rdoc [stella 2.1.0}]</title>
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
     <link href='../rdoc-style.css' media='screen' rel='stylesheet' type='text/css'>
     <script type='text/javascript'>
@@ -31,7 +31,7 @@
         </div>
         <div class='last-update'>
           Last Update:
-          <span class='datetime'>2010-11-03 16:31:20 -0400</span>
+          <span class='datetime'>2011-02-12 16:32:12 -0500</span>
         </div>
       </div>
       <div id='content'>
@@ -71,21 +71,17 @@
             directory, or in the subfolder try.
             </p>
             <p>
-            <img src="http://delano.github.com/tryouts/screens/tryouts-2.0-success.png"
-            />
-            </p>
-            <p>
             You can also supply a specific file to test.
             </p>
-            <pre>$ try path/2/test.rb</pre>
+            <pre>$ try path/2/test.rb&#x000A;Ruby 1.9.1 @ 2011-01-06 12:38:29 -0500&#x000A;&#x000A; # TEST 1: test matches result with expectation&#x000A;7    a = 1 + 1&#x000A;8    #=&gt; 2&#x000A;     ==  2&#x000A;...&#x000A;&#x000A; ## TEST 12: comments, tests, and expectations can&#x000A; ## contain multiple lines&#x000A;13   a = 1&#x000A;14   b = 2&#x000A;15   a + b&#x000A;16   # =&gt; 3&#x000A;17   # =&gt; 2 + 1&#x000A;     ==  3&#x000A;     ==  3&#x000A;&#x000A; 12 of 12 tests passed (and 5 skipped)</pre>
             <p>
             If all tests pass, try exits with a 0. Otherwise it exits with the number
             of tests that failed.
             </p>
             <p>
-            <img src="http://delano.github.com/tryouts/screens/tryouts-2.0-failure.png"
-            />
+            For reduced output, use the `-q` option:
             </p>
+            <pre>$ try -q&#x000A;Ruby 1.9.1 @ 2011-01-06 12:38:29 -0500&#x000A;&#x000A; 42 of 42 tests passed (and 5 skipped)&#x000A;  4 of 4 batches passed</pre>
             <h2>Installation</h2>
             <p>
             One of:
@@ -114,6 +110,9 @@
             
             </li>
             <li><a href="http://www.rubypulse.com/">AlexPeuchert</a> for the screencast.
+            
+            </li>
+            <li>Christian Michon for suggesting a better default output format.
             
             </li>
             </ul>

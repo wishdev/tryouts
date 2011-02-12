@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html lang='en'>
   <head>
-    <title>: Tryouts::Section [stella 2.0.4.001]</title>
+    <title>: Tryouts::Section [stella 2.1.0}]</title>
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
     <link href='../../rdoc-style.css' media='screen' rel='stylesheet' type='text/css'>
     <script type='text/javascript'>
@@ -89,7 +89,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('M000051-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000051-source'><span class="ruby-comment cmt"># File lib/tryouts.rb, line 337</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span> <span class="ruby-identifier">path</span>, <span class="ruby-identifier">start</span>=<span class="ruby-value">0</span>&#x000A;      <span class="ruby-ivar">@path</span> = <span class="ruby-identifier">path</span>&#x000A;      <span class="ruby-ivar">@first</span>, <span class="ruby-ivar">@last</span> = <span class="ruby-identifier">start</span>, <span class="ruby-identifier">start</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000051-source'><span class="ruby-comment cmt"># File lib/tryouts.rb, line 352</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span> <span class="ruby-identifier">path</span>, <span class="ruby-identifier">start</span>=<span class="ruby-value">0</span>&#x000A;      <span class="ruby-ivar">@path</span> = <span class="ruby-identifier">path</span>&#x000A;      <span class="ruby-ivar">@first</span>, <span class="ruby-ivar">@last</span> = <span class="ruby-identifier">start</span>, <span class="ruby-identifier">start</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
               <h2>Public instance methods</h2>
@@ -103,7 +103,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('M000053-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000053-source'><span class="ruby-comment cmt"># File lib/tryouts.rb, line 344</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">inspect</span>&#x000A;      <span class="ruby-identifier">range</span>.<span class="ruby-identifier">to_a</span>.<span class="ruby-identifier">zip</span>(<span class="ruby-keyword kw">self</span>).<span class="ruby-identifier">collect</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>&#x000A;        <span class="ruby-value str">&quot;%-4d %s\n&quot;</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">line</span>&#x000A;      <span class="ruby-keyword kw">end</span>.<span class="ruby-identifier">join</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000053-source'><span class="ruby-comment cmt"># File lib/tryouts.rb, line 359</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">inspect</span>&#x000A;      <span class="ruby-identifier">range</span>.<span class="ruby-identifier">to_a</span>.<span class="ruby-identifier">zip</span>(<span class="ruby-keyword kw">self</span>).<span class="ruby-identifier">collect</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>&#x000A;        <span class="ruby-value str">&quot;%-4d %s\n&quot;</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">line</span>&#x000A;      <span class="ruby-keyword kw">end</span>.<span class="ruby-identifier">join</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-M000052'>
@@ -116,7 +116,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('M000052-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000052-source'><span class="ruby-comment cmt"># File lib/tryouts.rb, line 341</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">range</span>&#x000A;      <span class="ruby-ivar">@first</span><span class="ruby-operator">..</span><span class="ruby-ivar">@last</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000052-source'><span class="ruby-comment cmt"># File lib/tryouts.rb, line 356</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">range</span>&#x000A;      <span class="ruby-ivar">@first</span><span class="ruby-operator">..</span><span class="ruby-ivar">@last</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-M000054'>
@@ -129,7 +129,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('M000054-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000054-source'><span class="ruby-comment cmt"># File lib/tryouts.rb, line 349</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_s</span>&#x000A;      <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">$/</span>)&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000054-source'><span class="ruby-comment cmt"># File lib/tryouts.rb, line 364</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_s</span>&#x000A;      <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">$/</span>)&#x000A;    <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
             </div>
